@@ -24,6 +24,7 @@ class DishesAdminRepository {
       price,
       image,
 
+
     });
 
     return ({ id: dishesId });
