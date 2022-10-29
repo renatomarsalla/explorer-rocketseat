@@ -21,23 +21,37 @@ class DishesRepository {
     if (ingredients) {
       // const filteredIngredients = ingredients.split(',').map(ingredient => ingredient.trim());
 
-      dishes = await connectionKnex('ingredients').
-        select(["dishes.id", "dishes.name"]).whereLike("ingredients", `%${ingredients}%`).innerJoin("dishes", "dishes.id", "ingredients.dish_id").orderBy("dishes.name");
-      console.log(dishes);
-      return ({ dishes });
+      dishes = await connectionKnex('ingredients')
+        .select(["dishes.id", "dishes.name"])
+        .whereLike("ingredients", `%${ingredients}%`)
+        .innerJoin("dishes", "dishes.id", "ingredients.dish_id")
+        .orderBy("dishes.name");
+      // console.log(dishes);
+      // return ({ dishes });
 
     } else {
-      dishes = await connectionKnex('dishes').whereLike("name", `%${name}%`).orderBy("name");
-      console.log(dishes);
-      return ({ dishes });
+      dishes = await connectionKnex('dishes')
+        .whereLike("name", `%${name}%`)
+        .orderBy("name");
+      // console.log(dishes);
+      // return ({ dishes });
     }
 
-    // const dishes = await connectionKnex('dishes').whereLike("name", `%${name}%`).orderBy("name");
-    // console.log(dishes);
-    // return ({ dishes });
+    const dishesIngredients = await connectionKnex("ingredients")
+    const dishesWithIngredients = dishes.map(dish => {
+      const dishIngredient = dishesIngredients.filter(ingredient => ingredient.dish_id === dish.id);
 
+      const dishWithAllInfos = {
+        ...dish,
+        ingredients: dishIngredient
+      }
+
+      console.log(dishWithAllInfos);
+      return ({ dishWithAllInfos });
+    })
 
   }
+
 
 }
 
