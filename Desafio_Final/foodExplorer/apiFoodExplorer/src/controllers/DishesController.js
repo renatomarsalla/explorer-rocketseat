@@ -17,12 +17,12 @@ class DishesController {
   }
 
   async indexDishes(request, response) {
-    const { name } = request.query;
+    const { name, ingredients } = request.query;
 
     const dishesRepository = new DishesRepository();
     const dishesService = new DishesService(dishesRepository);
 
-    await dishesService.executeIndex(name);
+    await dishesService.executeIndex(name, ingredients);
 
     return response.json();
   }
