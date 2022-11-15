@@ -6,7 +6,7 @@ export const Container = styled.button`
 
   color: ${({ theme }) => theme.COLORS.WHITE};
   
-  margin-top: 3.2rem;
+  /* margin-top: 3.2rem; */
 
   cursor: pointer;
 
@@ -14,5 +14,6 @@ export const Container = styled.button`
 
   font-family: 'Poppins', sans-serif;
 
-  
+  text-align: center;
+
 `;

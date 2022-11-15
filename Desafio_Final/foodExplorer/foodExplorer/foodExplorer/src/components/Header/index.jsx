@@ -25,16 +25,21 @@ function Header() {
           />
         </svg>
         <h3>food explorer</h3>
+        {/* <ButtonText text="Meus favoritos" className="hide btnFavorites" />; */}
       </div>
-      <Favorites className="btnFav">
+      <Favorites className="show">
         <AiFillHeart />
       </Favorites>
-      <ButtonText text="Meus favoritos" className="hide" />;
-      <Input placeholder="Busque pelas opções de pratos"></Input>
-      <Buy>
+      <ButtonText text="Meus favoritos" className="hide btnFavorites" />
+      <Input
+        icon={FiSearch}
+        type="text"
+        placeholder="Busque pelas opções de pratos"
+      />
+      <Buy className="show">
         <FaShoppingCart />
       </Buy>
-      <Button text="Meu pedido (0)" className="hide">
+      <Button text="Meu pedido (0)" className="hide myOrder">
         <svg
           width="27"
           height="22"
@@ -62,7 +67,7 @@ function Header() {
           />
         </svg>
       </Button>
-      <Logout>
+      <Logout className="logout">
         <FiLogOut />
       </Logout>
     </Container>

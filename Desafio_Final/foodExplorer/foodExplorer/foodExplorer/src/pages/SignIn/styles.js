@@ -23,9 +23,9 @@ const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-family: 'Roboto';
     
-
-    
   }
+
+  
   
   
   @media (min-width: 1024px){
@@ -117,6 +117,10 @@ const Form = styled.form`
     gap: 0.8rem;
     align-items: flex-start;
     margin-bottom:1.6rem ;
+  }
+
+  button{
+    margin-top: 3.2rem;
   }
 
 

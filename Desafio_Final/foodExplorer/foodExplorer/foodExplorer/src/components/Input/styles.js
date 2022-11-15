@@ -6,11 +6,11 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
 
-  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
 
   color: ${({ theme }) => theme.COLORS.GREY_200};
 
-  margin-bottom: 0.8rem;
+  /* margin-bottom: 0.8rem; */
   border-radius: 1rem;
 
   >input{
@@ -19,12 +19,15 @@ export const Container = styled.div`
     padding: 1.2rem;
 
     color: ${({ theme }) => theme.COLORS.WHITE};
-    background: transparent;
+    background-color:${({ theme }) => theme.COLORS.BACKGROUND_600};
     border: 1px solid;
+    border: none;
 
     border-radius: 1rem;
 
     
+
+
 
     &::placeholder{
       color: ${({ theme }) => theme.COLORS.GRAY_300};
@@ -34,11 +37,22 @@ export const Container = styled.div`
       font-family: 'Roboto', sans-serif;
     }
 
+
+    
     
   }
 
   >svg{
-      margin-left: 1.6rem;
-      color: ${({ theme }) => theme.COLORS.GRAY_200};
-    }
+    font-size: 3rem;
+    margin-left: 1.6rem;
+    color: ${({ theme }) => theme.COLORS.GRAY_300};
+  }  
+
+  
+
+
+
+
 `;
+
+

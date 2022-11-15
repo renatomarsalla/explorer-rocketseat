@@ -52,7 +52,7 @@ function SignIn() {
             <Button text="Entrar" />
           </div>
 
-          <ButtonText text="Criar uma conta" />
+          <ButtonText text="Criar uma conta" className="btnCreateAccount" />
 
           {/* <p>criar uma conta</p> */}
         </fieldset>

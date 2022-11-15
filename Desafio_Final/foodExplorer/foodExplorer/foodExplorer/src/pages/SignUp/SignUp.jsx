@@ -42,7 +42,7 @@ function SignUp() {
           </div>
 
           <div className="password">
-            <legend>Password</legend>
+            <legend>Senha</legend>
             <Input
               type="password"
               placeholder="No mínimo 6 caracteres"
