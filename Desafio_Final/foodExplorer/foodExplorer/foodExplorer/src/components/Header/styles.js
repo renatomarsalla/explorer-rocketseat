@@ -54,7 +54,7 @@ const Container = styled.div`
       }
 
       >h3{
-        width: 15rem;//minimo
+        width: 17rem;//minimo
         height: 2.9rem;
         /* margin-right: 3.7rem; */
 
@@ -88,6 +88,16 @@ const Container = styled.div`
    .logout{
     margin-right: 6rem;
     /* margin-right: 12.8rem; */
+   }
+
+   .myOrder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+    >svg{
+      font-size: 2rem;
+    }
    }
 
 

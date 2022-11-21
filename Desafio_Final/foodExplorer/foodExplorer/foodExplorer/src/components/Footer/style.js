@@ -13,6 +13,8 @@ const Container = styled.footer`
 
   div{
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 1.2rem;
 
     >h4{
@@ -21,7 +23,7 @@ const Container = styled.footer`
       display: flex;
       align-items: center;
 
-      font-size: 2.4rem;
+      font-size: 2rem;
       font-family: 'Roboto', sans-serif;
       font-weight: 700;
 
@@ -32,7 +34,7 @@ const Container = styled.footer`
   span{
     color: ${({ theme }) => theme.COLORS.WHITE};
 
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-family: 'DM Sans', sans-serif;
 
   }

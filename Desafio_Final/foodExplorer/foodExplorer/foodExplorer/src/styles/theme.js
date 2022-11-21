@@ -6,10 +6,13 @@ export default {
     BACKGROUND_600: "#0D1D25",//figma
 
     WHITE: "#FFFFFF",//figma
+    WHITE_HOME: "#E1E1E6",
 
     GRAY_100: "#C4C4CC",//figma
     GRAY_300: "#7C7C8A",//figma
 
-    RED: "#92000E" //figma
+    RED: "#92000E", //figma
+
+    PRICE: "#82F3FF"
   }
 }

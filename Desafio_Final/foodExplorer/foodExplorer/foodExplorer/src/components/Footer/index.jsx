@@ -20,7 +20,7 @@ function Footer() {
         <h4>food explorer</h4>
       </div>
       <div className="copyright">
-        <span>&#169; 2022 - Todos os direitos reservados.</span>;
+        <span>&#169; 2022 - Todos os direitos reservados.</span>
       </div>
     </Container>
   );
