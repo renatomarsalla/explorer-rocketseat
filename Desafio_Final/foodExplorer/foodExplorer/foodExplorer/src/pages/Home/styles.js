@@ -30,6 +30,7 @@ const Container = styled.div`
     h1{
       font-size: 3rem;
       font-family: 'Roboto', sans-serif;
+      color: ${({ theme }) => theme.COLORS.WHITE};
     }
 
     svg{
@@ -48,6 +49,7 @@ const Container = styled.div`
     h3{
       font-size: 2rem;
       font-family: 'Poppins',sans-serif;
+      color: ${({ theme }) => theme.COLORS.WHITE};
     }
     h4{
       font-size: 1.2rem;
@@ -77,13 +79,14 @@ const Container = styled.div`
 
   ul{
     display: flex;
-    /* gap: 2.7rem; */
+    gap: 2.7rem;
     justify-content: space-around;
+    overflow-y: auto;
   }
 
   ul li{
     list-style: none;
-    
+    justify-content: space-around;
   }
 
 
@@ -221,6 +224,29 @@ const Container = styled.div`
       .hide{
         display: block;
       }
+
+      main section{
+        min-width:112rem;
+      }
+
+      main section ul{
+        gap: 2.7rem;
+        overflow-y: auto;      
+      }
+
+      main section ul::-webkit-scrollbar{
+        /* display: none; */
+      }
+
+
+      main section ul li{
+        /* flex: none; */
+        
+      }
+
+      
+
+      
       
       
     }

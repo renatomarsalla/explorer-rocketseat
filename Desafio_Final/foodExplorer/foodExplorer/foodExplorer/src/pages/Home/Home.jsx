@@ -90,6 +90,166 @@ function Home() {
                 </div>
               </div>
             </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
           </ul>
           {/* <div className="showDish"></div> */}
         </Section>
@@ -135,11 +295,211 @@ function Home() {
                 </div>
               </div>
             </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
           </ul>
           {/* <div className="showDish"></div> */}
         </Section>
         <Section title="Bebidas">
           <ul>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
+            <li>
+              <div className="card">
+                <div className="favorite">
+                  <ButtonFavorite icon={AiOutlineHeart} />
+                </div>
+                <img src={salad} alt="" />
+                <h2>Salada Ravanello</h2>
+                <p>
+                  Rabanetes, folhas verdes e molho agridoce salpicados com
+                  gergelim
+                </p>
+                <span>R$ 49,97</span>
+                <div className="unitsAndInsert">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button text="incluir" />
+                </div>
+              </div>
+            </li>
             <li>
               <div className="card">
                 <div className="favorite">
