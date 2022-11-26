@@ -10,9 +10,11 @@ const Container = styled.button`
   border-radius: 1rem;
   font-weight: 500;
 
-  /* &:disabled{
-    opacity: 0.5;
-  } */
+
+  @media (min-width: 1024px){
+    width: 9.2rem;
+    
+  }
 `;
 
 export { Container }

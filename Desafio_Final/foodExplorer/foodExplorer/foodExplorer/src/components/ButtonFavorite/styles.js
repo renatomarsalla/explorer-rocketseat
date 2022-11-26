@@ -5,7 +5,7 @@ const Container = styled.button`
     border: none;
 
     >svg{
-      color: black;
+      color: ${({ theme }) => theme.COLORS.WHITE};
       font-size: 2rem;
     }
 `;

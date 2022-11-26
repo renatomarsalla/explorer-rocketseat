@@ -71,10 +71,12 @@ const Container = styled.div`
 
   main{
     width: 100vw;
+    
   }
 
   main section{
     margin-bottom: 2rem;
+    /* margin-top: 2rem; */
   }
 
   ul{
@@ -92,8 +94,8 @@ const Container = styled.div`
 
   ul li .card{
     width: 15rem;
-    /* height: 50rem; */
-    background-color: violet;
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
+    /* background-color: violet; */
 
     margin-top: 1.5rem;
     padding: 0 1rem;
@@ -106,10 +108,16 @@ const Container = styled.div`
 
     >h2{
       font-size: 1.6rem;
+      color: ${({ theme }) => theme.COLORS.WHITE_HOME};
     }
 
     >span{
       font-size: 1.4rem;
+    }
+
+    >p{
+      color: ${({ theme }) => theme.COLORS.WHITE_HOME};
+
     }
   }
 
@@ -117,7 +125,7 @@ const Container = styled.div`
     width: 12.6rem;
     height: 12.6rem;
 
-    /* margin-top: 2.6rem; */
+    margin-top: 1rem;
   }
 
   ul li .card p{
@@ -161,6 +169,10 @@ const Container = styled.div`
      
   }
 
+  main section ul::-webkit-scrollbar{
+        /* display: none; */
+  }
+
   /* .showDish{
     display: flex;
     gap: 2.7rem;
@@ -170,6 +182,7 @@ const Container = styled.div`
 
   @media (min-width: 1024px) {
     width: 100%;
+    
       .imgAndTitle{
         flex-direction: row;
         width: 112rem;
@@ -225,13 +238,22 @@ const Container = styled.div`
         display: block;
       }
 
+
+
       main section{
         min-width:112rem;
+
+        margin-bottom: 4rem;
+      }
+
+      main section h2{
+        justify-content: left;
       }
 
       main section ul{
         gap: 2.7rem;
-        overflow-y: auto;      
+        overflow-y: auto;
+        
       }
 
       main section ul::-webkit-scrollbar{
@@ -239,9 +261,50 @@ const Container = styled.div`
       }
 
 
-      main section ul li{
-        /* flex: none; */
+      main section ul li .card{
+        min-width: 30rem;
         
+        >h2{
+          font-size: 2.4rem;
+          font-family: 'Poppins', sans-serif;
+        }
+
+        >p{
+          font-size: 1.4rem;
+          font-family: 'Roboto', sans-serif;
+          width: 22rem;
+        }
+
+        >span{
+          font-size: 3.2rem;
+          font-family: 'Roboto', sans-serif;
+          margin: 1.6rem 0;
+          
+        }
+      }
+
+      main section ul li .card .unitsAndInsert{
+        margin-bottom: 3.6rem;
+        gap: 1.7rem;
+      }
+
+      ul li div.unitsAndInsert span{
+        font-size: 3rem;
+      }
+
+      ul li div.unitsAndInsert:last-child button{
+        font-size: 2rem;
+      }
+
+      ul li div.unitsAndInsert button:nth-child(-n+3){
+        font-size: 3rem;
+      }
+
+
+      main section ul li .card .favorite{
+        >button svg{
+          font-size: 2.8rem;
+        }
       }
 
       

@@ -38,6 +38,12 @@ const Container = styled.footer`
     font-family: 'DM Sans', sans-serif;
 
   }
+
+  @media (min-width: 1024px){
+    >div span{
+      font-size: 1.6rem;
+    }
+  }
 `;
 
 export { Container }

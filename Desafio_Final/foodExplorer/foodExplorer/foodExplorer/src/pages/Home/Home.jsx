@@ -416,7 +416,7 @@ function Home() {
                   <ButtonText text="-" className="decrement" />
                   <span>01</span>
                   <ButtonText text="+" className="increment" />
-                  <Button text="incluir" />
+                  <Button text="incluir" className="insert" />
                 </div>
               </div>
             </li>

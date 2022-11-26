@@ -4,6 +4,8 @@ export default {
     BACKGROUND_800: "#001119",//figma
     BACKGROUND_700: "#00111A",//figma
     BACKGROUND_600: "#0D1D25",//figma
+    BACKGROUND_500: "#1C1C1C",//figma
+
 
     WHITE: "#FFFFFF",//figma
     WHITE_HOME: "#E1E1E6",
