@@ -23,7 +23,7 @@ const Container = styled.footer`
       display: flex;
       align-items: center;
 
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-family: 'Roboto', sans-serif;
       font-weight: 700;
 
@@ -34,7 +34,7 @@ const Container = styled.footer`
   span{
     color: ${({ theme }) => theme.COLORS.WHITE};
 
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-family: 'DM Sans', sans-serif;
 
   }

@@ -1,6 +1,8 @@
 import { Container } from './styles';
 
 import { AiOutlineHeart } from 'react-icons/ai';
+import { MdKeyboardArrowRight } from 'react-icons/md';
+import { MdKeyboardArrowLeft } from 'react-icons/md';
 
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
@@ -18,7 +20,7 @@ function Home() {
       <Header />
 
       <div className="imgAndTitle">
-        <div className="foodExplorer show">
+        {/* <div className="foodExplorer show">
           <svg
             width="26"
             height="30"
@@ -33,7 +35,7 @@ function Home() {
           </svg>
 
           <h1>food explorer</h1>
-        </div>
+        </div> */}
         <div className="titles">
           <img
             src={img}
@@ -540,6 +542,15 @@ function Home() {
                 </div>
               </div>
             </li>
+            <Button icon={MdKeyboardArrowLeft} className="arrowDishesLeft" />
+            <Button icon={MdKeyboardArrowLeft} className="arrowDessertsLeft" />
+            <Button icon={MdKeyboardArrowLeft} className="arrowDrinksLeft" />
+            <Button icon={MdKeyboardArrowRight} className="arrowDishesRight" />
+            <Button
+              icon={MdKeyboardArrowRight}
+              className="arrowDessertsRight"
+            />
+            <Button icon={MdKeyboardArrowRight} className="arrowDrinksRight" />
           </ul>
           {/* <div className="showDish"></div> */}
         </Section>

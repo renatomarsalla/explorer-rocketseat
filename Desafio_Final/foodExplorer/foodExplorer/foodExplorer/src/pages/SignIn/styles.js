@@ -3,7 +3,8 @@ import styled from "styled-components";
 const Container = styled.div`
   /* responsividade */
 
-  width: 38.4rem;
+  /* width: 38.4rem; */
+  width: 37.5rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -18,7 +19,7 @@ const Container = styled.div`
     gap: 1.9rem;
     justify-content: center;
     align-items: center;
-    margin-top: 3.2rem;
+    margin-top: 5.2rem;
     font-size: 2rem;
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-family: 'Roboto';
@@ -32,10 +33,13 @@ const Container = styled.div`
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    gap: 30rem;
+    gap: 5rem;
+
+    
     
     >.title h1{
       width: 25rem;
+      /* margin-left: 22.3rem; */
     }
   }
   
@@ -55,7 +59,8 @@ const Form = styled.form`
   border-radius: 1rem;
 
   /* responsividade */
-  width: 38.4rem;
+  /* width: 38.4rem; */
+  width: 37.5rem;
   margin-top: 7.1rem;
 
 
@@ -126,6 +131,10 @@ const Form = styled.form`
 
   @media (min-width: 1024px){
     min-width: 47.6rem;
+
+    /* margin-right: 5.8rem; */
+    margin-top: 14rem;
+    margin-bottom: 14rem;
   }  
 
 `;

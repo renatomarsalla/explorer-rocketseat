@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 38.4rem;
+  /* width: 38.4rem; */
+  width: 37.5rem;
   height: 100vh;
 
   margin: 0 auto;
@@ -15,6 +16,7 @@ const Container = styled.div`
     display: flex;
     gap: 1.9rem;
     align-items: center;
+    margin-top: 5.2rem;
 
     h1{
       color: ${({ theme }) => theme.COLORS.WHITE};
@@ -26,9 +28,9 @@ const Container = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: center;
-    gap: 30rem;
+    gap: 8rem;
     
     >.title h1{
       width: 25rem;
@@ -37,7 +39,8 @@ const Container = styled.div`
 `;
 
 const Form = styled.form`
-  width: 38.4rem;
+  /* width: 38.4rem; */
+  width: 37.5rem;
   margin: 0 auto;
   height: 60rem;
 
@@ -45,7 +48,7 @@ const Form = styled.form`
 
   border-radius: 1rem;
 
-  margin-top: 6.4rem;
+  margin-top: 4.4rem;
 
   fieldset{
     width: 34.8rem;
@@ -54,7 +57,7 @@ const Form = styled.form`
   }
 
   h2{
-    margin-top: 6.4rem;
+    margin-top: 2.4rem;
     margin-bottom: 3.2rem;
     text-align: center;
     font-family: 'Poppins', sans-serif;
@@ -86,6 +89,8 @@ const Form = styled.form`
 
   @media (min-width: 1024px) {
     min-width: 47.6rem;
+
+    margin: 14rem 0;
   }
 `;
 

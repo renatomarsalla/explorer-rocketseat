@@ -10,10 +10,7 @@ const Container = styled.div`
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
-  /* .container{
-    display: flex;
-    align-items: center;
-  } */
+  
 
   .title{
     display: flex;
@@ -36,8 +33,8 @@ const Container = styled.div`
 
   @media (min-width: 1024px) {
     .hide{
-      display: block;
-    }
+    display: block;
+  }
 
     .show{
       display: none;
@@ -49,12 +46,12 @@ const Container = styled.div`
       justify-content: center;
 
       >svg{
-        margin-left: 6rem;
+        margin-left: 4rem;
         /* margin-left: 12.3rem; */
       }
 
       >h3{
-        width: 17rem;//minimo
+        width: 16rem;//minimo
         height: 2.9rem;
         /* margin-right: 3.7rem; */
 
@@ -77,16 +74,15 @@ const Container = styled.div`
       
     }
 
-    button{
+    /* button{
       width: 50rem;
-      /* padding: 0 3.6rem; */
       margin-left: 3.7rem;
-    }
+    } */
 
     
 
    .logout{
-    margin-right: 6rem;
+    /* margin-right: 6rem; */
     /* margin-right: 12.8rem; */
    }
 
@@ -95,6 +91,9 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 1.1rem;
+
+    width: 50rem;
+    margin-left: 3.2rem;
     >svg{
       font-size: 2rem;
     }

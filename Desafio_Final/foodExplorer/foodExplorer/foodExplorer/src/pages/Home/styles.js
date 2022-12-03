@@ -2,12 +2,17 @@ import styled from 'styled-components'
 
 const Container = styled.div`
   height: 100vh;
-  width: 38.4rem;
+  /* width: 38.4rem; */
+  width: 37.5rem;
+  /* width: 37.5rem; */
+
+  
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   
   .imgAndTitle{   
     width: 100vw;
+    /* width: 33.5rem; */
     height: 13rem;
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
@@ -56,6 +61,8 @@ const Container = styled.div`
       font-family: 'Poppins', sans-serif;
       color: ${({ theme }) => theme.COLORS.GRAY_300};
     }
+
+    
   }
 
   .subtitles{
@@ -71,10 +78,12 @@ const Container = styled.div`
 
   main{
     width: 100vw;
+    /* margin: 37.5rem; */
     
   }
 
   main section{
+    /* width: 37.5rem; */
     margin-bottom: 2rem;
     /* margin-top: 2rem; */
   }
@@ -84,12 +93,90 @@ const Container = styled.div`
     gap: 2.7rem;
     justify-content: space-around;
     overflow-y: auto;
+
+    margin: 0 auto;
+    width: 34.5rem;
+    background-color: red;
   }
 
+  ul .arrowDishesLeft{
+    position: absolute;
+    /* top:35rem; */
+    /* bottom: 13rem; */
+    top:42rem;
+    right: 30rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 4rem;
+    }
+  }
+
+  ul .arrowDessertsLeft{
+    position: absolute;
+    /* top:35rem; */
+    top:82rem;
+    right: 30rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 4rem;
+    }
+  }
+
+  ul .arrowDrinksLeft{
+    position: absolute;
+    /* top:35rem; */
+    top:127rem;
+    right: 30rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 4rem;
+    }
+  }
+
+  ul .arrowDishesRight{
+    position: absolute;
+    /* top:35rem; */
+    top:42rem;
+    right:0.2rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 4rem;
+    }
+  }
+  ul .arrowDessertsRight{
+    position: absolute;
+    /* top:35rem; */
+    top:82rem;
+    right: 0.2rem;
+    background-color: transparent;
+    svg{
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      font-size: 4rem;
+    }
+  }
+
+  ul .arrowDrinksRight{
+    position: absolute;
+    /* top:35rem; */
+    top:127rem;
+    right: 0.2rem;
+    background-color: transparent;
+    svg{
+      /* color: red; */
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      font-size: 4rem;
+    }
+  }
   ul li{
     list-style: none;
     justify-content: space-around;
   }
+  
+  
 
 
   ul li .card{
@@ -119,6 +206,9 @@ const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.WHITE_HOME};
 
     }
+
+   
+    position: relative;
   }
 
   ul li img{
@@ -139,6 +229,8 @@ const Container = styled.div`
     color: ${({ theme }) => theme.COLORS.PRICE};
     font-family: 'Roboto', sans-serif;
   }
+
+  
 
   ul li div.favorite{
     width: 100%;
@@ -173,61 +265,96 @@ const Container = styled.div`
         /* display: none; */
   }
 
+  
+
   /* .showDish{
     display: flex;
     gap: 2.7rem;
 
   } */
+  @media (min-width: 412px){
+    ul .arrowDishesLeft{
+    top:42rem;
+    right: 33.5rem;   
+  }
+
+  ul .arrowDessertsLeft{
+    top:82rem;
+    right: 33.5rem;
+  }
+
+  ul .arrowDrinksLeft{
+    top:127rem;
+    right: 33.5rem;
+  } 
+
+  ul .arrowDishesRight{   
+    top:42rem;
+    right:1rem;    
+  }
+  ul .arrowDessertsRight{  
+    top:82rem;
+    right: 1rem;
+  }
+
+  ul .arrowDrinksRight{
+    
+    top:127rem;
+    right: 1rem;
+    
+  }
+
+  }
 
 
   @media (min-width: 1024px) {
     width: 100%;
     
+    
       .imgAndTitle{
         flex-direction: row;
-        width: 112rem;
+        /* width: 112rem; */
+        width: 92rem;
         height: 26rem;
-        /* background-color: red; */
+        margin-top: 16.4rem;
+        margin-bottom: 6.2rem;
+        margin-left: auto;
+        margin-right: auto;
         background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
-        margin: 16.4rem auto 6.2rem;
        
        
       }
 
-      .titles{
+      .titles{      
+        display: flex;
         flex-direction: row;
-        /* gap: 18rem; */
-        position: relative;
-        
-        
-
+               
         .subtitles{
           display: flex;
-          flex-direction: column;
-          align-items: flex-start;
-          /* background-color: blue; */
-          position: absolute;
-          left: 10rem;
+          flex-direction: column;       
+          align-items: flex-start;         
+          
           width: 48rem;
-          margin-left: 50rem;
 
           h3{
             font-size: 4rem;
             color: ${({ theme }) => theme.COLORS.WHITE_HOME};
+            font-weight: 500;
           }
 
           h4{
             color: ${({ theme }) => theme.COLORS.WHITE_HOME};
+            font-weight: 400;
           }
         }
       }
 
       .titles img{
-          width: 63rem;
+          width: 43rem;
           height: 40rem;
-          position: absolute;         
-          bottom: 0rem;
-          left: -5rem;
+          margin-top: -15rem;
+          margin-left: -4rem;
+          
         }
 
       .show{
@@ -241,9 +368,11 @@ const Container = styled.div`
 
 
       main section{
-        min-width:112rem;
-
+        min-width:92rem;
         margin-bottom: 4rem;
+
+        /* background-color: red; */
+
       }
 
       main section h2{
@@ -253,7 +382,7 @@ const Container = styled.div`
       main section ul{
         gap: 2.7rem;
         overflow-y: auto;
-        
+        width: 85rem;
       }
 
       main section ul::-webkit-scrollbar{
@@ -308,7 +437,76 @@ const Container = styled.div`
       }
 
       
+      ul .arrowDishesLeft{
+    position: absolute;
+    
+    top: 85rem;
+    left: 5rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 6rem;
+    }
+  }
 
+  ul .arrowDessertsLeft{
+    position: absolute;
+    
+    top: 145rem;
+    left: 5rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 6rem;
+    }
+  }
+
+  ul .arrowDrinksLeft{
+    position: absolute;
+    
+    top: 205rem;
+    left: 5rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 6rem;
+    }
+  }
+
+  ul .arrowDishesRight{
+    position: absolute;
+    
+    top: 85rem;
+    right: 5rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 6rem;
+    }
+  }
+  ul .arrowDessertsRight{
+    position: absolute;
+    
+    top: 145rem;
+    right: 5rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 6rem;
+    }
+  }
+
+  ul .arrowDrinksRight{
+    position: absolute;
+    
+    top: 205rem;
+    right: 5rem;
+    background-color: transparent;
+    svg{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-size: 6rem;
+    }
+  }
       
       
       
