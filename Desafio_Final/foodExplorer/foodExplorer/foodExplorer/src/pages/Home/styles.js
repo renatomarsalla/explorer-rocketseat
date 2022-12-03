@@ -96,7 +96,7 @@ const Container = styled.div`
 
     margin: 0 auto;
     width: 34.5rem;
-    background-color: red;
+    /* background-color: red; */
   }
 
   ul .arrowDishesLeft{
