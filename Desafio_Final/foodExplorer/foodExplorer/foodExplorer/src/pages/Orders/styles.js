@@ -36,6 +36,7 @@ const Container = styled.div`
       overflow: hidden;
       border-top-left-radius:1rem;
       border-top-right-radius:1rem;
+      border-bottom: none;
 
 
       table{
@@ -61,7 +62,7 @@ const Container = styled.div`
 
       table tbody td{
         border-right:2px solid ${({ theme }) => theme.COLORS.BORDER_TABLE_ORDER} ;
-        border-top:2px solid ${({ theme }) => theme.COLORS.BORDER_TABLE_ORDER} ;
+        border-bottom:2px solid ${({ theme }) => theme.COLORS.BORDER_TABLE_ORDER} ;
         
         padding: 1rem;
 
@@ -71,6 +72,10 @@ const Container = styled.div`
 
       table tbody td:last-child, table thead tr th:last-child{
         border-right:none;
+      }
+
+      table tbody tr:last-child{
+        border-bottom:none;
       }
     }
 
