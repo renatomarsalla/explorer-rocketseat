@@ -16,6 +16,8 @@ export default {
 
     RED: "#92000E", //figma
 
-    PRICE: "#82F3FF"
+    PRICE: "#82F3FF",
+
+    BORDER_TABLE_ORDER: "#192227"
   }
 }

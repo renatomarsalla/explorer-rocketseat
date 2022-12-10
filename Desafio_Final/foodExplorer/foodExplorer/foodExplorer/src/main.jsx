@@ -5,6 +5,7 @@ import { SignIn } from './pages/SignIn/SignIn';
 import { SignUp } from './pages/SignUp/SignUp';
 import { Home } from './pages/Home/Home';
 import { Details } from './pages/Details/Details';
+import { Order } from './pages/Orders/Orders';
 
 import { ThemeProvider } from 'styled-components';
 
@@ -16,7 +17,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <SignUp />
+      <Order />
     </ThemeProvider>
   </React.StrictMode>
 );

@@ -9,6 +9,73 @@ const Container = styled.div`
   height: 100vh;
   
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
+
+  >.page{
+    margin: 0 auto;
+    /* background-color: red; */
+    width: 34.5rem;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+    
+
+    h1{
+      color:white;
+      margin-top: 3.5rem;
+
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+    }
+
+    .table{
+      border: 2px solid ${({ theme }) => theme.COLORS.BORDER_TABLE_ORDER};
+      overflow: hidden;
+      border-top-left-radius:1rem;
+      border-top-right-radius:1rem;
+
+
+      table{
+        border-collapse: collapse;
+   
+      }
+
+      table thead tr th{
+        text-align: left;
+        border-bottom: 2px solid ${({ theme }) => theme.COLORS.BORDER_TABLE_ORDER};
+        border-right:2px solid ${({ theme }) => theme.COLORS.BORDER_TABLE_ORDER} ;
+        
+        padding: 1rem;
+    }
+
+      table *{
+        color: white;
+        font-size: 1.2rem;
+
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+      }
+
+      table tbody td{
+        border-right:2px solid ${({ theme }) => theme.COLORS.BORDER_TABLE_ORDER} ;
+        
+        padding: 1rem;
+      }
+
+      table tbody td:last-child, table thead tr th:last-child{
+        border-right:none;
+      }
+    }
+
+
+    
+    
+    
+  }
+
 `;
+
+
 
 export { Container }
