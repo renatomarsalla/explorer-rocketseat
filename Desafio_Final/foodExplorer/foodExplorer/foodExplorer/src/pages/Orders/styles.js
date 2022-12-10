@@ -90,11 +90,16 @@ const Container = styled.div`
   }
 
   @media (min-width:412px) {
-    .page{
+    margin: 0 auto;
+      width: 100%;
+      height: 100vh;
+    /* .page{
       margin: 0 auto;
       width: 100%;
       height: 100vh;
-    }
+
+      
+    } */
   }
 
   @media (min-width:1024px) {
