@@ -141,6 +141,103 @@ const Container = styled.div`
     
       
     }
+
+    @media (min-width: 1024px) {
+
+      .page{
+        margin: 0 auto;
+        width: 100%;
+        height: 100vh;
+        /* background-color: green; */
+
+        >.return{
+          margin-left: 12.2rem;
+
+          button{
+            width: 20rem;
+            height: 3.4rem;
+            font-size: 2rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            
+            svg{             
+              font-size: 3rem;
+            }
+          }
+        }
+
+        main{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+
+          >.dish{
+            img{
+              /* background-color: red; */
+              width: 32.9rem;
+              height: 32.9rem ;
+
+              margin-bottom: 18.5rem;
+              margin-left: 12.2rem;
+            }
+            
+          }
+
+          >.dishesIngredientsAndPrices{
+            /* background-color: red; */
+            margin-bottom: 22rem;
+            width: 60rem;
+            /* background-color: red; */
+
+            >.infos{
+              align-items: flex-start;
+
+              h1{
+                font-size: 4rem;
+                font-family: 'Poppins', sans-serif;
+              }
+              span{
+                font-size: 1.6rem;
+                text-align: left;
+                width: 50rem;
+                font-weight: 400;
+                font-family: 'Poppins', sans-serif;
+              }
+            }
+
+            >.ingredients, >.priceAndUnits{
+              justify-content: flex-start;
+            }
+
+            >.priceAndUnits{
+              gap: 5rem;
+
+              .price{
+                font-size: 3.2rem;
+                font-weight: 400;
+              }
+
+              .units{
+                span{
+                  font-size: 2rem;
+                }
+
+                .decrement, .increment{
+                  font-size: 2rem;
+                }
+              }
+            }
+            
+          }
+
+          
+        }
+    }
+    
+      
+    }
 `;
 
 export { Container }

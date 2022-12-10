@@ -1,6 +1,7 @@
 export default {
   COLORS: {
-    BACKGROUND_900: "#1E1E1E",//figma
+    // BACKGROUND_900: "#1E1E1E",//figma
+    BACKGROUND_900: "#000A0F",//figma
     BACKGROUND_800: "#001119",//figma
     BACKGROUND_700: "#00111A",//figma
     BACKGROUND_600: "#0D1D25",//figma

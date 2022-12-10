@@ -135,6 +135,10 @@ const Form = styled.form`
     /* margin-right: 5.8rem; */
     margin-top: 14rem;
     margin-bottom: 14rem;
+
+    .btnEnter button{
+      width: 100%;
+  }
   }  
 
 `;

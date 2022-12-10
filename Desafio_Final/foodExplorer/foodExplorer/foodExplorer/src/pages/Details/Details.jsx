@@ -27,40 +27,45 @@ function Details() {
           <div className="dish">
             <img src={img} alt="dish selected" />
           </div>
-          <div className="infos">
-            <h1>Salada Ravanello</h1>
-            <span>
-              Salada Ravanello Rabanetes, folhas verdes e molho agridoce
-              salpicados com gergelim.
-            </span>
-          </div>
+          <div className="dishesIngredientsAndPrices">
+            <div className="infos">
+              <h1>Salada Ravanello</h1>
+              <span>
+                Salada Ravanello Rabanetes, folhas verdes e molho agridoce
+                salpicados com gergelim.
+              </span>
+            </div>
 
-          <div className="ingredients">
-            <div className="ingredient">
-              <img src={lettuce} alt="" />
-              <label>alface</label>
+            <div className="ingredients">
+              <div className="ingredient">
+                <img src={lettuce} alt="" />
+                <label>alface</label>
+              </div>
+              <div className="ingredient">
+                <img src={tomato} alt="" />
+                <label>tomate</label>
+              </div>
+              <div className="ingredient">
+                <img src={radish} alt="" />
+                <label>rabanete</label>
+              </div>
+              <div className="ingredient">
+                <img src={bread_noon} alt="" />
+                <label>pão naan</label>
+              </div>
             </div>
-            <div className="ingredient">
-              <img src={tomato} alt="" />
-              <label>tomate</label>
-            </div>
-            <div className="ingredient">
-              <img src={radish} alt="" />
-              <label>rabanete</label>
-            </div>
-            <div className="ingredient">
-              <img src={bread_noon} alt="" />
-              <label>pão naan</label>
-            </div>
-          </div>
 
-          <div className="priceAndUnits">
-            <span className="price">R$ 25,97</span>
-            <div className="units">
-              <ButtonText text="-" className="decrement" />
-              <span>01</span>
-              <ButtonText text="+" className="increment" />
-              <Button text="incluir" icon={MdOutlineProductionQuantityLimits} />
+            <div className="priceAndUnits">
+              <span className="price">R$ 25,97</span>
+              <div className="units">
+                <ButtonText text="-" className="decrement" />
+                <span>01</span>
+                <ButtonText text="+" className="increment" />
+                <Button
+                  text="incluir"
+                  icon={MdOutlineProductionQuantityLimits}
+                />
+              </div>
             </div>
           </div>
         </main>
