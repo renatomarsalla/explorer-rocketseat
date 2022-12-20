@@ -14,6 +14,8 @@ export default {
     GRAY_100: "#C4C4CC",//figma
     GRAY_300: "#7C7C8A",//figma
 
+    GRAY_500: "#141d22",
+
     RED: "#92000E", //figma
 
     PRICE: "#82F3FF",
