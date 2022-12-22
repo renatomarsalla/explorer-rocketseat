@@ -9,7 +9,7 @@ import { MdKeyboardArrowLeft } from 'react-icons/md';
 
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 
-function AddDish() {
+function EditDish() {
   return (
     <Container>
       <header>
@@ -47,7 +47,7 @@ function AddDish() {
         <main>
           <div className="return">
             <Button text="Voltar" icon={MdKeyboardArrowLeft} />
-            <h2>Adicionar prato</h2>
+            <h2>Editar prato</h2>
           </div>
 
           <div className="imageAndNameDish">
@@ -86,7 +86,7 @@ function AddDish() {
             <textarea name="" id="" cols="30" rows="10"></textarea>
           </div>
 
-          <button className="addOrder">Adicionar</button>
+          <button className="addOrder">Editar</button>
         </main>
       </div>
       <Footer />
@@ -94,4 +94,4 @@ function AddDish() {
   );
 }
 
-export { AddDish };
+export { EditDish };

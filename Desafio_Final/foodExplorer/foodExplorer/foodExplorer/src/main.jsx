@@ -7,6 +7,7 @@ import { Home } from './pages/Home/Home';
 import { Details } from './pages/Details/Details';
 import { Order } from './pages/Orders/Orders';
 import { AddDish } from './pages/AddDish/AddDish';
+import { EditDish } from './pages/EditDish/EditDish';
 
 import { ThemeProvider } from 'styled-components';
 
