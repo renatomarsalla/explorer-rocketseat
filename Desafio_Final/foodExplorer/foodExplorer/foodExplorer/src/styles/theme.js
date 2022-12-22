@@ -22,6 +22,8 @@ export default {
 
     INGREDIENTITEM: "#192227",
 
-    BORDER_TABLE_ORDER: "#192227"
+    BORDER_TABLE_ORDER: "#192227",
+
+    BTN_DELETE: "#a04950"
   }
 }
