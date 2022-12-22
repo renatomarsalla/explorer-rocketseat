@@ -180,6 +180,7 @@ const Container = styled.div`
 
     .ingredientsAndPrice{
       display: flex;
+      align-items: center;
       gap: 0.8rem;
       justify-content: space-between;
       /* width: 100vw; */
@@ -191,11 +192,13 @@ const Container = styled.div`
         flex-direction: column;
         gap: 0.5rem;
 
+        
+
         label{
           color:${({ theme }) => theme.COLORS.GRAY_100};
           font-size: 1.4rem;
         }
-        input{
+        /* input{
           width: 23rem;
           padding: 0.6rem;
           background: transparent;
@@ -203,13 +206,38 @@ const Container = styled.div`
           border-radius: 0.5rem;
 
           color:${({ theme }) => theme.COLORS.GRAY_300};
+        } */
+
+        
+
+        .ingredientsToAdd{
+          display: flex;
+          align-items: center;
+          /* justify-content: flex-start; */
+          justify-content: center;
+          gap: 0.8rem ;
+          width: 22rem;
+          height: auto;
+          padding: 0.4rem 0;
+          /* height: 2.9rem; */
+          border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
+          border-radius: 0.5rem;
+          flex-wrap: wrap;
+
+
+          /* background-color: blue; */
+          
         }
+
+        
       }
 
       >.price{
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+
+        float: right;
 
         label{
           color:${({ theme }) => theme.COLORS.GRAY_100};
@@ -269,9 +297,45 @@ const Container = styled.div`
     /* width: 100%;
     background-color: red; */
 
+    header{   
+        .hide{
+          display: block;
+        }
+
+        .logoAndTitle{
+          margin-left: 12.3rem;
+        }
+
+        .userAndOrders{
+
+          margin-right: 12.3rem;
+
+          >button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+            width: 15rem;
+
+            svg{
+              font-size: 2rem;
+            }
+          }
+
+          .show{
+            display: none;
+          }
+
+          span{
+            margin-right: 1.6rem;
+          }
+        }
+      }
+
     .page{
       width: 100%;
       /* width: 77.6rem; */
+
       main{
         width: 77.6rem;
         /* background-color: black; */
@@ -323,6 +387,8 @@ const Container = styled.div`
               width: 65.5rem;
             }
           }
+
+          
         }
 
         .ingredientsAndPrice{
@@ -330,6 +396,15 @@ const Container = styled.div`
             label{
               font-size: 1.8rem;
             }
+
+            .ingredientsToAdd{
+            width: 65rem;
+            justify-content: left;
+
+            input{
+              /* margin-left: 0.5rem; */
+            }
+          }
           }
         }
 
@@ -345,7 +420,9 @@ const Container = styled.div`
           justify-content: center;
           float: right;
           
-    }
+        }
+
+        
       }
     }
 

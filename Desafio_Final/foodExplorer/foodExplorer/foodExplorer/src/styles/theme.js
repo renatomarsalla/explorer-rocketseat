@@ -20,6 +20,8 @@ export default {
 
     PRICE: "#82F3FF",
 
+    INGREDIENTITEM: "#192227",
+
     BORDER_TABLE_ORDER: "#192227"
   }
 }

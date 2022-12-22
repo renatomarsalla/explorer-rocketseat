@@ -2,9 +2,12 @@ import { Container, Buy } from './styles';
 import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { Input } from '../../components/Input';
+import { IngredientItem } from '../../components/IngredientItem';
 
 import { FaShoppingCart } from 'react-icons/fa';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
+
+import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 function AddDish() {
   return (
@@ -29,7 +32,11 @@ function AddDish() {
 
         <div className="userAndOrders">
           <span>Admin</span>
-          <Button text="Meu pedido (0)" className="hide" />
+          <Button
+            text="Meu pedido (0)"
+            className="hide"
+            icon={HiOutlineShoppingBag}
+          />
           <Buy className="show">
             <FaShoppingCart />
           </Buy>
@@ -63,7 +70,10 @@ function AddDish() {
           <div className="ingredientsAndPrice">
             <div className="ingredients">
               <label>Ingredientes</label>
-              <input type="text" className="ingredient" />
+              <div className="ingredientsToAdd">
+                <IngredientItem value="beterraba" />
+                <IngredientItem value="molho de tomate" isNew />
+              </div>
             </div>
             <div className="price">
               <label>Preço</label>
