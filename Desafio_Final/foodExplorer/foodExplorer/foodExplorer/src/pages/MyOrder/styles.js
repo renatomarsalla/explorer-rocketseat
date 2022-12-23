@@ -9,7 +9,7 @@ const Container = styled.div`
   main{
     >.page{
       width: 34.5rem;
-      /* height: 100vh; */
+      height: 100vh;
       margin: 0 auto;
       /* background-color: red; */
 
@@ -99,29 +99,141 @@ const Container = styled.div`
             font-size: 1.4rem;
             border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
           }
+
+          button.pix{
+            border-radius: 0.5rem 0 0 0;
+
+          }
         }
         .QrCodeOrCredit{
           width: 30rem;
-          height: 30rem;
-          margin: 0 auto;
           /* background-color: red; */
+          margin: 0 auto;
           border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
 
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          gap: 2rem;
+          .dataCredit{
+            width: 25rem;
+            /* background-color: green; */
+            margin: 2rem auto 0;
+            .numberCard{
+              display: flex;
+              flex-direction: column;
+              gap: 0.3rem;
+              
 
-          span{
-            color: ${({ theme }) => theme.COLORS.GRAY_300};
-            font-family:'Roboto', sans-serif;
-            font-size: 2rem;
+              /* width: 25rem;
+              background-color: blue; */
+
+              label{
+                color: ${({ theme }) => theme.COLORS.GRAY_300};
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400;
+                font-size: 1.4rem;
+                cursor: pointer;
+              }
+
+              input{
+                border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
+                background-color: transparent;
+                border-radius: .5rem;
+                padding: 0.6rem;
+                color: ${({ theme }) => theme.COLORS.GRAY_100};
+                
+              }
+              
+              input::-webkit-inner-spin-button {
+                -webkit-appearance: none;
+                margin: 0; 
+              }
+            }
+
+            .validateAndSecurityCode{
+              display: flex;
+              margin-top: 2rem;
+
+              .validate, .securityCodeCard{
+                label{
+                  color: ${({ theme }) => theme.COLORS.GRAY_300};
+                  font-family: 'Roboto', sans-serif;
+                  font-weight: 400;
+                  font-size: 1.4rem;
+                  cursor: pointer;
+                }
+
+                input{
+                  border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
+                  background-color: transparent;
+                  border-radius: .5rem;
+                  padding: 0.6rem;
+                  color: ${({ theme }) => theme.COLORS.GRAY_100};
+                  width: 30vw;
+                
+                }
+                
+                input::-webkit-inner-spin-button {                
+                  -webkit-appearance: none;
+                  margin: 0;
+                }
+              }
+            }
+
+            button{
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 1.1rem;
+
+              width: 100%;
+              background-color: red;
+              padding: 1.2rem 0;
+              margin-top: 2rem;
+              margin-bottom: 3rem;
+              border-radius: 0.5rem;
+
+              color: ${({ theme }) => theme.COLORS.WHITE};
+
+              font-family: 'Poppins', sans-serif;
+              font-weight: 500;
+
+              cursor: pointer;
+            }
+          }
+          
+          
+        }
+
+        .waitingPayment{
+            width: 30rem;
+            height: 30rem;
+            margin: 0 auto;
+            /* background-color: red; */
+            border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+
+            margin-bottom: 2rem;
+
+            span{
+              color: ${({ theme }) => theme.COLORS.GRAY_300};
+              font-family:'Roboto', sans-serif;
+              font-size: 2rem;
+            }
+
           }
 
-        }
+          .hide{
+            display: none;
       }
+      }
+
+      
     }
+
+    
   }
 
   @media (min-width: 412px) {
