@@ -27,6 +27,7 @@ const Container = styled.div`
           color:${({ theme }) => theme.COLORS.WHITE};
           font-weight: 500;
           margin-top: 1.6rem;
+          text-align: center;
         }
 
         
@@ -82,6 +83,14 @@ const Container = styled.div`
       }
 
       .payment{
+        h3{
+          font-family: 'Poppins', sans-serif;
+          font-weight: 500;
+          font-size: 2rem;
+          color:${({ theme }) => theme.COLORS.WHITE};
+          text-align: center;
+          margin-bottom: 1rem;
+        }
         .options{
           display: flex;
           justify-content: center;
@@ -150,6 +159,7 @@ const Container = styled.div`
             .validateAndSecurityCode{
               display: flex;
               margin-top: 2rem;
+              gap: 0.8rem;
 
               .validate, .securityCodeCard{
                 label{
@@ -166,7 +176,10 @@ const Container = styled.div`
                   border-radius: .5rem;
                   padding: 0.6rem;
                   color: ${({ theme }) => theme.COLORS.GRAY_100};
-                  width: 30vw;
+                  /* width: 30vw; */
+                  /* width: 10rem; */
+                  width: 100%;
+                  
                 
                 }
                 
@@ -237,12 +250,83 @@ const Container = styled.div`
   }
 
   @media (min-width: 412px) {
-      margin: 0 auto;
-      width: 100%;
-      height: 100vh;
+
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;     
+  }
+
+  @media (min-width: 1024px){
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
     
-      
+    main{
+      .page{
+        width: 90rem;
+        
+        flex-direction: row;
+        justify-content: center;
+
+        .myOrder{
+          width: 35rem;
+
+          h3{
+            text-align: left;
+            margin-top: 3.4rem;
+          }
+
+          ul .total{
+          span{
+            font-size: 1.6rem;
+          }
+          
+        }
+        }
+
+        .payment{
+          /* background-color: red; */
+          width: 35rem;
+
+          .options{
+            width:35rem;
+
+            button{
+              width: 100%;
+              font-size: 1.6rem;
+            }
+          }
+
+          .QrCodeOrCredit{
+            width: 100%;
+
+            .dataCredit{
+              width: 30rem;
+
+              .numberCard, .validateAndSecurityCode .validate, .validateAndSecurityCode .securityCodeCard{
+                label{
+                  font-size:1.6rem;
+                }
+
+                input{
+                  padding: 1.2rem;
+                  font-size: 1.6rem;
+                }
+              }
+            }
+
+          }
+
+          h3{
+            margin-top: 3.4rem;
+          }
+        }
+      }
+
     }
+  }
+  
+
 
 `;
 
