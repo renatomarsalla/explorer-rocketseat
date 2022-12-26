@@ -29,8 +29,8 @@ class UserCreateService {
     return userCreated;
   }
 
-  async executeUpdate({ name, email, password, newPassword, id }) {
-    const user = await this.userRepository.idExists(id);
+  async executeUpdate({ name, email, password, newPassword, user_id }) {
+    const user = await this.userRepository.idExists(user_id);
     //checking if user exists
     if (user.length === 0) {
       throw new AppError("User does not exist");

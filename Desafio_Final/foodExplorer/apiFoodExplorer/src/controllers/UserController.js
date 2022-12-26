@@ -17,14 +17,17 @@ class UserController {
 
   async updateUser(request, response) {
     const { name, email, password, newPassword } = request.body;
-    const { id } = request.params;
+    const user_id = request.user.id;
+    // const { id } = request.params;
 
     const userRepository = new UserRepository();
     const userCreateService = new UserCreateService(userRepository);
 
-    await userCreateService.executeUpdate({ name, email, password, newPassword, id });
+    await userCreateService.executeUpdate({ name, email, password, newPassword, user_id });
+    // await userCreateService.executeUpdate({ name, email, password, newPassword, id });
 
-    return response.json({ name, email, password, newPassword, id });
+    return response.json({ name, email, password, newPassword, user_id });
+    // return response.json({ name, email, password, newPassword, id });
 
   }
 }

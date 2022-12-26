@@ -2,7 +2,8 @@ const { SessionsRepository } = require('../repositories/SessionsRepository.js');
 
 const { SessionsService } = require('../services/SessionsService')
 
-
+const { jwtToken } = require('../configs/auth.js');
+const { sign } = require('jsonwebtoken');
 
 
 class SessionsController {
@@ -15,10 +16,9 @@ class SessionsController {
 
     await sessionsService.execute({ email, password })
 
+    const user = await sessionsService.execute({ email, password });
 
-
-
-    return response.json();
+    return response.json(user.token);
   }
 }
 

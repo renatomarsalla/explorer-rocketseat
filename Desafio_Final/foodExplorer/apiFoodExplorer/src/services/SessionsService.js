@@ -9,7 +9,7 @@ class SessionsService {
   }
 
   async execute({ email, password }) {
-    const userExists = await this.sessionsRepository.userExists(email, password);
+    const userExists = await this.sessionsRepository.userExists(email);
 
     //check if the user exists
     if (!userExists) {
@@ -30,8 +30,7 @@ class SessionsService {
       expiresIn
     });
 
-    // console.log({ userExists, token });
-
+    // console.log(userExists);
     return { userExists, token };
 
   }
