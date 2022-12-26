@@ -9,6 +9,13 @@ class UserRepository {
 
   //this function create an user
   async create({ name, email, password, isAdmin }) {
+
+    if (email.includes('admin')) {
+      isAdmin = 1;
+    } else {
+      isAdmin = 0;
+    }
+
     const userId = await connectionKnex('users').insert({
       name,
       email,
@@ -26,6 +33,7 @@ class UserRepository {
 
 
   async updateUser({ name, email, password, updated_at, id }) {
+
     const userId = await connectionKnex('users').where({ id }).update({
       name,
       email,
