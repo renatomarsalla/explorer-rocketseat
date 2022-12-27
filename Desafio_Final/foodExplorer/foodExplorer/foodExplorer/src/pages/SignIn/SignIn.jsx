@@ -6,7 +6,12 @@ import { ButtonText } from '../../components/Buttontext';
 
 import { Link } from 'react-router-dom';
 
+import { useAuth } from '../../hooks/auth';
+
 function SignIn() {
+  const data = useAuth();
+  console.log('meu contexto', data);
+
   return (
     <Container>
       <div className="title">
@@ -46,7 +51,7 @@ function SignIn() {
             <Input
               placeholder="No mínimo 6 caracteres"
               type="password"
-              minlength="6"
+              minLength="6"
               required
             />
           </div>
