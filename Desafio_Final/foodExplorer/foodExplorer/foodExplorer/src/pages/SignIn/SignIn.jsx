@@ -4,6 +4,8 @@ import { Button } from '../../components/Button';
 import { Input } from '../../components/Input';
 import { ButtonText } from '../../components/Buttontext';
 
+import { Link } from 'react-router-dom';
+
 function SignIn() {
   return (
     <Container>
@@ -21,7 +23,8 @@ function SignIn() {
           />
         </svg>
         <h1>
-          food<span>explorer</span>
+          food explorer
+          {/* food<span>explorer</span> */}
         </h1>
       </div>
 
@@ -52,7 +55,9 @@ function SignIn() {
             <Button text="Entrar" />
           </div>
 
-          <ButtonText text="Criar uma conta" className="btnCreateAccount" />
+          <Link to={'/register'}>
+            <ButtonText text="Criar uma conta" className="btnCreateAccount" />
+          </Link>
 
           {/* <p>criar uma conta</p> */}
         </fieldset>

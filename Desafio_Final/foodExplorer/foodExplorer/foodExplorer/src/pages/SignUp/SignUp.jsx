@@ -4,6 +4,8 @@ import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { ButtonText } from '../../components/Buttontext';
 
+import { Link } from 'react-router-dom';
+
 function SignUp() {
   return (
     <Container>
@@ -53,7 +55,9 @@ function SignUp() {
 
           <Button text="Criar conta" />
 
-          <ButtonText text="Já tenho uma conta" />
+          <Link to="/">
+            <ButtonText text="Já tenho uma conta" />
+          </Link>
         </fieldset>
       </Form>
     </Container>
