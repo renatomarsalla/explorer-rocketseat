@@ -3,19 +3,18 @@ const multer = require('multer');
 const uploadConfig = require('../configs/upload')
 
 const { DishesAdminController } = require('../controllers/DishesAdminController');
+const { DishesAvatarController } = require('../controllers/DishesAvatarController');
 
 const dishesRoutes = Router();
 
 const upload = multer(uploadConfig.MULTER);
 
 const dishesAdminController = new DishesAdminController();
+const dishesAvatarController = new DishesAvatarController();
 
 dishesRoutes.post('/', dishesAdminController.createDishes);
 dishesRoutes.put('/:id', dishesAdminController.updateDish);
 dishesRoutes.delete('/:id', dishesAdminController.deleteDish);
-dishesRoutes.patch('/avatar', upload.single("avatar"), (request, response) => {
-  console.log(request.file.filename);
-  response.json();
-})
+dishesRoutes.patch('/avatar/:id', upload.single("avatar"), dishesAvatarController.update)
 
 module.exports = { dishesRoutes };
