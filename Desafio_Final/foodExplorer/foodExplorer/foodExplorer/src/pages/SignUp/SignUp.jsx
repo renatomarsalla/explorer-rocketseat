@@ -4,9 +4,43 @@ import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
 import { ButtonText } from '../../components/Buttontext';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
+import { useState } from 'react';
+
+import { api } from '../../service/api';
 
 function SignUp() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const navigate = useNavigate();
+
+  async function handleSignUp() {
+    if (!name || !email || !password) {
+      return alert('Todos os campos devem ser preenchidos');
+    }
+
+    if (password.length < 3) {
+      return alert('A senha precisa ter no mínimo 3 caracteres');
+    }
+
+    api
+      .post('/users', { name, email, password })
+      .then(() => {
+        alert('Usuário cadastrado com sucesso');
+        navigate('/');
+      })
+      .catch(error => {
+        if (error.response) {
+          alert(error.response.data.message);
+        } else {
+          alert('Não foi possível cadastrar o usuário');
+        }
+      });
+  }
+
   return (
     <Container>
       <div className="title">
@@ -31,7 +65,12 @@ function SignUp() {
 
           <div className="name">
             <legend>Seu nome</legend>
-            <Input type="text" placeholder="Exemplo: Maria da Silva" required />
+            <Input
+              type="text"
+              placeholder="Exemplo: Maria da Silva"
+              required
+              onChange={e => setName(e.target.value)}
+            />
           </div>
 
           <div className="email">
@@ -40,6 +79,7 @@ function SignUp() {
               type="mail"
               placeholder="Exemplo: exemplo@exemplo.com.br"
               required
+              onChange={e => setEmail(e.target.value)}
             />
           </div>
 
@@ -48,12 +88,13 @@ function SignUp() {
             <Input
               type="password"
               placeholder="No mínimo 6 caracteres"
-              minlength="6"
+              // minlength="6"
               required
+              onChange={e => setPassword(e.target.value)}
             />
           </div>
 
-          <Button text="Criar conta" />
+          <Button text="Criar conta" onClick={handleSignUp} />
 
           <Link to="/">
             <ButtonText text="Já tenho uma conta" />
