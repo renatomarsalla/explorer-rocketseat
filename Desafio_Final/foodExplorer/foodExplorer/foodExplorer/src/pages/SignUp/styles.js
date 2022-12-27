@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 const Container = styled.div`
-  /* width: 38.4rem; */
-  width: 37.5rem;
+  /* width: 37.5rem;
   height: 100vh;
 
   margin: 0 auto;
@@ -10,12 +9,22 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: center; */
+
+  width: 37.5rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+  
+  background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
   >.title{
     display: flex;
     gap: 1.9rem;
     align-items: center;
+    justify-content: center;
     margin-top: 5.2rem;
 
     h1{

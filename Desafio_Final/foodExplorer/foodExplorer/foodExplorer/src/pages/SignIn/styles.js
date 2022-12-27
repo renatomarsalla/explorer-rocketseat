@@ -23,6 +23,13 @@ const Container = styled.div`
     font-size: 2rem;
     color: ${({ theme }) => theme.COLORS.WHITE};
     font-family: 'Roboto';
+
+    h1{
+      color: ${({ theme }) => theme.COLORS.WHITE};
+      font-family: 'Roboto', sans-serif;
+      font-size: 4.2rem;
+    
+    }
     
   }
 
