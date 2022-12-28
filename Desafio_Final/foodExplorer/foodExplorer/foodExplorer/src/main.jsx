@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 // import { SignIn } from './pages/SignIn/SignIn';
 // import { SignUp } from './pages/SignUp/SignUp';
-// import { Home } from './pages/Home/Home';
+import { Home } from './pages/Home/Home';
 // import { Details } from './pages/Details/Details';
 // import { Order } from './pages/Orders/Orders';
 // import { AddDish } from './pages/AddDish/AddDish';

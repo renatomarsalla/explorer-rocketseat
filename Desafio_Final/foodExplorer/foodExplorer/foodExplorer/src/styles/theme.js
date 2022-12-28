@@ -6,6 +6,7 @@ export default {
     BACKGROUND_700: "#00111A",//figma
     BACKGROUND_600: "#0D1D25",//figma
     BACKGROUND_500: "#1C1C1C",//figma
+    BACKGROUND_CARD: "#00070a",//figma
 
 
     WHITE: "#FFFFFF",//figma

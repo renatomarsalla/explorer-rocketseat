@@ -14,7 +14,15 @@ import { ButtonFavorite } from '../../components/ButtonFavorite';
 import img from '../../assets/principal.png';
 import salad from '../../assets/Mask group.png';
 
+import { useNavigate } from 'react-router-dom';
+
 function Home() {
+  const navigate = useNavigate();
+
+  function handleOpenDetails() {
+    navigate('/details');
+  }
+
   return (
     <Container>
       <Header />
@@ -102,7 +110,7 @@ function Home() {
                   <ButtonFavorite icon={AiOutlineHeart} />
                 </div>
                 <img src={salad} alt="" />
-                <h2>Salada Ravanello</h2>
+                <h2>Salada </h2>
                 <p>
                   Rabanetes, folhas verdes e molho agridoce salpicados com
                   gergelim
@@ -247,7 +255,7 @@ function Home() {
                   <ButtonFavorite icon={AiOutlineHeart} />
                 </div>
                 <img src={salad} alt="" />
-                <h2>Salada Ravanello</h2>
+                <h2>Salada</h2>
                 <p>
                   Rabanetes, folhas verdes e molho agridoce salpicados com
                   gergelim
@@ -392,7 +400,7 @@ function Home() {
                   <ButtonFavorite icon={AiOutlineHeart} />
                 </div>
                 <img src={salad} alt="" />
-                <h2>Salada Ravanello</h2>
+                <h2>Salada</h2>
                 <p>
                   Rabanetes, folhas verdes e molho agridoce salpicados com
                   gergelim
@@ -446,7 +454,7 @@ function Home() {
                 </div>
               </div>
             </li>
-            <li>
+            {/* <li>
               <div className="card">
                 <div className="favorite">
                   <ButtonFavorite icon={AiOutlineHeart} />
@@ -525,7 +533,7 @@ function Home() {
                   <Button text="incluir" />
                 </div>
               </div>
-            </li>
+            </li> */}
             <Button icon={MdKeyboardArrowLeft} className="arrowDishesLeft" />
             <Button icon={MdKeyboardArrowLeft} className="arrowDessertsLeft" />
             <Button icon={MdKeyboardArrowLeft} className="arrowDrinksLeft" />

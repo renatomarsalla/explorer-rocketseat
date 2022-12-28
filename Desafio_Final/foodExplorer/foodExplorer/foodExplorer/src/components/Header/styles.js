@@ -91,6 +91,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     gap: 1.1rem;
+    /* background-color: pink; */
 
     width: 50rem;
     margin-left: 3.2rem;

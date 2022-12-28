@@ -181,8 +181,8 @@ const Container = styled.div`
 
   ul li .card{
     width: 15rem;
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500};
-    /* background-color: violet; */
+    /* background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500}; */
+    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_CARD};
 
     margin-top: 1.5rem;
     padding: 0 1rem;
@@ -216,6 +216,8 @@ const Container = styled.div`
     height: 12.6rem;
 
     margin-top: 1rem;
+
+    cursor: pointer;
   }
 
   ul li .card p{
