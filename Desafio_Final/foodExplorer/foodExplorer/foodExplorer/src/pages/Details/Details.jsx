@@ -8,8 +8,8 @@ import { ButtonText } from '../../components/Buttontext';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 import { MdOutlineProductionQuantityLimits } from 'react-icons/md';
 
-import img from '../../assets/Mask group-3.png';
-import lettuce from '../../assets/lettuce.png';
+import img from '../../assets/salada_molla.png';
+import lettuce from '../../assets/alface.png';
 import tomato from '../../assets/tomato.png';
 import radish from '../../assets/radish.png';
 import bread_noon from '../../assets/bread_naan.png';
