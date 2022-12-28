@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createContext, useContext } from 'react';
 
 import { api } from '../service/api';
@@ -12,6 +12,10 @@ function AuthProvider({ children }) {
       const response = await api.post('/sessions', { email, password });
       const { userExists, token } = response.data;
 
+      //armazena no localStorage
+      localStorage.setItem('@foodexplorer:user', JSON.stringify(userExists));
+      localStorage.setItem('@foodexplorer:token', token);
+
       //passa o token para o cabecalho de autenticação
       api.defaults.headers.authorization = `Bearer ${token}`;
       setData({ userExists, token });
@@ -23,6 +27,20 @@ function AuthProvider({ children }) {
       }
     }
   }
+
+  useEffect(() => {
+    const token = localStorage.getItem('@foodexplorer:token');
+    const user = localStorage.getItem('@foodexplorer:user');
+
+    if (user && token) {
+      api.defaults.headers.authorization = `Bearer ${token}`;
+
+      setData({
+        token,
+        userExists: JSON.parse(user)
+      });
+    }
+  }, []);
 
   return (
     <AuthContext.Provider value={{ signIn, user: data.userExists }}>
