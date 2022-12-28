@@ -18,7 +18,9 @@ function AuthProvider({ children }) {
       localStorage.setItem('@foodexplorer:token', token);
 
       //passa o token para o cabecalho de autenticação
-      api.defaults.headers.authorization = `Bearer ${token}`;
+      // api.defaults.headers.authorization = `Bearer ${token}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+
       setData({ userExists, token });
     } catch (error) {
       if (error.response) {
@@ -42,7 +44,8 @@ function AuthProvider({ children }) {
     const user = localStorage.getItem('@foodexplorer:user');
 
     if (user && token) {
-      api.defaults.headers.authorization = `Bearer ${token}`;
+      // api.defaults.headers.authorization = `Bearer ${token}`;
+      api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
       setData({
         token,
