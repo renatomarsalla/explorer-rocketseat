@@ -9,7 +9,11 @@ import { AiFillHeart } from 'react-icons/ai';
 import { FaShoppingCart } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 
+import { useAuth } from '../../hooks/auth';
+
 function Header() {
+  const { logout } = useAuth();
+
   return (
     <Container>
       <div className="title hide">
@@ -45,7 +49,7 @@ function Header() {
         className="hide myOrder"
         icon={HiOutlineShoppingBag}
       ></Button>
-      <Logout className="logout">
+      <Logout className="logout" onClick={logout}>
         <FiLogOut />
       </Logout>
     </Container>

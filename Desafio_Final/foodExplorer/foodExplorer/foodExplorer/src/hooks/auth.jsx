@@ -7,6 +7,7 @@ const AuthContext = createContext();
 
 function AuthProvider({ children }) {
   const [data, setData] = useState({});
+
   async function signIn({ email, password }) {
     try {
       const response = await api.post('/sessions', { email, password });
@@ -28,6 +29,14 @@ function AuthProvider({ children }) {
     }
   }
 
+  function logout() {
+    localStorage.removeItem('@foodexplorer:token');
+    localStorage.removeItem('@foodexplorer:user');
+
+    setData({});
+  }
+
+  //toda vez que a tela for renderizada o localstorage atualiza os dados do usuario
   useEffect(() => {
     const token = localStorage.getItem('@foodexplorer:token');
     const user = localStorage.getItem('@foodexplorer:user');
@@ -43,7 +52,7 @@ function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ signIn, user: data.userExists }}>
+    <AuthContext.Provider value={{ signIn, user: data.userExists, logout }}>
       {children}
     </AuthContext.Provider>
   );
