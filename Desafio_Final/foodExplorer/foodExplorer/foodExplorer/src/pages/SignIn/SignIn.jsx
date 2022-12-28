@@ -7,10 +7,18 @@ import { ButtonText } from '../../components/Buttontext';
 import { Link } from 'react-router-dom';
 
 import { useAuth } from '../../hooks/auth';
+import { useState } from 'react';
 
 function SignIn() {
-  const data = useAuth();
-  console.log('meu contexto', data);
+  // const data = useAuth();
+  // console.log('meu contexto', data);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const { signIn } = useAuth();
+  function handleSignIn() {
+    signIn({ email, password });
+  }
 
   return (
     <Container>
@@ -43,6 +51,7 @@ function SignIn() {
               placeholder="Exemplo: exemplor@exemplo.com.br"
               type="mail"
               required
+              onChange={e => setEmail(e.target.value)}
             />
           </div>
 
@@ -53,11 +62,12 @@ function SignIn() {
               type="password"
               minLength="6"
               required
+              onChange={e => setPassword(e.target.value)}
             />
           </div>
 
           <div className="btnEnter">
-            <Button text="Entrar" />
+            <Button text="Entrar" onClick={handleSignIn} />
           </div>
 
           <Link to={'/register'}>

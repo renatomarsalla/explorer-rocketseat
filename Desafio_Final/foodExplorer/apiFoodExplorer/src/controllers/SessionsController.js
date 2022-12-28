@@ -18,7 +18,7 @@ class SessionsController {
 
     const user = await sessionsService.execute({ email, password });
 
-    return response.json(user.token);
+    return response.json(user);
   }
 }
 
