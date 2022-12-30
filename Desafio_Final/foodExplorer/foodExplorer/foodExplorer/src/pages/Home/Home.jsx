@@ -18,7 +18,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect } from 'react';
 import { api } from '../../service/api';
-import { useReducer } from 'react';
 
 function Home() {
   // const navigate = useNavigate();
@@ -31,10 +30,13 @@ function Home() {
   const [drinks, setDrinks] = useState([]);
   const [desserts, setDesserts] = useState([]);
 
+  const avatarURL = `${api.defaults.baseURL}/files/${dish.image}`;
+  console.log(avatarURL);
+
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get('/dishesUser');
-      console.log(response.data);
+      // console.log(response.data);
       setDish(response.data);
     }
     fetchDishes();
@@ -43,7 +45,7 @@ function Home() {
   useEffect(() => {
     async function fetchDesserts() {
       const response = await api.get('/dessertsUser');
-      console.log(response.data);
+      // console.log(response.data);
       setDesserts(response.data);
     }
     fetchDesserts();
@@ -52,7 +54,6 @@ function Home() {
   useEffect(() => {
     async function fetchDrinks() {
       const response = await api.get('/drinksUser');
-      console.log(response.data);
       setDrinks(response.data);
     }
     fetchDrinks();
@@ -86,7 +87,8 @@ function Home() {
                     <div className="favorite">
                       <ButtonFavorite icon={AiOutlineHeart} />
                     </div>
-                    <img src={dish.image} alt="" />
+
+                    <img src={avatarURL} alt="" />
                     <h2>{dish.name}</h2>
                     <p>{dish.description}</p>
                     <span>R$ {dish.price}</span>
@@ -106,12 +108,12 @@ function Home() {
           <ul>
             {desserts &&
               desserts.map(dessert => (
-                <li>
+                <li key={dessert.id}>
                   <div className="card">
                     <div className="favorite">
                       <ButtonFavorite icon={AiOutlineHeart} />
                     </div>
-                    <img src={dessert.image} alt="" />
+                    <img src="" alt="" />
                     <h2>{dessert.name}</h2>
                     <p>{dessert.description}</p>
                     <span>R$ {dessert.price}</span>
@@ -131,12 +133,12 @@ function Home() {
           <ul>
             {drinks &&
               drinks.map(drink => (
-                <li>
+                <li key={drink.id}>
                   <div className="card">
                     <div className="favorite">
                       <ButtonFavorite icon={AiOutlineHeart} />
                     </div>
-                    <img src={drink.image} alt="" />
+                    <img src="" alt="" />
                     <h2>{drink.name}</h2>
                     <p>{drink.description}</p>
                     <span>R$ {drink.price}</span>
