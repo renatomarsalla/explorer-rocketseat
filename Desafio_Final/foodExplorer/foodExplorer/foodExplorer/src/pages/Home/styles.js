@@ -86,17 +86,18 @@ const Container = styled.div`
     /* width: 37.5rem; */
     margin-bottom: 2rem;
     /* margin-top: 2rem; */
+    /* background-color: red; */
   }
 
   ul{
     display: flex;
     gap: 2.7rem;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     overflow-y: auto;
 
     margin: 0 auto;
     width: 34.5rem;
-    /* background-color: red; */
+    /* background-color: blue; */
   }
 
   ul .arrowDishesLeft{
@@ -181,10 +182,12 @@ const Container = styled.div`
 
   ul li .card{
     width: 15rem;
+    height: 40rem;
     /* background-color: ${({ theme }) => theme.COLORS.BACKGROUND_500}; */
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_CARD};
 
     margin-top: 1.5rem;
+    /* margin-bottom: 1rem; */
     padding: 0 1rem;
 
     display: flex;

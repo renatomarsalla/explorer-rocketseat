@@ -2,6 +2,9 @@
 const { DishesRepository } = require('../repositories/DishesRepository');
 const { DishesService } = require('../services/DishesService');
 
+const { connectionKnex } = require('../database/knex/index');
+
+
 class DishesController {
 
   async showDishes(request, response) {
@@ -17,14 +20,35 @@ class DishesController {
   }
 
   async indexDishes(request, response) {
-    const { name, ingredients } = request.query;
+
+
+    /*const { name, ingredients } = request.query;
 
     const dishesRepository = new DishesRepository();
     const dishesService = new DishesService(dishesRepository);
 
     await dishesService.executeIndex(name, ingredients);
 
-    return response.json();
+    const dishes = await dishesService.executeIndex(name, ingredients);
+
+    return response.json(dishes);*/
+
+
+
+    ////////////////////////////////////////////////
+    const dishesRepository = new DishesRepository();
+    const dishesService = new DishesService(dishesRepository);
+
+    await dishesService.executeIndex();
+
+    const dishes = await dishesService.executeIndex();
+
+    return response.json(dishes);
+    ////////////////////////////////////////////////
+
+
+
+
   }
 }
 

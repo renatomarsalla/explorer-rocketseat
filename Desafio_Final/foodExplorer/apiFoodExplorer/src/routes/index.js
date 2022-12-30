@@ -11,7 +11,11 @@ const { sessionsRoutes } = require('./sessions.routes');
 
 const { drinksRoutes } = require('./drinksAdmin.routes');
 
+const { drinksUserRoutes } = require('./drinksUser.routes');
+
 const { dessertsRoutes } = require('./dessertsAdmin.routes');
+
+const { dessertsUserRoutes } = require('./dessertsUser.routes');
 
 const routes = Router();
 
@@ -21,7 +25,9 @@ routes.use("/dishesUser", dishesUserRoutes);
 routes.use("/ingredientsDish", ingredientsRoutes);
 routes.use('/sessions', sessionsRoutes);
 routes.use('/drinks', drinksRoutes);
+routes.use('/drinksUser', drinksUserRoutes);
 routes.use('/desserts', dessertsRoutes);
+routes.use('/dessertsUser', dessertsUserRoutes);
 
 
 module.exports = { routes };

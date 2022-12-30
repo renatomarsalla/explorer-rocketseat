@@ -10,8 +10,15 @@ class DishesService {
     return dishesShow;
   }
 
-  async executeIndex(name, ingredients) {
-    const dishesIndex = await this.dishesRepository.indexDishes(name, ingredients);
+  // async executeIndex(name) {
+  //   const dishesIndex = await this.dishesRepository.indexDishes(name);
+
+  //   return dishesIndex;
+  // }
+
+
+  async executeIndex() {
+    const dishesIndex = await this.dishesRepository.indexDishes();
 
     return dishesIndex;
   }

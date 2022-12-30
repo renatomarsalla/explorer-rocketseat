@@ -11,31 +11,44 @@ class DishesRepository {
     console.log(dishWithIngredients);
 
     // return ({ ...dishes, ingredients });
+    // console.log('oi');
     return (dishWithIngredients);
   }
 
-  async indexDishes(name, ingredients) {
+  async indexDishes() {
+
+    const dishes = await connectionKnex('dishes').orderBy('name');
+
+    console.log(dishes);
+
+    return dishes;
+
+
+  }
+
+
+  ////////////////////////////////////////////////////
+  /*async indexDishes(name, ingredients) {
 
     let dishes;
 
     if (ingredients) {
-      // const filteredIngredients = ingredients.split(',').map(ingredient => ingredient.trim());
+
 
       dishes = await connectionKnex('ingredients')
         .select(["dishes.id", "dishes.name"])
         .whereLike("ingredients", `%${ingredients}%`)
         .innerJoin("dishes", "dishes.id", "ingredients.dish_id")
         .orderBy("dishes.name");
-      // console.log(dishes);
-      // return ({ dishes });
+
 
     } else {
       dishes = await connectionKnex('dishes')
         .whereLike("name", `%${name}%`)
         .orderBy("name");
-      // console.log(dishes);
-      // return ({ dishes });
+
     }
+
 
     const dishesIngredients = await connectionKnex("ingredients")
     const dishesWithIngredients = dishes.map(dish => {
@@ -46,11 +59,13 @@ class DishesRepository {
         ingredients: dishIngredient
       }
 
-      console.log(dishWithAllInfos);
+
+      console.log(dishesIngredients);
       return ({ dishWithAllInfos });
     })
 
-  }
+
+  }*/
 
 
 }
