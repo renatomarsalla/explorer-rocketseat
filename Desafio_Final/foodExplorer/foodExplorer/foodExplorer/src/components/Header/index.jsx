@@ -10,7 +10,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 import { useAuth } from '../../hooks/auth';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 function Header({ search }) {
   const { logout } = useAuth();

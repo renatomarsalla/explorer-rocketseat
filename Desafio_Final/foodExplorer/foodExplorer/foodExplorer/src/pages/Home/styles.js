@@ -222,6 +222,8 @@ const Container = styled.div`
 
     margin-top: 1rem;
 
+    border-radius: 50%;
+
     cursor: pointer;
   }
 
