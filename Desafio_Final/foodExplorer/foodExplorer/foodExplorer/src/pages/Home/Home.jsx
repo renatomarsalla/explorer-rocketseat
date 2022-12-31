@@ -30,6 +30,8 @@ function Home() {
   const [drinks, setDrinks] = useState([]);
   const [desserts, setDesserts] = useState([]);
 
+  const [search, setSearch] = useState([]);
+
   let avatarURL = `${api.defaults.baseURL}/files`;
 
   const carousel = useRef(null);
@@ -92,9 +94,18 @@ function Home() {
     fetchDrinks();
   }, []);
 
+  useEffect(() => {
+    async function searchDishes() {
+      const response = await api.get(`/searchDish?name=${search}`);
+      setDish(response.data);
+    }
+
+    searchDishes();
+  }, [search]);
+
   return (
     <Container>
-      <Header />
+      <Header search={setSearch} />
 
       <div className="imgAndTitle">
         <div className="titles">

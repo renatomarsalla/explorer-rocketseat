@@ -29,6 +29,12 @@ class DishesService {
     return listImages;
   }
 
+  async executeSearch(name) {
+    const search = await this.dishesRepository.searchDish(name);
+
+    return search;
+  }
+
 }
 
 module.exports = { DishesService };

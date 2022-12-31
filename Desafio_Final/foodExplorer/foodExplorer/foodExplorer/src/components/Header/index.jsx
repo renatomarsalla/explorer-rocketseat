@@ -10,8 +10,9 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 import { useAuth } from '../../hooks/auth';
+import { useState } from 'react';
 
-function Header() {
+function Header({ search }) {
   const { logout } = useAuth();
 
   return (
@@ -40,6 +41,9 @@ function Header() {
         icon={FiSearch}
         type="text"
         placeholder="Busque pelas opções de pratos"
+        onChange={e => {
+          search(e.target.value);
+        }}
       />
       <Buy className="show">
         <FaShoppingCart />

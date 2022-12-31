@@ -34,48 +34,60 @@ class DishesRepository {
     return images;
   }
 
+  async searchDish(name, ingredients) {
 
-  ////////////////////////////////////////////////////
-  /*async indexDishes(name, ingredients) {
+    const dishes = await connectionKnex('dishes').where({ name }).orderBy('name');
 
-    let dishes;
-
-    if (ingredients) {
+    return dishes
 
 
-      dishes = await connectionKnex('ingredients')
-        .select(["dishes.id", "dishes.name"])
-        .whereLike("ingredients", `%${ingredients}%`)
-        .innerJoin("dishes", "dishes.id", "ingredients.dish_id")
-        .orderBy("dishes.name");
+
+  }
+}
 
 
-    } else {
-      dishes = await connectionKnex('dishes')
-        .whereLike("name", `%${name}%`)
-        .orderBy("name");
 
+////////////////////////////////////////////////////
+/*async indexDishes(name, ingredients) {
+
+  let dishes;
+
+  if (ingredients) {
+
+
+    dishes = await connectionKnex('ingredients')
+      .select(["dishes.id", "dishes.name"])
+      .whereLike("ingredients", `%${ingredients}%`)
+      .innerJoin("dishes", "dishes.id", "ingredients.dish_id")
+      .orderBy("dishes.name");
+
+
+  } else {
+    dishes = await connectionKnex('dishes')
+      .whereLike("name", `%${name}%`)
+      .orderBy("name");
+
+  }
+
+
+  const dishesIngredients = await connectionKnex("ingredients")
+  const dishesWithIngredients = dishes.map(dish => {
+    const dishIngredient = dishesIngredients.filter(ingredient => ingredient.dish_id === dish.id);
+
+    const dishWithAllInfos = {
+      ...dish,
+      ingredients: dishIngredient
     }
 
 
-    const dishesIngredients = await connectionKnex("ingredients")
-    const dishesWithIngredients = dishes.map(dish => {
-      const dishIngredient = dishesIngredients.filter(ingredient => ingredient.dish_id === dish.id);
-
-      const dishWithAllInfos = {
-        ...dish,
-        ingredients: dishIngredient
-      }
+    console.log(dishesIngredients);
+    return ({ dishWithAllInfos });
+  })
 
 
-      console.log(dishesIngredients);
-      return ({ dishWithAllInfos });
-    })
+}*/
 
 
-  }*/
 
-
-}
 
 module.exports = { DishesRepository };

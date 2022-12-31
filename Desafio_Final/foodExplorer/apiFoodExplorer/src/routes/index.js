@@ -17,7 +17,9 @@ const { dessertsRoutes } = require('./dessertsAdmin.routes');
 
 const { dessertsUserRoutes } = require('./dessertsUser.routes');
 
-const { imagesDishRoutes } = require('./imageDish.routes');
+const { searchDishesUserRoutes } = require('./searchDishesUser.routes');
+
+
 
 const routes = Router();
 
@@ -31,6 +33,7 @@ routes.use('/drinks', drinksRoutes);
 routes.use('/drinksUser', drinksUserRoutes);
 routes.use('/desserts', dessertsRoutes);
 routes.use('/dessertsUser', dessertsUserRoutes);
+routes.use('/searchDish', searchDishesUserRoutes);
 
 
 module.exports = { routes };
