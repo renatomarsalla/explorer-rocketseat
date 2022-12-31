@@ -12,11 +12,11 @@ import { Button } from '../../components/Button';
 import { ButtonFavorite } from '../../components/ButtonFavorite';
 
 import img from '../../assets/principal.png';
-import salad from '../../assets/Mask group.png';
+// import salad from '../../assets/Mask group.png';
 
 import { useNavigate } from 'react-router-dom';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { api } from '../../service/api';
 
 function Home() {
@@ -32,6 +32,40 @@ function Home() {
 
   let avatarURL = `${api.defaults.baseURL}/files`;
 
+  const carousel = useRef(null);
+  const carouselDesserts = useRef(null);
+  const carouselDrinks = useRef(null);
+
+  const handleLeftClick = e => {
+    e.preventDefault();
+    carousel.current.scrollLeft -= carousel.current.offsetWidth;
+  };
+
+  const handleRightClick = e => {
+    e.preventDefault();
+    carousel.current.scrollLeft += carousel.current.offsetWidth;
+  };
+
+  const handleLeftClickDesserts = e => {
+    e.preventDefault();
+    carouselDesserts.current.scrollLeft -= carouselDesserts.current.offsetWidth;
+  };
+
+  const handleRightClickDesserts = e => {
+    e.preventDefault();
+    carouselDesserts.current.scrollLeft += carouselDesserts.current.offsetWidth;
+  };
+
+  const handleLeftClickDrinks = e => {
+    e.preventDefault();
+    carouselDrinks.current.scrollLeft -= carouselDrinks.current.offsetWidth;
+  };
+
+  const handleRightClickDrinks = e => {
+    e.preventDefault();
+    carouselDrinks.current.scrollLeft += carouselDrinks.current.offsetWidth;
+  };
+
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get('/dishesUser');
@@ -40,20 +74,6 @@ function Home() {
     }
     fetchDishes();
   }, []);
-
-  // useEffect(() => {
-  //   async function fetchAvatar() {
-  //     const response = await api.get('/dishesUser');
-
-  //     const responseData = response.data.map(img => img.image);
-  //     console.log('response', response);
-
-  //     avatarURL = `${api.defaults.baseURL}/files/${responseData}`;
-
-  //     setDishAvatar(avatarURL);
-  //   }
-  //   fetchAvatar();
-  // }, []);
 
   useEffect(() => {
     async function fetchDesserts() {
@@ -92,7 +112,7 @@ function Home() {
 
       <main>
         <Section title="Pratos principais">
-          <ul>
+          <ul ref={carousel}>
             {dish &&
               dish.map(dish => (
                 <li key={String(dish.id)}>
@@ -123,7 +143,7 @@ function Home() {
           {/* <div className="showDish"></div> */}
         </Section>
         <Section title="Sobremesas">
-          <ul>
+          <ul ref={carouselDesserts}>
             {desserts &&
               desserts.map(dessert => (
                 <li key={dessert.id}>
@@ -151,7 +171,7 @@ function Home() {
           {/* <div className="showDish"></div> */}
         </Section>
         <Section title="Bebidas">
-          <ul>
+          <ul ref={carouselDrinks}>
             {drinks &&
               drinks.map(drink => (
                 <li key={drink.id}>
@@ -176,15 +196,36 @@ function Home() {
                 </li>
               ))}
 
-            <Button icon={MdKeyboardArrowLeft} className="arrowDishesLeft" />
-            <Button icon={MdKeyboardArrowLeft} className="arrowDessertsLeft" />
-            <Button icon={MdKeyboardArrowLeft} className="arrowDrinksLeft" />
-            <Button icon={MdKeyboardArrowRight} className="arrowDishesRight" />
+            <Button
+              icon={MdKeyboardArrowLeft}
+              className="arrowDishesLeft"
+              onClick={handleLeftClick}
+            />
+            <Button
+              icon={MdKeyboardArrowLeft}
+              className="arrowDessertsLeft"
+              onClick={handleLeftClickDesserts}
+            />
+            <Button
+              icon={MdKeyboardArrowLeft}
+              className="arrowDrinksLeft"
+              onClick={handleLeftClickDrinks}
+            />
+            <Button
+              icon={MdKeyboardArrowRight}
+              className="arrowDishesRight"
+              onClick={handleRightClick}
+            />
             <Button
               icon={MdKeyboardArrowRight}
               className="arrowDessertsRight"
+              onClick={handleRightClickDesserts}
             />
-            <Button icon={MdKeyboardArrowRight} className="arrowDrinksRight" />
+            <Button
+              icon={MdKeyboardArrowRight}
+              className="arrowDrinksRight"
+              onClick={handleRightClickDrinks}
+            />
           </ul>
           {/* <div className="showDish"></div> */}
         </Section>

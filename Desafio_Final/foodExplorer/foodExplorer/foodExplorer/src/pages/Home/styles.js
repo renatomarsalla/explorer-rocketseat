@@ -92,7 +92,7 @@ const Container = styled.div`
   ul{
     display: flex;
     gap: 2.7rem;
-    /* justify-content: space-around; */
+    /* justify-content: space-between; */
     overflow-y: auto;
 
     margin: 0 auto;
@@ -116,7 +116,7 @@ const Container = styled.div`
   ul .arrowDessertsLeft{
     position: absolute;
     /* top:35rem; */
-    top:82rem;
+    top:92rem;
     right: 30rem;
     background-color: transparent;
     svg{
@@ -128,7 +128,7 @@ const Container = styled.div`
   ul .arrowDrinksLeft{
     position: absolute;
     /* top:35rem; */
-    top:127rem;
+    top:137rem;
     right: 30rem;
     background-color: transparent;
     svg{
@@ -151,7 +151,7 @@ const Container = styled.div`
   ul .arrowDessertsRight{
     position: absolute;
     /* top:35rem; */
-    top:82rem;
+    top:92rem;
     right: 0.2rem;
     background-color: transparent;
     svg{
@@ -163,7 +163,7 @@ const Container = styled.div`
   ul .arrowDrinksRight{
     position: absolute;
     /* top:35rem; */
-    top:127rem;
+    top:137rem;
     right: 0.2rem;
     background-color: transparent;
     svg{
@@ -174,7 +174,9 @@ const Container = styled.div`
   }
   ul li{
     list-style: none;
-    justify-content: space-around;
+    justify-content: space-between;
+    /* background-color: red; */
+    /* justify-content: space-around; */
   }
   
   
@@ -267,7 +269,7 @@ const Container = styled.div`
   }
 
   main section ul::-webkit-scrollbar{
-        /* display: none; */
+        display: none;
   }
 
   
@@ -376,6 +378,7 @@ const Container = styled.div`
         min-width:92rem;
         margin-bottom: 4rem;
 
+
         /* background-color: red; */
 
       }
@@ -388,15 +391,19 @@ const Container = styled.div`
         gap: 2.7rem;
         overflow-y: auto;
         width: 85rem;
+
+
+        /* margin: 0 auto; */
       }
 
       main section ul::-webkit-scrollbar{
-        /* display: none; */
+        display: none;
       }
 
 
       main section ul li .card{
         min-width: 30rem;
+        /* background-color: red; */
         
         >h2{
           font-size: 2.4rem;
@@ -457,7 +464,7 @@ const Container = styled.div`
   ul .arrowDessertsLeft{
     position: absolute;
     
-    top: 145rem;
+    top: 138rem;
     left: 5rem;
     background-color: transparent;
     svg{
@@ -469,7 +476,7 @@ const Container = styled.div`
   ul .arrowDrinksLeft{
     position: absolute;
     
-    top: 205rem;
+    top: 192rem;
     left: 5rem;
     background-color: transparent;
     svg{
@@ -492,7 +499,7 @@ const Container = styled.div`
   ul .arrowDessertsRight{
     position: absolute;
     
-    top: 145rem;
+    top: 138rem;
     right: 5rem;
     background-color: transparent;
     svg{
@@ -504,7 +511,7 @@ const Container = styled.div`
   ul .arrowDrinksRight{
     position: absolute;
     
-    top: 205rem;
+    top: 192rem;
     right: 5rem;
     background-color: transparent;
     svg{
