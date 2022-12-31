@@ -17,11 +17,14 @@ const { dessertsRoutes } = require('./dessertsAdmin.routes');
 
 const { dessertsUserRoutes } = require('./dessertsUser.routes');
 
+const { imagesDishRoutes } = require('./imageDish.routes');
+
 const routes = Router();
 
 routes.use("/users", usersRoutes);
 routes.use("/dishes", dishesRoutes);
 routes.use("/dishesUser", dishesUserRoutes);
+// routes.use("/files", imagesDishRoutes);
 routes.use("/ingredientsDish", ingredientsRoutes);
 routes.use('/sessions', sessionsRoutes);
 routes.use('/drinks', drinksRoutes);

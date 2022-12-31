@@ -7,13 +7,16 @@ const { AppError } = require('./utils/AppError.js');
 
 const uploadConfig = require('./configs/upload.js');
 
+const path = require('path');
+
 const cors = require('cors');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER));
+// app.use("/files", express.static(uploadConfig.UPLOADS_FOLDER));
+app.use('/files', express.static(path.resolve(__dirname, "..", "tmp", "uploads")))
 
 app.use(routes);
 

@@ -26,6 +26,14 @@ class DishesRepository {
 
   }
 
+  async listImages(image) {
+    const images = await connectionKnex('dishes').where({ image }).first();
+
+    console.log(images);
+
+    return images;
+  }
+
 
   ////////////////////////////////////////////////////
   /*async indexDishes(name, ingredients) {

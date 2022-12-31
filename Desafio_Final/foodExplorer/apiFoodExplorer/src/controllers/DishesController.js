@@ -19,6 +19,17 @@ class DishesController {
 
   }
 
+  async showDishesImages(request, response) {
+    // const { image } = request.params;
+
+    const dishesRepository = new DishesRepository();
+    const dishesService = new DishesService(dishesRepository);
+
+
+    dishesService.listImages(image);
+    return response.json();
+  }
+
   async indexDishes(request, response) {
 
 

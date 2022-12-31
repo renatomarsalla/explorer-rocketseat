@@ -30,17 +30,30 @@ function Home() {
   const [drinks, setDrinks] = useState([]);
   const [desserts, setDesserts] = useState([]);
 
-  const avatarURL = `${api.defaults.baseURL}/files/${dish.image}`;
-  console.log(avatarURL);
+  let avatarURL = `${api.defaults.baseURL}/files`;
 
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get('/dishesUser');
-      // console.log(response.data);
+      // console.log('response data', response.data);
       setDish(response.data);
     }
     fetchDishes();
   }, []);
+
+  // useEffect(() => {
+  //   async function fetchAvatar() {
+  //     const response = await api.get('/dishesUser');
+
+  //     const responseData = response.data.map(img => img.image);
+  //     console.log('response', response);
+
+  //     avatarURL = `${api.defaults.baseURL}/files/${responseData}`;
+
+  //     setDishAvatar(avatarURL);
+  //   }
+  //   fetchAvatar();
+  // }, []);
 
   useEffect(() => {
     async function fetchDesserts() {
@@ -87,11 +100,16 @@ function Home() {
                     <div className="favorite">
                       <ButtonFavorite icon={AiOutlineHeart} />
                     </div>
+                    <img
+                      src={`${avatarURL}/${dish.image}`}
+                      alt="imagem do prato"
+                    />
 
-                    <img src={avatarURL} alt="" />
                     <h2>{dish.name}</h2>
                     <p>{dish.description}</p>
-                    <span>R$ {dish.price}</span>
+                    <span>
+                      R$ {dish.price} {dish.id}
+                    </span>
                     <div className="unitsAndInsert">
                       <ButtonText text="-" className="decrement" />
                       <span>01</span>
@@ -113,7 +131,10 @@ function Home() {
                     <div className="favorite">
                       <ButtonFavorite icon={AiOutlineHeart} />
                     </div>
-                    <img src="" alt="" />
+                    <img
+                      src={`${avatarURL}/${dessert.image}`}
+                      alt="imagem da sobremesa"
+                    />
                     <h2>{dessert.name}</h2>
                     <p>{dessert.description}</p>
                     <span>R$ {dessert.price}</span>
@@ -138,7 +159,10 @@ function Home() {
                     <div className="favorite">
                       <ButtonFavorite icon={AiOutlineHeart} />
                     </div>
-                    <img src="" alt="" />
+                    <img
+                      src={`${avatarURL}/${drink.image}`}
+                      alt="imagem da bebida"
+                    />
                     <h2>{drink.name}</h2>
                     <p>{drink.description}</p>
                     <span>R$ {drink.price}</span>

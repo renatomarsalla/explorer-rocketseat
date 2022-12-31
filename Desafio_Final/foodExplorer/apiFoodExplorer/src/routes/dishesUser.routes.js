@@ -10,4 +10,6 @@ dishesUserRoutes.get('/:id', dishesController.showDishes);
 
 dishesUserRoutes.get('/', dishesController.indexDishes);
 
+dishesUserRoutes.get('/files', dishesController.showDishesImages);
+
 module.exports = { dishesUserRoutes };

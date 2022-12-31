@@ -23,6 +23,12 @@ class DishesService {
     return dishesIndex;
   }
 
+  async listImages(image) {
+    const listImages = await this.dishesRepository.listImages(image);
+
+    return listImages;
+  }
+
 }
 
 module.exports = { DishesService };
