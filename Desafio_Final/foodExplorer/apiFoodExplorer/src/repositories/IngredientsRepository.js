@@ -8,6 +8,15 @@ class IngredientsRepository {
 
     return ({ id_dish });
   }
+
+  async createIngredient({ ingredients, image }) {
+    const dishesId = await connectionKnex("listIngredients").insert({
+      image,
+      ingredients
+    });
+
+    return ({ id: dishesId });
+  }
 }
 
 module.exports = { IngredientsRepository };

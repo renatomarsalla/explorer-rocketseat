@@ -20,12 +20,6 @@ import { useState, useEffect, useRef } from 'react';
 import { api } from '../../service/api';
 
 function Home() {
-  // const navigate = useNavigate();
-
-  // function handleOpenDetails() {
-  //   navigate('/details');
-  // }
-
   const [dish, setDish] = useState([]);
   const [drinks, setDrinks] = useState([]);
   const [desserts, setDesserts] = useState([]);
@@ -37,6 +31,8 @@ function Home() {
   const carousel = useRef(null);
   const carouselDesserts = useRef(null);
   const carouselDrinks = useRef(null);
+
+  const navigate = useNavigate();
 
   const handleLeftClick = e => {
     e.preventDefault();
@@ -67,6 +63,13 @@ function Home() {
     e.preventDefault();
     carouselDrinks.current.scrollLeft += carouselDrinks.current.offsetWidth;
   };
+
+  function handleDetails(id) {
+    navigate(`/details/${id}`);
+  }
+  // function handleDetails() {
+  //   navigate('/details');
+  // }
 
   useEffect(() => {
     async function fetchDishes() {
@@ -134,6 +137,8 @@ function Home() {
                     <img
                       src={`${avatarURL}/${dish.image}`}
                       alt="imagem do prato"
+                      onClick={() => handleDetails(dish.id)}
+                      // onClick={() => handleDetails(dish.id)}
                     />
 
                     <h2>{dish.name}</h2>

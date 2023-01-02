@@ -16,7 +16,9 @@ class DishesController {
 
     await dishesService.executeShow(id);
 
-    return response.json();
+    const dish = await dishesService.executeShow(id);
+
+    return response.json(dish);
 
   }
 

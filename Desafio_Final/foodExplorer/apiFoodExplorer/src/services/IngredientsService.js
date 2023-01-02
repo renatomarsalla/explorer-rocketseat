@@ -7,6 +7,13 @@ class IngredientsService {
 
     return showIngredients;
   }
+
+  async execute({ ingredients, image }) {
+    const ingredient = await this.ingredientsRepository.createIngredient({ ingredients, image });
+
+    return ingredient;
+
+  }
 }
 
 module.exports = { IngredientsService }

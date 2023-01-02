@@ -4,6 +4,9 @@ const Container = styled.div`
   width: 37.5rem;
   height: 100vh;
 
+  position: relative;
+  top:5rem;
+
   .page{
     margin: 0 auto;
     width: 34.5rem;
@@ -37,6 +40,8 @@ const Container = styled.div`
           height: 15rem;
 
           margin-top: 1rem;
+
+          border-radius: 50%;
         }
 
         

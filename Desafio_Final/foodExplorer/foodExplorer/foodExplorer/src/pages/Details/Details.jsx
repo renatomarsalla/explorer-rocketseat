@@ -14,7 +14,43 @@ import tomato from '../../assets/tomato.png';
 import radish from '../../assets/radish.png';
 import bread_noon from '../../assets/bread_naan.png';
 
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { api } from '../../service/api';
+
+let avatar = `${api.defaults.baseURL}/files`;
+
 function Details() {
+  const [data, setData] = useState('');
+  const [listIngredients, setListIngredients] = useState('');
+  const params = useParams();
+
+  useEffect(() => {
+    async function fetchDetails() {
+      const response = await api.get(`/dishesUser/${params.id}`);
+      // console.log(response.data.ingredients);
+      setData(response.data);
+    }
+
+    fetchDetails();
+  }, []);
+
+  useEffect(() => {
+    async function fetchListIngredients() {
+      const response = await api.get(`/dishesUser/${params.id}`);
+      const filter = response.data.ingredients.map(ing => ing.ingredients);
+
+      let items, item;
+      for (item of filter) {
+        items = item;
+      }
+      const eachItem = items.split(',');
+      setListIngredients(eachItem);
+    }
+
+    fetchListIngredients();
+  }, []);
+
   return (
     <Container>
       <Header />
@@ -23,52 +59,42 @@ function Details() {
           <Button text="Voltar" icon={MdKeyboardArrowLeft} />
         </div>
 
-        <main>
-          <div className="dish">
-            <img src={img} alt="dish selected" />
-          </div>
-          <div className="dishesIngredientsAndPrices">
-            <div className="infos">
-              <h1>Salada Ravanello</h1>
-              <span>
-                Salada Ravanello Rabanetes, folhas verdes e molho agridoce
-                salpicados com gergelim.
-              </span>
+        {data && (
+          <main>
+            <div className="dish">
+              <img src={`${avatar}/${data.image}`} alt="dish selected" />
             </div>
+            <div className="dishesIngredientsAndPrices">
+              <div className="infos">
+                <h1>{data.name}</h1>
+                <span>{data.description}</span>
+              </div>
 
-            <div className="ingredients">
-              <div className="ingredient">
-                <img src={lettuce} alt="" />
-                <label>alface</label>
+              <div className="ingredients">
+                {listIngredients &&
+                  listIngredients.map(ing => (
+                    <div className="ingredient">
+                      <img src={lettuce} alt="imagem do alimento" />
+                      <label>{ing}</label>;
+                    </div>
+                  ))}
               </div>
-              <div className="ingredient">
-                <img src={tomato} alt="" />
-                <label>tomate</label>
-              </div>
-              <div className="ingredient">
-                <img src={radish} alt="" />
-                <label>rabanete</label>
-              </div>
-              <div className="ingredient">
-                <img src={bread_noon} alt="" />
-                <label>pão naan</label>
-              </div>
-            </div>
 
-            <div className="priceAndUnits">
-              <span className="price">R$ 25,97</span>
-              <div className="units">
-                <ButtonText text="-" className="decrement" />
-                <span>01</span>
-                <ButtonText text="+" className="increment" />
-                <Button
-                  text="incluir"
-                  icon={MdOutlineProductionQuantityLimits}
-                />
+              <div className="priceAndUnits">
+                <span className="price">R$ {data.price}</span>
+                <div className="units">
+                  <ButtonText text="-" className="decrement" />
+                  <span>01</span>
+                  <ButtonText text="+" className="increment" />
+                  <Button
+                    text="incluir"
+                    icon={MdOutlineProductionQuantityLimits}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </main>
+          </main>
+        )}
       </div>
       <Footer />
     </Container>

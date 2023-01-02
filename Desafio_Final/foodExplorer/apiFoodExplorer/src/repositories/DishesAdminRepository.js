@@ -28,6 +28,7 @@ class DishesAdminRepository {
 
     const ingredientsId = await connectionKnex("ingredients").insert({ ingredients, dish_id: dishesId });
 
+
     return ({ id: dishesId, ingredientsId });
 
   }
