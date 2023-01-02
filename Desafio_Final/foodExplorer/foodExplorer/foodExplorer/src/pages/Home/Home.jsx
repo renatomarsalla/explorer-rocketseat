@@ -138,9 +138,7 @@ function Home() {
 
                     <h2>{dish.name}</h2>
                     <p>{dish.description}</p>
-                    <span>
-                      R$ {dish.price} {dish.id}
-                    </span>
+                    <span>R$ {dish.price}</span>
                     <div className="unitsAndInsert">
                       <ButtonText text="-" className="decrement" />
                       <span>01</span>

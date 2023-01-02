@@ -6,19 +6,21 @@ const Container = styled.div`
   width: 37.5rem;
   /* width: 37.5rem; */
 
-  
+  position: relative;
+  top:10.2rem;
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   
   .imgAndTitle{   
     width: 100vw;
     /* width: 33.5rem; */
-    height: 13rem;
+    height: 12rem;
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND_600};
 
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
     margin-bottom: 3.2rem;
 
@@ -104,7 +106,7 @@ const Container = styled.div`
     position: absolute;
     /* top:35rem; */
     /* bottom: 13rem; */
-    top:42rem;
+    top:32rem;
     right: 30rem;
     background-color: transparent;
     svg{
@@ -116,7 +118,7 @@ const Container = styled.div`
   ul .arrowDessertsLeft{
     position: absolute;
     /* top:35rem; */
-    top:92rem;
+    top:82rem;
     right: 30rem;
     background-color: transparent;
     svg{
@@ -128,7 +130,7 @@ const Container = styled.div`
   ul .arrowDrinksLeft{
     position: absolute;
     /* top:35rem; */
-    top:137rem;
+    top:127rem;
     right: 30rem;
     background-color: transparent;
     svg{
@@ -140,7 +142,7 @@ const Container = styled.div`
   ul .arrowDishesRight{
     position: absolute;
     /* top:35rem; */
-    top:42rem;
+    top:32rem;
     right:0.2rem;
     background-color: transparent;
     svg{
@@ -151,7 +153,7 @@ const Container = styled.div`
   ul .arrowDessertsRight{
     position: absolute;
     /* top:35rem; */
-    top:92rem;
+    top:82rem;
     right: 0.2rem;
     background-color: transparent;
     svg{
@@ -163,7 +165,7 @@ const Container = styled.div`
   ul .arrowDrinksRight{
     position: absolute;
     /* top:35rem; */
-    top:137rem;
+    top:127rem;
     right: 0.2rem;
     background-color: transparent;
     svg{
@@ -454,7 +456,7 @@ const Container = styled.div`
       ul .arrowDishesLeft{
     position: absolute;
     
-    top: 85rem;
+    top: 55rem;
     left: 5rem;
     background-color: transparent;
     svg{
@@ -466,7 +468,7 @@ const Container = styled.div`
   ul .arrowDessertsLeft{
     position: absolute;
     
-    top: 138rem;
+    top: 108rem;
     left: 5rem;
     background-color: transparent;
     svg{
@@ -478,7 +480,7 @@ const Container = styled.div`
   ul .arrowDrinksLeft{
     position: absolute;
     
-    top: 192rem;
+    top: 162rem;
     left: 5rem;
     background-color: transparent;
     svg{
@@ -490,7 +492,7 @@ const Container = styled.div`
   ul .arrowDishesRight{
     position: absolute;
     
-    top: 85rem;
+    top: 55rem;
     right: 5rem;
     background-color: transparent;
     svg{
@@ -501,7 +503,7 @@ const Container = styled.div`
   ul .arrowDessertsRight{
     position: absolute;
     
-    top: 138rem;
+    top: 108rem;
     right: 5rem;
     background-color: transparent;
     svg{
@@ -513,7 +515,7 @@ const Container = styled.div`
   ul .arrowDrinksRight{
     position: absolute;
     
-    top: 192rem;
+    top: 162rem;
     right: 5rem;
     background-color: transparent;
     svg{

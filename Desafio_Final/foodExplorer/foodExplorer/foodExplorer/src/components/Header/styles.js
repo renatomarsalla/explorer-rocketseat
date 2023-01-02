@@ -10,6 +10,9 @@ const Container = styled.div`
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
 
+  position: fixed;
+  top:0;
+  z-index: 10;
   
 
   .title{
