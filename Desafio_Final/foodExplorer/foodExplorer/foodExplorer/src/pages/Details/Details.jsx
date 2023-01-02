@@ -70,7 +70,15 @@ function Details() {
                 <span>{data.description}</span>
               </div>
 
+              <div className="ingredientsTitle">
+                <span>Ingredientes:</span>
+              </div>
               <div className="ingredients">
+                {listIngredients &&
+                  listIngredients.map(ing => <label>{ing}</label>)}
+              </div>
+
+              {/* <div className="ingredients">
                 {listIngredients &&
                   listIngredients.map(ing => (
                     <div className="ingredient">
@@ -78,7 +86,7 @@ function Details() {
                       <label>{ing}</label>;
                     </div>
                   ))}
-              </div>
+              </div> */}
 
               <div className="priceAndUnits">
                 <span className="price">R$ {data.price}</span>

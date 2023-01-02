@@ -29,6 +29,8 @@ const Container = styled.div`
 
     main{
       height: 100vh;
+
+
       >.dish{
         display: flex;
         align-items: center;
@@ -70,6 +72,18 @@ const Container = styled.div`
           }
         }
 
+      .ingredientsTitle{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3.2rem;
+        span{
+          color: ${({ theme }) => theme.COLORS.WHITE};
+          font-size: 1.6rem;
+          font-family: "Poppins", sans-serif;
+        }
+      }
+
       .ingredients{
         display: flex;
         flex-direction: row;
@@ -78,6 +92,13 @@ const Container = styled.div`
         justify-content: center;
 
         margin-top: 2rem;
+
+        
+        
+        label{
+          color: ${({ theme }) => theme.COLORS.WHITE};
+          font-size: 1.4rem;
+        }
 
         >.ingredient{
           display: flex;
@@ -90,6 +111,8 @@ const Container = styled.div`
             color: ${({ theme }) => theme.COLORS.WHITE};
             font-size: 1.4rem;
           }
+
+          
         }
 
         >.ingredient img{
@@ -177,6 +200,24 @@ const Container = styled.div`
           align-items: center;
           justify-content: center;
           gap: 2rem;
+
+          .ingredientsTitle{  
+            justify-content: left;
+            span{
+              color: ${({ theme }) => theme.COLORS.WHITE};
+              font-size: 2rem;
+              font-family: "Poppins", sans-serif;
+            }
+          }
+
+          .ingredients{
+            margin-top: 0.8rem;
+            label{
+              font-size: 1.8rem;
+              font-family: "Poppins", sans-serif;
+              font-weight: normal;
+            }
+          }
 
           >.dish{
             img{
