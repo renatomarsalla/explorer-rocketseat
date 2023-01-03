@@ -7,6 +7,7 @@ const ingredientsRoutes = Router();
 const ingredientsController = new IngredientsController();
 
 ingredientsRoutes.get('/:dish_id', ingredientsController.indexIngredients);
+ingredientsRoutes.put('/:dish_id', ingredientsController.updateIngredients);
 ingredientsRoutes.post('/', ingredientsController.createIngredient);
 
 module.exports = { ingredientsRoutes };

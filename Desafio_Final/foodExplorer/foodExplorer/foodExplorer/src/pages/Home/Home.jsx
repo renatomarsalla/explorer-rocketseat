@@ -2,7 +2,9 @@ import { Container } from './styles';
 
 import { AiOutlineHeart } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import { MdKeyboardArrowLeft } from 'react-icons/md';
+import { MdKeyboardArrowLeft, MdChangeCircle } from 'react-icons/md';
+import { GrUpdate, GrDocumentUpdate } from 'react-icons/gr';
+// import { GrUpdate } from 'react-icons/';
 
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
@@ -10,6 +12,7 @@ import { Section } from '../../components/Section';
 import { ButtonText } from '../../components/Buttontext';
 import { Button } from '../../components/Button';
 import { ButtonFavorite } from '../../components/ButtonFavorite';
+import { ButtonUpdate } from '../../components/ButtonUpdate';
 
 import img from '../../assets/principal.png';
 // import salad from '../../assets/Mask group.png';
@@ -18,6 +21,8 @@ import { useNavigate } from 'react-router-dom';
 
 import { useState, useEffect, useRef } from 'react';
 import { api } from '../../service/api';
+
+import { useAuth } from '../../hooks/auth';
 
 function Home() {
   const [dish, setDish] = useState([]);
@@ -33,6 +38,8 @@ function Home() {
   const carouselDrinks = useRef(null);
 
   const navigate = useNavigate();
+
+  const { user } = useAuth();
 
   const handleLeftClick = e => {
     e.preventDefault();
@@ -67,9 +74,26 @@ function Home() {
   function handleDetails(id) {
     navigate(`/details/${id}`);
   }
-  // function handleDetails() {
-  //   navigate('/details');
-  // }
+
+  function handleDetailsDessert(id) {
+    navigate(`/detailsDessert/${id}`);
+  }
+
+  function handleDetailsDrink(id) {
+    navigate(`/detailsDrink/${id}`);
+  }
+
+  function updateDish(id) {
+    navigate(`/update/${id}`);
+  }
+
+  function updateDessert(id) {
+    navigate(`/updateDessert/${id}`);
+  }
+
+  function updateDrink(id) {
+    navigate(`/updateDrink/${id}`);
+  }
 
   useEffect(() => {
     async function fetchDishes() {
@@ -132,6 +156,13 @@ function Home() {
                 <li key={String(dish.id)}>
                   <div className="card">
                     <div className="favorite">
+                      {user.admin && (
+                        <ButtonUpdate
+                          icon={MdChangeCircle}
+                          id="dish"
+                          onClick={() => updateDish(dish.id)}
+                        />
+                      )}
                       <ButtonFavorite icon={AiOutlineHeart} />
                     </div>
                     <img
@@ -163,11 +194,19 @@ function Home() {
                 <li key={dessert.id}>
                   <div className="card">
                     <div className="favorite">
+                      {user.admin && (
+                        <ButtonUpdate
+                          icon={MdChangeCircle}
+                          id="dish"
+                          onClick={() => updateDessert(dessert.id)}
+                        />
+                      )}
                       <ButtonFavorite icon={AiOutlineHeart} />
                     </div>
                     <img
                       src={`${avatarURL}/${dessert.image}`}
                       alt="imagem da sobremesa"
+                      onClick={() => handleDetailsDessert(dessert.id)}
                     />
                     <h2>{dessert.name}</h2>
                     <p>{dessert.description}</p>
@@ -191,11 +230,19 @@ function Home() {
                 <li key={drink.id}>
                   <div className="card">
                     <div className="favorite">
+                      {user.admin && (
+                        <ButtonUpdate
+                          icon={MdChangeCircle}
+                          id="dish"
+                          onClick={() => updateDrink(drink.id)}
+                        />
+                      )}
                       <ButtonFavorite icon={AiOutlineHeart} />
                     </div>
                     <img
                       src={`${avatarURL}/${drink.image}`}
                       alt="imagem da bebida"
+                      onClick={() => handleDetailsDrink(drink.id)}
                     />
                     <h2>{drink.name}</h2>
                     <p>{drink.description}</p>

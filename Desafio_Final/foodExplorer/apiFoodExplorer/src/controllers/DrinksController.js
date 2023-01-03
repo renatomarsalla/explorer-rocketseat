@@ -15,7 +15,9 @@ class DrinksController {
 
     await drinksService.executeShow(id);
 
-    return response.json();
+    const drink = await drinksService.executeShow(id);
+
+    return response.json(drink);
 
   }
 
@@ -28,9 +30,9 @@ class DrinksController {
 
     await drinksService.executeIndex();
 
-    const dishes = await drinksService.executeIndex();
+    const drinks = await drinksService.executeIndex();
 
-    return response.json(dishes);
+    return response.json(drinks);
     ////////////////////////////////////////////////
 
 

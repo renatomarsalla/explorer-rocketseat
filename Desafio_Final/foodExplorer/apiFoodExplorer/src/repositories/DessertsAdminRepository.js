@@ -39,6 +39,11 @@ class DessertsAdminRepository {
 
     });
 
+    // const updatedIngredientDessertsId = await connectionKnex("ingredientsDessert").where({ dish_id: id }).update({
+    //   ingredients
+
+    // });
+
     return ({ id: updatedDessertsId });
 
   }

@@ -24,7 +24,7 @@ class DrinksAdminRepository {
 
     const ingredientsId = await connectionKnex("ingredientsDrink").insert({ ingredients, dish_id: drinksId });
 
-    return ({ id: drinksId, ingredientsId });
+    return ({ id: drinksId, id: ingredientsId });
 
   }
 
@@ -39,7 +39,13 @@ class DrinksAdminRepository {
 
     });
 
+    // const updatedIngredientsDrinksId = await connectionKnex("ingredientsDrink").where({ dish_id: id }).update({
+    //   ingredients
+
+    // });
+
     return ({ id: updatedDrinksId });
+
 
   }
 

@@ -21,8 +21,10 @@ class DishesAdminController {
     const dishesAdminRepository = new DishesAdminRepository();
     const dishesAdminService = new DishesAdminService(dishesAdminRepository);
 
+    // await dishesAdminService.executeUpdate({ name, description, price, image, id, ingredients });
     await dishesAdminService.executeUpdate({ name, description, price, image, id, ingredients });
 
+    // return response.json({ name, description, price, image, id, ingredients });
     return response.json({ name, description, price, image, id, ingredients });
 
   }

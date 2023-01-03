@@ -26,6 +26,21 @@ class IngredientsController {
     return response.json();
   }
 
+  async updateIngredients(request, response) {
+    const { ingredients } = request.body;
+    const { dish_id } = request.params;
+
+    const ingredientsRepository = new IngredientsRepository();
+    const ingredientsService = new IngredientsService(ingredientsRepository);
+
+
+    await ingredientsService.updateIngredients({ ingredients, dish_id });
+
+
+    return response.json(ingredients);
+
+  }
+
 }
 
 module.exports = { IngredientsController };

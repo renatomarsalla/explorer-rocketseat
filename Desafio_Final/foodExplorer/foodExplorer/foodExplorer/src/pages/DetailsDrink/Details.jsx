@@ -20,15 +20,16 @@ import { api } from '../../service/api';
 
 let avatar = `${api.defaults.baseURL}/files`;
 
-function Details() {
+function DetailsDrink() {
   const [data, setData] = useState('');
-  const [listIngredients, setListIngredients] = useState('');
+  const [listIngredients, setListIngredients] = useState([]);
+  // const [listIngredients, setListIngredients] = useState('');
   const params = useParams();
 
   useEffect(() => {
     async function fetchDetails() {
-      const response = await api.get(`/dishesUser/${params.id}`);
-      // console.log(response.data.ingredients);
+      const response = await api.get(`/drinksUser/${params.id}`);
+      console.log(response.data);
       setData(response.data);
     }
 
@@ -37,7 +38,7 @@ function Details() {
 
   useEffect(() => {
     async function fetchListIngredients() {
-      const response = await api.get(`/dishesUser/${params.id}`);
+      const response = await api.get(`/drinksUser/${params.id}`);
       const filter = response.data.ingredients.map(ing => ing.ingredients);
 
       let items, item;
@@ -109,4 +110,4 @@ function Details() {
   );
 }
 
-export { Details };
+export { DetailsDrink };

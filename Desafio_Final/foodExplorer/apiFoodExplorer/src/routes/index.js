@@ -29,6 +29,9 @@ routes.use("/dishesUser", dishesUserRoutes);
 // routes.use("/dishesUser", dishesUserRoutes);
 // routes.use("/files", imagesDishRoutes);
 routes.use("/ingredientsDish", ingredientsRoutes);
+
+// routes.use("/ingredientsDish", ingredientsRoutes);
+
 routes.use('/sessions', sessionsRoutes);
 routes.use('/drinks', drinksRoutes);
 routes.use('/drinksUser', drinksUserRoutes);

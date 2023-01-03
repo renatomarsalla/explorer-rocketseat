@@ -43,6 +43,12 @@ class DishesAdminRepository {
       ingredients,
 
     });
+    // const updatedIngredientsDishesId = await connectionKnex("ingredients").where({ dish_id: id }).update({
+    //   ingredients
+
+    // });
+
+
 
     return ({ id: updatedDishesId });
 

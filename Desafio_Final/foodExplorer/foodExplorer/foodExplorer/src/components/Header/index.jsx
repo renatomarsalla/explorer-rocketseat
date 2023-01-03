@@ -10,10 +10,18 @@ import { FaShoppingCart } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 import { useAuth } from '../../hooks/auth';
+import { useNavigate } from 'react-router-dom';
 // import { useState } from 'react';
 
 function Header({ search }) {
   const { logout } = useAuth();
+
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    navigate('/');
+    logout();
+  }
 
   return (
     <Container>
@@ -53,7 +61,7 @@ function Header({ search }) {
         className="hide myOrder"
         icon={HiOutlineShoppingBag}
       ></Button>
-      <Logout className="logout" onClick={logout}>
+      <Logout className="logout" onClick={handleLogout}>
         <FiLogOut />
       </Logout>
     </Container>

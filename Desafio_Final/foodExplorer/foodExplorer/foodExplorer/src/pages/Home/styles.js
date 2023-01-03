@@ -247,6 +247,8 @@ const Container = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-end;
+    gap: 9rem;
+    /* justify-content: space-between; */
     
     margin-top: 0.5rem;
   }
@@ -407,6 +409,7 @@ const Container = styled.div`
 
       main section ul li .card{
         min-width: 30rem;
+        height: 60rem;
         /* background-color: red; */
         
         >h2{
@@ -523,8 +526,11 @@ const Container = styled.div`
       font-size: 6rem;
     }
   }
-      
-      
+
+  ul li div.favorite{
+    /* margin-top: 2.5rem;
+    background-color: red; */
+  } 
       
     }
 `;
