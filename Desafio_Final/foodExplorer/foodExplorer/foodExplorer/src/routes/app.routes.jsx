@@ -11,6 +11,7 @@ import { Home } from '../pages/Home/Home';
 import { MyOrder } from '../pages/MyOrder/MyOrder';
 import { Order } from '../pages/Orders/Orders';
 import { UpdateFood } from '../pages/UpdateFood/UpdateFood';
+import { UpdateDessert } from '../pages/UpdateDessert/UpdateDessert';
 
 function AppRoutes() {
   return (
@@ -23,7 +24,7 @@ function AppRoutes() {
       <Route path="/detailsDrink/:id" element={<DetailsDrink />} />
       <Route path="/editDish/:id" element={<EditDish />} />
       <Route path="/update/:id" element={<UpdateFood />} />
-      <Route path="/updateDessert/:id" element={<UpdateFood />} />
+      <Route path="/updateDessert/:id" element={<UpdateDessert />} />
       <Route path="/updateDrink/:id" element={<UpdateFood />} />
       <Route path="/" element={<Home />} />
       <Route path="/myOrder" element={<MyOrder />} />

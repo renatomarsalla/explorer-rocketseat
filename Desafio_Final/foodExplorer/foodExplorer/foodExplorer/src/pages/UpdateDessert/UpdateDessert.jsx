@@ -14,7 +14,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { api } from '../../service/api';
 
-function UpdateFood() {
+function UpdateDessert() {
   const [name, setName] = useState();
   const [price, setPrice] = useState();
   const [description, setDescription] = useState();
@@ -50,12 +50,12 @@ function UpdateFood() {
     if (!image) {
       alert('prato atualizada com sucesso');
     } else {
-      await api.patch(`/desserts/avatar/${id}`, fileUploadForm);
+      await api.patch(`/dishes/avatar/${id}`, fileUploadForm);
       alert('prato atualizada com sucesso');
     }
 
     const ingredientsList = [...ingredients, ...listIngredients];
-    await api.put(`ingredientsDessert/${id}`, { ingredients: ingredientsList });
+    await api.put(`ingredientsDish/${id}`, { ingredients: ingredientsList });
     navigate('/');
   }
 
@@ -75,7 +75,7 @@ function UpdateFood() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await api.get(`/dessertsUser/${params.id}`);
+      const response = await api.get(`/dishesUser/${params.id}`);
       // console.log('response data', response.data);
       setData(response.data);
     }
@@ -84,7 +84,7 @@ function UpdateFood() {
 
   useEffect(() => {
     async function fetchListIngredients() {
-      const response = await api.get(`/dessertsUser/${params.id}`);
+      const response = await api.get(`/dishesUser/${params.id}`);
       const filter = response.data.ingredients.map(ing => ing.ingredients);
 
       let items, item;
@@ -231,4 +231,4 @@ function UpdateFood() {
   );
 }
 
-export { UpdateFood };
+export { UpdateDessert };
