@@ -203,6 +203,7 @@ const Container = styled.div`
     >h2{
       font-size: 1.6rem;
       color: ${({ theme }) => theme.COLORS.WHITE_HOME};
+      text-align: center;
     }
 
     >span{
@@ -273,6 +274,20 @@ const Container = styled.div`
 
      
   }
+
+  .newProduct{
+    width: 20rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    .newRegister{
+      background-color: black;
+      font-family: 'Poppins',sans-serif;
+    }
+  }
+
 
   main section ul::-webkit-scrollbar{
         display: none;
@@ -529,9 +544,26 @@ const Container = styled.div`
 
   ul li div.favorite{
     gap: 22rem;
-  } 
-      
+  }
+  
+  .newProduct{
+    width: 20rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    .newRegister{
+      width: 100%;
+      background-color: black;
+
+      font-family: 'Poppins',sans-serif;
     }
+    
+  }
+      
+}
+
 `;
 
 

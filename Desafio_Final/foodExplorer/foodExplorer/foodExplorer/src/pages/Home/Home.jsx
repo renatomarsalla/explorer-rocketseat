@@ -95,6 +95,10 @@ function Home() {
     navigate(`/updateDrink/${id}`);
   }
 
+  function routeAddDish() {
+    navigate('/addDish');
+  }
+
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get('/dishesUser');
@@ -291,6 +295,16 @@ function Home() {
           {/* <div className="showDish"></div> */}
         </Section>
       </main>
+
+      <div className="newProduct">
+        {user.admin && (
+          <Button
+            text="Cadastrar novo item"
+            className="newRegister"
+            onClick={routeAddDish}
+          />
+        )}
+      </div>
 
       <Footer />
     </Container>
