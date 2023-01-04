@@ -9,6 +9,22 @@ class IngredientsRepository {
     return (id_dish);
   }
 
+  async indexDessertIngredients(dish_id) {
+    const id_dish = await connectionKnex('ingredientsDessert').where({ dish_id });
+
+    console.log(id_dish)
+
+    return (id_dish);
+  }
+
+  async indexDrinkIngredients(dish_id) {
+    const id_dish = await connectionKnex('ingredientsDrink').where({ dish_id });
+
+    console.log(id_dish)
+
+    return (id_dish);
+  }
+
 
 
   async createIngredient({ ingredients, image }) {
@@ -26,6 +42,22 @@ class IngredientsRepository {
       dish_id
     });
     return ({ id: updatedIngredientId });
+  }
+
+  async updateDessertIngredients({ ingredients, dish_id }) {
+    const updatedDessertIngredientId = await connectionKnex("ingredientsDessert").where({ dish_id }).update({
+      ingredients,
+      dish_id
+    });
+    return ({ id: updatedDessertIngredientId });
+  }
+
+  async updateDrinkIngredients({ ingredients, dish_id }) {
+    const updatedDrinkIngredientId = await connectionKnex("ingredientsDrink").where({ dish_id }).update({
+      ingredients,
+      dish_id
+    });
+    return ({ id: updatedDrinkIngredientId });
   }
 }
 

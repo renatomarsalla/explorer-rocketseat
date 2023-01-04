@@ -7,6 +7,10 @@ const { dishesUserRoutes } = require("./dishesUser.routes");
 
 const { ingredientsRoutes } = require('./ingredients.routes');
 
+const { ingredientsDessertRoutes } = require('./ingredientsDessert.routes');
+
+const { ingredientsDrinkRoutes } = require('./ingredientsDrink.routes');
+
 const { sessionsRoutes } = require('./sessions.routes');
 
 const { drinksRoutes } = require('./drinksAdmin.routes');
@@ -29,6 +33,8 @@ routes.use("/dishesUser", dishesUserRoutes);
 // routes.use("/dishesUser", dishesUserRoutes);
 // routes.use("/files", imagesDishRoutes);
 routes.use("/ingredientsDish", ingredientsRoutes);
+routes.use("/ingredientsDessert", ingredientsDessertRoutes);
+routes.use("/ingredientsDrink", ingredientsDrinkRoutes);
 
 // routes.use("/ingredientsDish", ingredientsRoutes);
 

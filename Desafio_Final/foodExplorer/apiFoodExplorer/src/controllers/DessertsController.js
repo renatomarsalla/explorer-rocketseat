@@ -16,7 +16,7 @@ class DessertsController {
     await dessertsService.executeShow(id);
 
     const dessert = await dessertsService.executeShow(id);
-    console.log(dessert);
+    // console.log(dessert);
 
     return response.json(dessert);
 

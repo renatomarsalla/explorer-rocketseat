@@ -75,7 +75,9 @@ function Details() {
               </div>
               <div className="ingredients">
                 {listIngredients &&
-                  listIngredients.map(ing => <label>{ing}</label>)}
+                  listIngredients.map((ing, index) => (
+                    <label key={String(index)}>{ing}</label>
+                  ))}
               </div>
 
               {/* <div className="ingredients">

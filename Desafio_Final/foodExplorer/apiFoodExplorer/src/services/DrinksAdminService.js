@@ -44,7 +44,7 @@ class DrinksAdminService {
 
   async executeDelete({ id }) {
     const drink = await this.drinksAdminRepository.searchById(id);
-    console.log(drink);
+    // console.log(drink);
     if (drink.length === 0) {
       throw new AppError("Drink does not exist");
     }

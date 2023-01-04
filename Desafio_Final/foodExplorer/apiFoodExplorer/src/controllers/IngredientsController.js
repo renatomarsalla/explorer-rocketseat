@@ -40,6 +40,34 @@ class IngredientsController {
     return response.json(ingredients);
 
   }
+  async updateDessertIngredients(request, response) {
+    const { ingredients } = request.body;
+    const { dish_id } = request.params;
+
+    const ingredientsRepository = new IngredientsRepository();
+    const ingredientsService = new IngredientsService(ingredientsRepository);
+
+
+    await ingredientsService.updateDessertIngredients({ ingredients, dish_id });
+
+
+    return response.json(ingredients);
+
+  }
+  async updateDrinkIngredients(request, response) {
+    const { ingredients } = request.body;
+    const { dish_id } = request.params;
+
+    const ingredientsRepository = new IngredientsRepository();
+    const ingredientsService = new IngredientsService(ingredientsRepository);
+
+
+    await ingredientsService.updateDrinkIngredients({ ingredients, dish_id });
+
+
+    return response.json(ingredients);
+
+  }
 
 }
 

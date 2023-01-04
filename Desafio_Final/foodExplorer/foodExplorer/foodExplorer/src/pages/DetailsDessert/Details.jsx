@@ -29,7 +29,7 @@ function DetailsDessert() {
   useEffect(() => {
     async function fetchDetails() {
       const response = await api.get(`/dessertsUser/${params.id}`);
-      console.log(response.data);
+      // console.log(response.data);
       setData(response.data);
     }
 
@@ -76,7 +76,9 @@ function DetailsDessert() {
               </div>
               <div className="ingredients">
                 {listIngredients &&
-                  listIngredients.map(ing => <label>{ing}</label>)}
+                  listIngredients.map((ing, index) => (
+                    <label key={String(index)}>{ing}</label>
+                  ))}
               </div>
 
               {/* <div className="ingredients">

@@ -44,7 +44,7 @@ class DishesAdminService {
 
   async executeDelete({ id }) {
     const dish = await this.dishesAdminRepository.searchById(id);
-    console.log(dish);
+    // console.log(dish);
     if (dish.length === 0) {
       throw new AppError("Dish does not exist");
     }
