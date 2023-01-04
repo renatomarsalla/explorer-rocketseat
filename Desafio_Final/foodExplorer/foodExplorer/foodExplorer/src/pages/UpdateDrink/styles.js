@@ -89,6 +89,8 @@ const Container = styled.div`
             display: flex;
             align-items: center;           
 
+            font-family: "Poppins",sans-serif;
+
             margin-top: 2.4rem;
 
             padding: 0;

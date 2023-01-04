@@ -73,6 +73,14 @@ function UpdateFood() {
     setIngredientsNew('');
   }
 
+  function handleRemoveIngredient(item) {
+    setIngredients(prevState => prevState.filter(ing => ing !== item));
+  }
+
+  function home() {
+    navigate('/');
+  }
+
   useEffect(() => {
     async function fetchData() {
       const response = await api.get(`/dishesUser/${params.id}`);
@@ -134,7 +142,7 @@ function UpdateFood() {
       <div className="page">
         <main>
           <div className="return">
-            <Button text="Voltar" icon={MdKeyboardArrowLeft} />
+            <Button text="Voltar" icon={MdKeyboardArrowLeft} onClick={home} />
             <h2>Editar prato</h2>
           </div>
 
@@ -182,9 +190,11 @@ function UpdateFood() {
                 {/* <IngredientItem value="beterraba" /> */}
                 {ingredients.map((ingredient, index) => (
                   <IngredientItem
-                    value={ingredient}
-                    onClick={() => {}}
                     key={String(index)}
+                    value={ingredient}
+                    onClick={() => {
+                      handleRemoveIngredient(ingredient);
+                    }}
                   />
                 ))}
                 <IngredientItem

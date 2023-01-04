@@ -528,8 +528,7 @@ const Container = styled.div`
   }
 
   ul li div.favorite{
-    /* margin-top: 2.5rem;
-    background-color: red; */
+    gap: 22rem;
   } 
       
     }

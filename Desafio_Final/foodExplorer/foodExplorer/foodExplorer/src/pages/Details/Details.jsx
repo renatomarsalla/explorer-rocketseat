@@ -20,10 +20,18 @@ import { api } from '../../service/api';
 
 let avatar = `${api.defaults.baseURL}/files`;
 
+import { useNavigate } from 'react-router-dom';
+
 function Details() {
   const [data, setData] = useState('');
   const [listIngredients, setListIngredients] = useState('');
   const params = useParams();
+
+  const navigate = useNavigate();
+
+  function home() {
+    navigate('/');
+  }
 
   useEffect(() => {
     async function fetchDetails() {
@@ -56,7 +64,7 @@ function Details() {
       <Header />
       <div className="page">
         <div className="return">
-          <Button text="Voltar" icon={MdKeyboardArrowLeft} />
+          <Button text="Voltar" icon={MdKeyboardArrowLeft} onClick={home} />
         </div>
 
         {data && (

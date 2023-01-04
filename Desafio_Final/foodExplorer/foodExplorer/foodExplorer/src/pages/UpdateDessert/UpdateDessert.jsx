@@ -31,6 +31,10 @@ function UpdateDessert() {
 
   const navigate = useNavigate();
 
+  function home() {
+    navigate('/');
+  }
+
   async function handleUpdate(id) {
     !name ? setName(data.name) : name;
     !price ? setPrice(data.price) : price;
@@ -69,6 +73,12 @@ function UpdateDessert() {
 
   function handleAddIngredient() {
     setIngredients(prevState => [...prevState, ingredientsNew]);
+    // console.log(ingredients);
+    setIngredientsNew('');
+  }
+
+  function handleRemoveIngredient(item) {
+    setIngredients(prevState => prevState.filter(ing => ing !== item));
     // console.log(ingredients);
     setIngredientsNew('');
   }
@@ -134,7 +144,7 @@ function UpdateDessert() {
       <div className="page">
         <main>
           <div className="return">
-            <Button text="Voltar" icon={MdKeyboardArrowLeft} />
+            <Button text="Voltar" icon={MdKeyboardArrowLeft} onClick={home} />
             <h2>Editar prato</h2>
           </div>
 
@@ -183,7 +193,9 @@ function UpdateDessert() {
                 {ingredients.map((ingredient, index) => (
                   <IngredientItem
                     value={ingredient}
-                    onClick={() => {}}
+                    onClick={() => {
+                      handleRemoveIngredient(ingredient);
+                    }}
                     key={String(index)}
                   />
                 ))}

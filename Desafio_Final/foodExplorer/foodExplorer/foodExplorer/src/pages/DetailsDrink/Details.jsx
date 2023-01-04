@@ -18,6 +18,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { api } from '../../service/api';
 
+import { useNavigate } from 'react-router-dom';
+
 let avatar = `${api.defaults.baseURL}/files`;
 
 function DetailsDrink() {
@@ -25,6 +27,12 @@ function DetailsDrink() {
   const [listIngredients, setListIngredients] = useState([]);
   // const [listIngredients, setListIngredients] = useState('');
   const params = useParams();
+
+  const navigate = useNavigate();
+
+  function home() {
+    navigate('/');
+  }
 
   useEffect(() => {
     async function fetchDetails() {
@@ -57,7 +65,7 @@ function DetailsDrink() {
       <Header />
       <div className="page">
         <div className="return">
-          <Button text="Voltar" icon={MdKeyboardArrowLeft} />
+          <Button text="Voltar" icon={MdKeyboardArrowLeft} onClick={home} />
         </div>
 
         {data && (

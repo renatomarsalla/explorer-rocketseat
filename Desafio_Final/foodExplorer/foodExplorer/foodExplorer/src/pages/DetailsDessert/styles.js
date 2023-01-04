@@ -5,7 +5,7 @@ const Container = styled.div`
   height: 100vh;
 
   position: relative;
-  top:5rem;
+  top:8rem;
 
   .page{
     margin: 0 auto;
@@ -18,6 +18,7 @@ const Container = styled.div`
         display: flex;
         align-items: center;
 
+        font-family: 'Poppins',sans-serif;
         margin-top: 2.4rem;
 
         svg{

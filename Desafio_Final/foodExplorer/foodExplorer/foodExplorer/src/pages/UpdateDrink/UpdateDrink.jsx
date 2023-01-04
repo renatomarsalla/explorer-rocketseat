@@ -31,6 +31,10 @@ function UpdateDrink() {
 
   const navigate = useNavigate();
 
+  function home() {
+    navigate('/');
+  }
+
   async function handleUpdate(id) {
     !name ? setName(data.name) : name;
     !price ? setPrice(data.price) : price;
@@ -71,6 +75,10 @@ function UpdateDrink() {
     setIngredients(prevState => [...prevState, ingredientsNew]);
     // console.log(ingredients);
     setIngredientsNew('');
+  }
+
+  function handleRemoveIngredient(item) {
+    setIngredients(prevState => prevState.filter(ing => ing !== item));
   }
 
   useEffect(() => {
@@ -134,7 +142,7 @@ function UpdateDrink() {
       <div className="page">
         <main>
           <div className="return">
-            <Button text="Voltar" icon={MdKeyboardArrowLeft} />
+            <Button text="Voltar" icon={MdKeyboardArrowLeft} onClick={home} />
             <h2>Editar prato</h2>
           </div>
 
@@ -183,7 +191,9 @@ function UpdateDrink() {
                 {ingredients.map((ingredient, index) => (
                   <IngredientItem
                     value={ingredient}
-                    onClick={() => {}}
+                    onClick={() => {
+                      handleRemoveIngredient(ingredient);
+                    }}
                     key={String(index)}
                   />
                 ))}
