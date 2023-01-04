@@ -13,6 +13,14 @@ class DishesAvatarController {
 
     return response.json({ avatarFilename });
   }
+
+  // async create(request, response) {
+  //   const avatarFilename = request.file.filename;
+
+  //   await dishesAvatarService.create({ avatarFilename })
+
+  //   return response.json({ avatarFilename });
+  // }
 }
 
 module.exports = { DishesAvatarController }

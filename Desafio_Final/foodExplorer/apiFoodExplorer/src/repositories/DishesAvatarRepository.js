@@ -15,6 +15,14 @@ class DishesAvatarRepository {
 
     return dishAvatar;
   }
+
+  // async createAvatar(avatar, id) {
+  //   const dishAvatar = await connectionKnex('dishes').post({
+  //     image: avatar
+  //   });
+
+  //   return dishAvatar;
+  // }
 }
 
 module.exports = { DishesAvatarRepository }

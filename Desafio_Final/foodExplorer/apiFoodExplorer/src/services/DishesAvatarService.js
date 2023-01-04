@@ -30,6 +30,19 @@ class DishesAvatarService {
     return saveAvatar;
 
   }
+
+  // async create({ id, avatarFilename }) {
+  //   const dishesAvatar = await this.dishesAvatarRepository.getIdDish(id);
+
+  //   const diskStorage = new DiskStorage();
+
+  //   const filename = await diskStorage.saveFile(avatarFilename);
+  //   dishesAvatar.image = filename;
+
+  //   const saveAvatar = await this.dishesAvatarRepository.createAvatar(avatarFilename);
+
+  //   return saveAvatar;
+  // }
 }
 
 module.exports = { DishesAvatarService }

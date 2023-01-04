@@ -82,23 +82,43 @@ const Container = styled.div`
         flex-direction: column;
         justify-content: left;
         align-items: flex-start;
-        
 
-          button{
+        .nameAndOption{
+          display: flex;
+          flex-direction: row;
+          gap: 1.2rem;
+          justify-content: center;
+          align-items: center;
+
+          select{
+            border: 1px solid ${({ theme }) => theme.COLORS.GRAY_100};
             background-color: transparent;
-            display: flex;
-            align-items: center;           
+            border-radius: 0.5rem;
+            color: ${({ theme }) => theme.COLORS.GRAY_100};
+            padding: 0.4rem;
 
-            margin-top: 2.4rem;
-
-            padding: 0;
-
-            svg{
-              font-size: 2rem;
-              gap: 1.1rem;
-              /* padding:0; */
+            option{
+              background-color: black;
+              color: ${({ theme }) => theme.COLORS.GRAY_100};
             }
           }
+        }
+
+        button{
+          background-color: transparent;
+          display: flex;
+          align-items: center;           
+
+          margin-top: 2.4rem;
+
+          padding: 0;
+
+          svg{
+            font-size: 2rem;
+            gap: 1.1rem;
+              /* padding:0; */
+          }
+        }
 
           h2{
             /* margin-left: 1.2rem; */
@@ -354,6 +374,10 @@ const Container = styled.div`
               font-size: 3rem;
             }
           }
+
+          
+
+          
         }
 
         .imageAndNameDish{

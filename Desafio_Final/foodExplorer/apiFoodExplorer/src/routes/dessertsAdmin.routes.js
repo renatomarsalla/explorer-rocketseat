@@ -16,5 +16,6 @@ dessertsRoutes.post('/', dessertsAdminController.createDessert);
 dessertsRoutes.put('/:id', dessertsAdminController.updateDessert);
 dessertsRoutes.delete('/:id', dessertsAdminController.deleteDessert);
 dessertsRoutes.patch('/avatar/:id', upload.single("avatar"), dessertsAvatarController.update)
+// dessertsRoutes.post('/avatar', upload.single("avatar"), dessertsAvatarController.update)
 
 module.exports = { dessertsRoutes };
