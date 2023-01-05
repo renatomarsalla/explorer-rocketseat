@@ -13,7 +13,7 @@ import { useAuth } from '../../hooks/auth';
 import { useNavigate } from 'react-router-dom';
 // import { useState } from 'react';
 
-function Header({ search }) {
+function Header({ search, searchDesserts, searchDrinks }) {
   const { logout } = useAuth();
 
   const navigate = useNavigate();
@@ -51,6 +51,8 @@ function Header({ search }) {
         placeholder="Busque pelas opções de pratos"
         onChange={e => {
           search(e.target.value);
+          searchDesserts(e.target.value);
+          searchDrinks(e.target.value);
         }}
       />
       <Buy className="show">

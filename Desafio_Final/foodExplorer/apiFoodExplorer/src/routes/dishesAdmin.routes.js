@@ -12,7 +12,7 @@ const upload = multer(uploadConfig.MULTER);
 const dishesAdminController = new DishesAdminController();
 const dishesAvatarController = new DishesAvatarController();
 
-dishesRoutes.post('/', dishesAdminController.createDishes);
+// dishesRoutes.post('/', dishesAdminController.createDishes);
 dishesRoutes.put('/:id', dishesAdminController.updateDish);
 dishesRoutes.delete('/:id', dishesAdminController.deleteDish);
 dishesRoutes.patch('/avatar/:id', upload.single("avatar"), dishesAvatarController.update)

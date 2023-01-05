@@ -23,6 +23,10 @@ const { dessertsUserRoutes } = require('./dessertsUser.routes');
 
 const { searchDishesUserRoutes } = require('./searchDishesUser.routes');
 
+const { searchDessertsUserRoutes } = require('./searchDessertUser.routes');
+
+const { searchDrinksUserRoutes } = require('./searchDrinkUser.routes');
+
 const { dishesWithAvatarRoutes } = require('./dishesWithAvatarAdmin.routes')
 
 const { dessertsWithAvatarRoutes } = require('./dessertsWithAvatarAdmin.routes')
@@ -50,6 +54,8 @@ routes.use('/drinksUser', drinksUserRoutes);
 routes.use('/desserts', dessertsRoutes);
 routes.use('/dessertsUser', dessertsUserRoutes);
 routes.use('/searchDish', searchDishesUserRoutes);
+routes.use('/searchDessert', searchDessertsUserRoutes);
+routes.use('/searchDrink', searchDrinksUserRoutes);
 
 routes.use('/dishesFull', dishesWithAvatarRoutes);
 

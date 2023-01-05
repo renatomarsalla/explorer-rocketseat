@@ -34,6 +34,8 @@ function Home() {
   const [desserts, setDesserts] = useState([]);
 
   const [search, setSearch] = useState([]);
+  const [searchDesserts, setSearchDesserts] = useState([]);
+  const [searchDrinks, setSearchDrinks] = useState([]);
 
   let avatarURL = `${api.defaults.baseURL}/files`;
 
@@ -138,9 +140,31 @@ function Home() {
     searchDishes();
   }, [search]);
 
+  useEffect(() => {
+    async function searchDessert() {
+      const response = await api.get(`/searchDessert?name=${searchDesserts}`);
+      setDesserts(response.data);
+    }
+
+    searchDessert();
+  }, [searchDesserts]);
+
+  useEffect(() => {
+    async function searchDrink() {
+      const response = await api.get(`/searchDrink?name=${searchDrinks}`);
+      setDrinks(response.data);
+    }
+
+    searchDrink();
+  }, [searchDrinks]);
+
   return (
     <Container>
-      <Header search={setSearch} />
+      <Header
+        search={setSearch}
+        searchDesserts={setSearchDesserts}
+        searchDrinks={setSearchDrinks}
+      />
 
       <div className="imgAndTitle">
         <div className="titles">
