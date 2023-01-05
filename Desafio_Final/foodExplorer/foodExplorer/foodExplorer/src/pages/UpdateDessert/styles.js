@@ -82,6 +82,21 @@ const Container = styled.div`
         flex-direction: column;
         justify-content: left;
         align-items: flex-start;
+
+        .delete{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          button{
+            background-color: red;
+            height: 2rem;
+            margin-top: 0;
+          }
+          
+        }
         
 
           button{
@@ -356,6 +371,12 @@ const Container = styled.div`
 
             svg{
               font-size: 3rem;
+            }
+          }
+
+          .delete{
+            button{
+              width: 2rem;
             }
           }
         }

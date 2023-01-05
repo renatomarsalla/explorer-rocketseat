@@ -9,6 +9,8 @@ import { MdKeyboardArrowLeft } from 'react-icons/md';
 
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 
+import { FiX } from 'react-icons/fi';
+
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -30,6 +32,12 @@ function UpdateDessert() {
   const params = useParams();
 
   const navigate = useNavigate();
+
+  async function deleteDish(id) {
+    // await api.delete(`/dishes/${params.id}`);
+    await api.delete(`/desserts/${id}`);
+    navigate('/');
+  }
 
   function home() {
     navigate('/');
@@ -145,7 +153,10 @@ function UpdateDessert() {
         <main>
           <div className="return">
             <Button text="Voltar" icon={MdKeyboardArrowLeft} onClick={home} />
-            <h2>Editar prato</h2>
+            <div className="delete">
+              <h2>Editar prato</h2>
+              <Button icon={FiX} onClick={() => deleteDish(data.id)} />
+            </div>
           </div>
 
           <div className="imageAndNameDish">
