@@ -12,6 +12,8 @@ import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
+import { FiX } from 'react-icons/fi';
+
 import { api } from '../../service/api';
 
 function UpdateDrink() {
@@ -30,6 +32,12 @@ function UpdateDrink() {
   const params = useParams();
 
   const navigate = useNavigate();
+
+  async function deleteDish(id) {
+    // await api.delete(`/dishes/${params.id}`);
+    await api.delete(`/drinks/${id}`);
+    navigate('/');
+  }
 
   function home() {
     navigate('/');
@@ -143,7 +151,10 @@ function UpdateDrink() {
         <main>
           <div className="return">
             <Button text="Voltar" icon={MdKeyboardArrowLeft} onClick={home} />
-            <h2>Editar prato</h2>
+            <div className="delete">
+              <h2>Editar prato</h2>
+              <Button icon={FiX} onClick={() => deleteDish(data.id)} />
+            </div>
           </div>
 
           <div className="imageAndNameDish">
