@@ -23,6 +23,12 @@ const { dessertsUserRoutes } = require('./dessertsUser.routes');
 
 const { searchDishesUserRoutes } = require('./searchDishesUser.routes');
 
+const { dishesWithAvatarRoutes } = require('./dishesWithAvatarAdmin.routes')
+
+const { dessertsWithAvatarRoutes } = require('./dessertsWithAvatarAdmin.routes')
+
+const { drinksWithAvatarRoutes } = require('./drinksWithAvatarAdmin.routes')
+
 
 
 const routes = Router();
@@ -44,6 +50,12 @@ routes.use('/drinksUser', drinksUserRoutes);
 routes.use('/desserts', dessertsRoutes);
 routes.use('/dessertsUser', dessertsUserRoutes);
 routes.use('/searchDish', searchDishesUserRoutes);
+
+routes.use('/dishesFull', dishesWithAvatarRoutes);
+
+routes.use('/dessertsFull', dessertsWithAvatarRoutes);
+
+routes.use('/drinksFull', drinksWithAvatarRoutes);
 
 
 module.exports = { routes };

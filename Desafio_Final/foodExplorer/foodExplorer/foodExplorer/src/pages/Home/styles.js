@@ -110,7 +110,8 @@ const Container = styled.div`
     right: 30rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      color: gray;
       font-size: 4rem;
     }
   }
@@ -122,7 +123,8 @@ const Container = styled.div`
     right: 30rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      color: gray;
       font-size: 4rem;
     }
   }
@@ -134,7 +136,8 @@ const Container = styled.div`
     right: 30rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      color: gray;
       font-size: 4rem;
     }
   }
@@ -146,7 +149,8 @@ const Container = styled.div`
     right:0.2rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      color: gray;
       font-size: 4rem;
     }
   }
@@ -157,6 +161,7 @@ const Container = styled.div`
     right: 0.2rem;
     background-color: transparent;
     svg{
+      color: gray;
       /* color: ${({ theme }) => theme.COLORS.WHITE}; */
       font-size: 4rem;
     }
@@ -169,6 +174,7 @@ const Container = styled.div`
     right: 0.2rem;
     background-color: transparent;
     svg{
+      color: gray;
       /* color: red; */
       /* color: ${({ theme }) => theme.COLORS.WHITE}; */
       font-size: 4rem;
@@ -474,11 +480,12 @@ const Container = styled.div`
       ul .arrowDishesLeft{
     position: absolute;
     
-    top: 55rem;
+    top: 65rem;
     left: 5rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      color: gray;
       font-size: 6rem;
     }
   }
@@ -486,11 +493,12 @@ const Container = styled.div`
   ul .arrowDessertsLeft{
     position: absolute;
     
-    top: 108rem;
+    top: 138rem;
     left: 5rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      color: gray;
       font-size: 6rem;
     }
   }
@@ -498,11 +506,12 @@ const Container = styled.div`
   ul .arrowDrinksLeft{
     position: absolute;
     
-    top: 162rem;
+    top: 215rem;
     left: 5rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      color: gray;
       font-size: 6rem;
     }
   }
@@ -510,22 +519,24 @@ const Container = styled.div`
   ul .arrowDishesRight{
     position: absolute;
     
-    top: 55rem;
+    top: 65rem;
     right: 5rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
+      color: gray;
       font-size: 6rem;
     }
   }
   ul .arrowDessertsRight{
     position: absolute;
     
-    top: 108rem;
+    top: 138rem;
     right: 5rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      color: gray;
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
       font-size: 6rem;
     }
   }
@@ -533,11 +544,12 @@ const Container = styled.div`
   ul .arrowDrinksRight{
     position: absolute;
     
-    top: 162rem;
+    top: 215rem;
     right: 5rem;
     background-color: transparent;
     svg{
-      color: ${({ theme }) => theme.COLORS.WHITE};
+      color: gray;
+      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
       font-size: 6rem;
     }
   }

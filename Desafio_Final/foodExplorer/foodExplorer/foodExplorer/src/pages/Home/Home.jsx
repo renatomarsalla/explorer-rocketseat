@@ -2,7 +2,11 @@ import { Container } from './styles';
 
 import { AiOutlineHeart } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import { MdKeyboardArrowLeft, MdChangeCircle } from 'react-icons/md';
+import {
+  MdKeyboardArrowLeft,
+  MdChangeCircle,
+  MdSystemUpdate
+} from 'react-icons/md';
 import { GrUpdate, GrDocumentUpdate } from 'react-icons/gr';
 // import { GrUpdate } from 'react-icons/';
 
@@ -162,7 +166,7 @@ function Home() {
                     <div className="favorite">
                       {user.admin && (
                         <ButtonUpdate
-                          icon={MdChangeCircle}
+                          icon={MdSystemUpdate}
                           id="dish"
                           onClick={() => updateDish(dish.id)}
                         />
@@ -200,7 +204,7 @@ function Home() {
                     <div className="favorite">
                       {user.admin && (
                         <ButtonUpdate
-                          icon={MdChangeCircle}
+                          icon={MdSystemUpdate}
                           id="dish"
                           onClick={() => updateDessert(dessert.id)}
                         />
@@ -236,7 +240,7 @@ function Home() {
                     <div className="favorite">
                       {user.admin && (
                         <ButtonUpdate
-                          icon={MdChangeCircle}
+                          icon={MdSystemUpdate}
                           id="dish"
                           onClick={() => updateDrink(drink.id)}
                         />

@@ -36,8 +36,8 @@ function AddDish() {
   const [image, setImage] = useState(null);
   const [imageFile, setImageFile] = useState(null);
 
-  const formImage = new FormData();
-  formImage.append('image', image);
+  // const formImage = new FormData();
+  // formImage.append('image', image);
 
   function handleAddIngredient() {
     setIngredients(prevState => [...prevState, ingredientsNew]);
@@ -61,10 +61,7 @@ function AddDish() {
   // const img = imageFile.map(img => img.name);
   // fileUploadForm.append('image', img);
 
-  const fileUploadForm = new FormData();
-  fileUploadForm.append('image', imageFile);
-
-  console.log(fileUploadForm);
+  // console.log(fileUploadForm);
 
   async function register() {
     if (!name || !ingredients || !price || !description) {
@@ -74,35 +71,27 @@ function AddDish() {
 
     const option = selectOptionDish();
 
-    if (option === 'Prato') {
-      await api.post('/dishes', {
-        fileUploadForm
-        // name,
-        // description,
-        // price,
-        // ingredients,
-        // image
-      });
+    const fileUploadForm = new FormData();
+    fileUploadForm.append('avatar', image);
+    fileUploadForm.append('name', name);
+    fileUploadForm.append('price', price);
+    fileUploadForm.append('description', description);
+    fileUploadForm.append('ingredients', ingredients);
 
+    if (option === 'Prato') {
+      await api.post('/dishesFull', fileUploadForm);
       alert('Prato criado com sucesso');
+      navigate('/');
     }
     if (option === 'Sobremesa') {
-      await api.post('/desserts', {
-        name,
-        description,
-        price,
-        ingredients
-      });
-      alert('acertei no sobremesa');
+      await api.post('/dessertsFull', fileUploadForm);
+      alert('Sobremesa criada com sucesso');
+      navigate('/');
     }
     if (option === 'Bebida') {
-      await api.post('/drinks', {
-        name,
-        description,
-        price,
-        ingredients
-      });
-      alert('acertei no drink');
+      await api.post('/drinksFull', fileUploadForm);
+      alert('Drink criado com sucesso');
+      navigate('/');
     }
   }
 
@@ -172,8 +161,8 @@ function AddDish() {
                   <input
                     id="avatar"
                     type="file"
-                    // onChange={e => setImage(e.target.files[0])}
-                    onChange={handleChangeAvatar}
+                    onChange={e => setImage(e.target.files[0])}
+                    // onChange={handleChangeAvatar}
                   />
                 </label>
               </div>
