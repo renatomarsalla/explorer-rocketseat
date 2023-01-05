@@ -22,8 +22,8 @@ function SignUp() {
       return alert('Todos os campos devem ser preenchidos');
     }
 
-    if (password.length < 3) {
-      return alert('A senha precisa ter no mínimo 3 caracteres');
+    if (password.length < 6) {
+      return alert('A senha precisa ter no mínimo 6 caracteres');
     }
 
     api
