@@ -17,21 +17,21 @@ class DishesAdminRepository {
     return dishesId;
   }
 
-  async createDishes({ name, description, price, image, ingredients }) {
-    const dishesId = await connectionKnex("dishes").insert({
-      name,
-      description,
-      price,
-      image,
-    });
+  // async createDishes({ name, description, price, image, ingredients }) {
+  //   const dishesId = await connectionKnex("dishes").insert({
+  //     name,
+  //     description,
+  //     price,
+  //     image,
+  //   });
 
 
-    const ingredientsId = await connectionKnex("ingredients").insert({ ingredients, dish_id: dishesId });
+  //   const ingredientsId = await connectionKnex("ingredients").insert({ ingredients, dish_id: dishesId });
 
 
-    return ({ id: dishesId, ingredientsId });
+  //   return ({ id: dishesId, ingredientsId });
 
-  }
+  // }
 
   async updateDishes({ name, description, price, image, id, ingredients }) {
     const updatedDishesId = await connectionKnex("dishes").where({ id }).update({

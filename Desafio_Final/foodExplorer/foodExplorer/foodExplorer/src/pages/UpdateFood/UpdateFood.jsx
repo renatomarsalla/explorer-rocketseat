@@ -3,11 +3,14 @@ import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 import { Input } from '../../components/Input';
 import { IngredientItem } from '../../components/IngredientItem';
+import { ButtonText } from '../../components/Buttontext';
 
 import { FaListAlt, FaShoppingCart } from 'react-icons/fa';
 import { MdKeyboardArrowLeft } from 'react-icons/md';
 
 import { HiOutlineShoppingBag } from 'react-icons/hi';
+
+import { FiX } from 'react-icons/fi';
 
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -77,6 +80,12 @@ function UpdateFood() {
     setIngredients(prevState => prevState.filter(ing => ing !== item));
   }
 
+  async function deleteDish(id) {
+    // await api.delete(`/dishes/${params.id}`);
+    await api.delete(`/dishes/${id}`);
+    navigate('/');
+  }
+
   function home() {
     navigate('/');
   }
@@ -143,7 +152,10 @@ function UpdateFood() {
         <main>
           <div className="return">
             <Button text="Voltar" icon={MdKeyboardArrowLeft} onClick={home} />
-            <h2>Editar prato</h2>
+            <div className="delete">
+              <h2>Editar prato</h2>
+              <Button icon={FiX} onClick={() => deleteDish(data.id)} />
+            </div>
           </div>
 
           <div className="imageAndNameDish">

@@ -5,17 +5,17 @@ class DishesAdminService {
     this.dishesAdminRepository = dishesAdminRepository;
   }
 
-  async execute({ name, description, price, image, ingredients }) {
-    const dishesAlreadyRegistered = await this.dishesAdminRepository.searchByName(name);
-    if (dishesAlreadyRegistered.length !== 0) {
-      throw new AppError("Dish already is registered");
-    }
+  // async execute({ name, description, price, image, ingredients }) {
+  //   const dishesAlreadyRegistered = await this.dishesAdminRepository.searchByName(name);
+  //   if (dishesAlreadyRegistered.length !== 0) {
+  //     throw new AppError("Dish already is registered");
+  //   }
 
-    const dishCreated = await this.dishesAdminRepository.createDishes({ name, description, price, image, ingredients });
+  //   const dishCreated = await this.dishesAdminRepository.createDishes({ name, description, price, image, ingredients });
 
-    return dishCreated;
+  //   return dishCreated;
 
-  }
+  // }
 
   async executeUpdate({ name, description, price, image, id, ingredients }) {
     const dish = await this.dishesAdminRepository.searchById(id);

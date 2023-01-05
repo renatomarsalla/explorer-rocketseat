@@ -82,6 +82,21 @@ const Container = styled.div`
         flex-direction: column;
         justify-content: left;
         align-items: flex-start;
+
+        .delete{
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          button{
+            background-color: red;
+            height: 2rem;
+            margin-top: 0;
+          }
+          
+        }
         
 
           button{
@@ -357,6 +372,12 @@ const Container = styled.div`
               font-size: 3rem;
             }
           }
+
+          .delete{
+            button{
+              width: 2rem;
+            }
+          }
         }
 
         .imageAndNameDish{
@@ -366,12 +387,27 @@ const Container = styled.div`
             .imageDish{
               font-size: 1.6rem;
             }
+
+            div{
+              padding: 1.6rem;
+              width:22rem;
+              label{
+                width:22rem;
+                font-size: 1.8rem;
+                color: ${({ theme }) => theme.COLORS.GRAY_300};
+                /* padding: 1.2rem; */
+              }
+            }
+
+            
           }       
         
 
           .name{
             input{
-              width: 61rem;             
+              width: 54rem;   
+              padding:1.6rem;
+              font-size: 1.8rem;
             }
 
             label{
@@ -391,6 +427,14 @@ const Container = styled.div`
             }
           }
 
+          .price{
+            input{
+              padding: 2.5rem 0.6rem;
+              font-size: 1.6rem;
+            }
+          }
+        }
+
           
         }
 
@@ -403,13 +447,25 @@ const Container = styled.div`
             .ingredientsToAdd{
             width: 65rem;
             justify-content: left;
+            padding: 1.6rem 0;
 
             input{
+              padding: 1.6rem 0.6rem;
+              font-size: 1.6rem;
+              
               /* margin-left: 0.5rem; */
             }
           }
           }
         }
+
+        .description{
+          textarea{
+            font-size: 1.8rem;
+          }
+        }
+
+        
 
         .description, .price{
           label{
@@ -430,7 +486,7 @@ const Container = styled.div`
     }
 
 
-  }
+  
 
   
 
