@@ -6,8 +6,31 @@ const Container = styled.div`
 
   background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
+  position: relative;
+  top:12.2rem;
+
   main{
     >.page{
+
+
+      button.back{
+        background-color: blue;
+        width: 10rem;
+        display: flex;
+        align-items: center;
+
+        font-size: 1.6rem;
+
+        background: transparent;
+
+        font-family: "Poppins",sans-serif;
+
+        svg{
+          font-size: 2rem;
+          gap: 1.1rem;
+        }
+      }
+
       width: 34.5rem;
       height: 100vh;
       margin: 0 auto;
@@ -89,7 +112,7 @@ const Container = styled.div`
           font-size: 2rem;
           color:${({ theme }) => theme.COLORS.WHITE};
           text-align: center;
-          margin-bottom: 1rem;
+          margin-bottom: 1.6rem;
         }
         .options{
           display: flex;

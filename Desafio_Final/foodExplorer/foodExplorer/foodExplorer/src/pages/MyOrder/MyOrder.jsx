@@ -3,16 +3,33 @@ import { Container } from './styles';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { ButtonText } from '../../components/Buttontext';
+import { Button } from '../../components/Button';
+
+import { MdKeyboardArrowLeft } from 'react-icons/md';
 
 import img from '../../assets/cafe.png';
 
+import { useNavigate } from 'react-router-dom';
+
 function MyOrder() {
+  const navigate = useNavigate();
+
+  function home() {
+    navigate('/');
+  }
+
   return (
     <Container>
       <Header />
 
       <main>
         <div className="page">
+          <Button
+            icon={MdKeyboardArrowLeft}
+            text="Voltar"
+            className="back"
+            onClick={home}
+          />
           <div className="myOrder">
             <h3>Meu pedido</h3>
             <ul>

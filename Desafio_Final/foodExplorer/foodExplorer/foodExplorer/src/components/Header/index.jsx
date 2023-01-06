@@ -23,6 +23,10 @@ function Header({ search, searchDesserts, searchDrinks }) {
     logout();
   }
 
+  function myOrders() {
+    navigate('/myOrder');
+  }
+
   return (
     <Container>
       <div className="title hide">
@@ -55,13 +59,14 @@ function Header({ search, searchDesserts, searchDrinks }) {
           searchDrinks(e.target.value);
         }}
       />
-      <Buy className="show">
+      <Buy className="show" onClick={myOrders}>
         <FaShoppingCart />
       </Buy>
       <Button
         text="Meu pedido (0)"
         className="hide myOrder"
         icon={HiOutlineShoppingBag}
+        onClick={myOrders}
       ></Button>
       <Logout className="logout" onClick={handleLogout}>
         <FiLogOut />
