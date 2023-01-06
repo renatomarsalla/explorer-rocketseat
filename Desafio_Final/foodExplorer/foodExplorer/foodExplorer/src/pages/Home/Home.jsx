@@ -1,6 +1,6 @@
 import { Container } from './styles';
 
-import { AiOutlineHeart } from 'react-icons/ai';
+import { AiOutlineHeart, AiOutlineEdit } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
 import {
   MdKeyboardArrowLeft,
@@ -190,7 +190,7 @@ function Home() {
                     <div className="favorite">
                       {user.admin && (
                         <ButtonUpdate
-                          icon={MdSystemUpdate}
+                          icon={AiOutlineEdit}
                           id="dish"
                           onClick={() => updateDish(dish.id)}
                         />
@@ -228,7 +228,7 @@ function Home() {
                     <div className="favorite">
                       {user.admin && (
                         <ButtonUpdate
-                          icon={MdSystemUpdate}
+                          icon={AiOutlineEdit}
                           id="dish"
                           onClick={() => updateDessert(dessert.id)}
                         />
@@ -264,7 +264,7 @@ function Home() {
                     <div className="favorite">
                       {user.admin && (
                         <ButtonUpdate
-                          icon={MdSystemUpdate}
+                          icon={AiOutlineEdit}
                           id="dish"
                           onClick={() => updateDrink(drink.id)}
                         />
