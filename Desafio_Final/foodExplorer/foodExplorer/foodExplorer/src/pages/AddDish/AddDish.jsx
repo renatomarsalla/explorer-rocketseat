@@ -69,12 +69,15 @@ function AddDish() {
       return;
     }
 
+    // const editPrice = price.replace(',', '.');
+    // setPrice(editPrice);
+
     const option = selectOptionDish();
 
     const fileUploadForm = new FormData();
     fileUploadForm.append('avatar', image);
     fileUploadForm.append('name', name);
-    fileUploadForm.append('price', price);
+    fileUploadForm.append('price', price.replace(',', '.'));
     fileUploadForm.append('description', description);
     fileUploadForm.append('ingredients', ingredients);
 

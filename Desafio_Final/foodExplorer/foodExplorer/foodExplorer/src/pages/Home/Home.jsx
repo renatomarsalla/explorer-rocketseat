@@ -23,7 +23,7 @@ import img from '../../assets/principal.png';
 
 import { useNavigate } from 'react-router-dom';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useLayoutEffect } from 'react';
 import { api } from '../../service/api';
 
 import { useAuth } from '../../hooks/auth';
@@ -120,7 +120,15 @@ function Home() {
   const [unitsToDish, setUnitsToDish] = useState('');
 
   function addUnits() {
-    setUnits(units + 1);
+    setUnits(prevState => prevState + 1);
+  }
+
+  function removeUnits() {
+    setUnits(prevState => prevState - 1);
+
+    if (units <= 1) {
+      setUnits(1);
+    }
   }
 
   let quantity;
@@ -128,10 +136,16 @@ function Home() {
   async function handleCreateOrder(name, price, quantity, total, image) {
     quantity = document.querySelector('.quantity').innerHTML;
 
-    total = (
-      parseFloat(quantity).toFixed(2) * parseFloat(price).toFixed(2)
-    ).toFixed(2);
+    // total = (parseFloat(quantity).toFixed(2) * parseFloat(price)).toFixed(2);
+    // alert(total);
+
+    let p = Number(price.replace(',', '.'));
+    let q = Number(quantity.replace(',', '.'));
+
+    total = (p * q).toFixed(2);
     alert(total);
+
+    // return;
 
     alert(`${name} ${price} ${quantity} ${total} ${image}`);
     await api.post(`/order/${user.id}`, {
@@ -242,20 +256,25 @@ function Home() {
                     <img
                       src={`${avatarURL}/${dish.image}`}
                       alt="imagem do prato"
-                      onClick={() => handleDetails(dish.name)}
-                      // onClick={() => handleDetails(dish.id)}
+                      // onClick={() => handleDetails(dish.name)}
+                      onClick={() => handleDetails(dish.id)}
                     />
 
                     <h2>{dish.name}</h2>
                     <p>{dish.description}</p>
-                    <span>R$ {dish.price}</span>
+                    <span>R$ {dish.price.replace('.', ',')}</span>
                     <div className="unitsAndInsert">
-                      <ButtonText text="-" className="decrement" />
+                      <ButtonText
+                        text="-"
+                        className="decrement"
+                        onClick={removeUnits}
+                      />
                       <span className="quantity">{units}</span>
                       <ButtonText
                         text="+"
                         className="increment"
                         onClick={addUnits}
+
                         // onClick={handleAddUnits}
                       />
                       <Button
