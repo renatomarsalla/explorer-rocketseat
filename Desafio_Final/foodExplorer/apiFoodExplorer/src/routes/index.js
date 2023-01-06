@@ -33,6 +33,8 @@ const { dessertsWithAvatarRoutes } = require('./dessertsWithAvatarAdmin.routes')
 
 const { drinksWithAvatarRoutes } = require('./drinksWithAvatarAdmin.routes')
 
+const { orderRoutes } = require('./myOrder.routes')
+
 
 
 const routes = Router();
@@ -62,6 +64,8 @@ routes.use('/dishesFull', dishesWithAvatarRoutes);
 routes.use('/dessertsFull', dessertsWithAvatarRoutes);
 
 routes.use('/drinksFull', drinksWithAvatarRoutes);
+
+routes.use('/order', orderRoutes);
 
 
 module.exports = { routes };

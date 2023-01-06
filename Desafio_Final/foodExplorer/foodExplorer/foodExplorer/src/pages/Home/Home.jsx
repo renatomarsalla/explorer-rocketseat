@@ -42,10 +42,22 @@ function Home() {
   const carousel = useRef(null);
   const carouselDesserts = useRef(null);
   const carouselDrinks = useRef(null);
+  const unit = useRef(1);
+  const [units, setUnits] = useState(1);
 
   const navigate = useNavigate();
 
   const { user } = useAuth();
+
+  // const handleAddUnits = e => {
+  //   e.preventDefault();
+  //   setUnits(units + 1);
+  //   // carousel.current -= carousel.current;
+  // };
+
+  // useEffect(() => {
+  //   unit.current = units;
+  // });
 
   const handleLeftClick = e => {
     e.preventDefault();
@@ -103,6 +115,36 @@ function Home() {
 
   function routeAddDish() {
     navigate('/addDish');
+  }
+
+  const [unitsToDish, setUnitsToDish] = useState('');
+
+  function addUnits() {
+    setUnits(units + 1);
+  }
+
+  let quantity;
+  let total;
+  async function handleCreateOrder(name, price, quantity, total, image) {
+    quantity = document.querySelector('.quantity').innerHTML;
+
+    total = (
+      parseFloat(quantity).toFixed(2) * parseFloat(price).toFixed(2)
+    ).toFixed(2);
+    alert(total);
+
+    alert(`${name} ${price} ${quantity} ${total} ${image}`);
+    await api.post(`/order/${user.id}`, {
+      name,
+      price,
+      quantity,
+      total,
+      image
+    });
+
+    // console.log('dish', dish.name);
+
+    alert('pedido realizado');
   }
 
   useEffect(() => {
@@ -200,7 +242,7 @@ function Home() {
                     <img
                       src={`${avatarURL}/${dish.image}`}
                       alt="imagem do prato"
-                      onClick={() => handleDetails(dish.id)}
+                      onClick={() => handleDetails(dish.name)}
                       // onClick={() => handleDetails(dish.id)}
                     />
 
@@ -209,13 +251,30 @@ function Home() {
                     <span>R$ {dish.price}</span>
                     <div className="unitsAndInsert">
                       <ButtonText text="-" className="decrement" />
-                      <span>01</span>
-                      <ButtonText text="+" className="increment" />
-                      <Button text="incluir" />
+                      <span className="quantity">{units}</span>
+                      <ButtonText
+                        text="+"
+                        className="increment"
+                        onClick={addUnits}
+                        // onClick={handleAddUnits}
+                      />
+                      <Button
+                        text="incluir"
+                        onClick={() =>
+                          handleCreateOrder(
+                            dish.name,
+                            dish.price,
+                            quantity,
+                            total,
+                            dish.image
+                          )
+                        }
+                      />
                     </div>
                   </div>
                 </li>
               ))}
+            {/* aqui */}
           </ul>
           {/* <div className="showDish"></div> */}
         </Section>

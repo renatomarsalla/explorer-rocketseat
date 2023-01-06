@@ -14,7 +14,7 @@ import { useNavigate } from 'react-router-dom';
 // import { useState } from 'react';
 
 function Header({ search, searchDesserts, searchDrinks }) {
-  const { logout } = useAuth();
+  const { logout, user } = useAuth();
 
   const navigate = useNavigate();
 
@@ -24,7 +24,8 @@ function Header({ search, searchDesserts, searchDrinks }) {
   }
 
   function myOrders() {
-    navigate('/myOrder');
+    // navigate('/myOrder');
+    navigate(`/myOrder/${user.id}`);
   }
 
   return (

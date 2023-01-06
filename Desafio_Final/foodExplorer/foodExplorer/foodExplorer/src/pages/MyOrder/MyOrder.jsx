@@ -11,8 +11,13 @@ import img from '../../assets/cafe.png';
 
 import { useNavigate } from 'react-router-dom';
 
+import { api } from '../../service/api';
+
+import { useParams } from 'react-router-dom';
+
 function MyOrder() {
   const navigate = useNavigate();
+  const params = useParams();
 
   function home() {
     navigate('/');

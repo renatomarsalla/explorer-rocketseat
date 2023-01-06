@@ -22,7 +22,7 @@ function AppRoutes() {
       <Route path="/updateDessert/:id" element={<UpdateDessert />} />
       <Route path="/updateDrink/:id" element={<UpdateDrink />} />
       <Route path="/" element={<Home />} />
-      <Route path="/myOrder" element={<MyOrder />} />
+      <Route path="/myOrder/:id" element={<MyOrder />} />
       <Route path="/order" element={<Order />} />
     </Routes>
   );
