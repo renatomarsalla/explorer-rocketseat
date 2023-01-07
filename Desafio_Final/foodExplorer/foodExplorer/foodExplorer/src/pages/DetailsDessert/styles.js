@@ -63,6 +63,7 @@ const Container = styled.div`
             font-weight: 500;
             font-family: "Poppins", sans-serif;
             font-size: 2rem;
+            text-align: center;
           }
           span{
             color: ${({ theme }) => theme.COLORS.WHITE};

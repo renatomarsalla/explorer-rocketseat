@@ -17,6 +17,9 @@ import { ButtonText } from '../../components/Buttontext';
 import { Button } from '../../components/Button';
 import { ButtonFavorite } from '../../components/ButtonFavorite';
 import { ButtonUpdate } from '../../components/ButtonUpdate';
+import { Card } from '../../components/Cards';
+
+import { Quantity } from '../../components/Quantity';
 
 import img from '../../assets/principal.png';
 // import salad from '../../assets/Mask group.png';
@@ -32,6 +35,7 @@ function Home() {
   const [dish, setDish] = useState([]);
   const [drinks, setDrinks] = useState([]);
   const [desserts, setDesserts] = useState([]);
+  // const [data, setData] = useState([]);
 
   const [search, setSearch] = useState([]);
   const [searchDesserts, setSearchDesserts] = useState([]);
@@ -48,16 +52,6 @@ function Home() {
   const navigate = useNavigate();
 
   const { user } = useAuth();
-
-  // const handleAddUnits = e => {
-  //   e.preventDefault();
-  //   setUnits(units + 1);
-  //   // carousel.current -= carousel.current;
-  // };
-
-  // useEffect(() => {
-  //   unit.current = units;
-  // });
 
   const handleLeftClick = e => {
     e.preventDefault();
@@ -89,47 +83,35 @@ function Home() {
     carouselDrinks.current.scrollLeft += carouselDrinks.current.offsetWidth;
   };
 
-  function handleDetails(id) {
-    navigate(`/details/${id}`);
-  }
+  // function handleDetails(id) {
+  //   navigate(`/details/${id}`);
+  // }
 
-  function handleDetailsDessert(id) {
-    navigate(`/detailsDessert/${id}`);
-  }
+  // function handleDetailsDessert(id) {
+  //   navigate(`/detailsDessert/${id}`);
+  // }
 
-  function handleDetailsDrink(id) {
-    navigate(`/detailsDrink/${id}`);
-  }
+  // function handleDetailsDrink(id) {
+  //   navigate(`/detailsDrink/${id}`);
+  // }
 
-  function updateDish(id) {
-    navigate(`/update/${id}`);
-  }
+  // function updateDish(id) {
+  //   navigate(`/update/${id}`);
+  // }
 
-  function updateDessert(id) {
-    navigate(`/updateDessert/${id}`);
-  }
+  // function updateDessert(id) {
+  //   navigate(`/updateDessert/${id}`);
+  // }
 
-  function updateDrink(id) {
-    navigate(`/updateDrink/${id}`);
-  }
+  // function updateDrink(id) {
+  //   navigate(`/updateDrink/${id}`);
+  // }
 
   function routeAddDish() {
     navigate('/addDish');
   }
 
-  const [unitsToDish, setUnitsToDish] = useState('');
-
-  function addUnits() {
-    setUnits(prevState => prevState + 1);
-  }
-
-  function removeUnits() {
-    setUnits(prevState => prevState - 1);
-
-    if (units <= 1) {
-      setUnits(1);
-    }
-  }
+  // const [unitsToDish, setUnitsToDish] = useState('');
 
   let quantity;
   let total;
@@ -161,11 +143,48 @@ function Home() {
     alert('pedido realizado');
   }
 
+  async function add(id) {
+    // alert(typeof id);
+    const id_dish = await api.get('/dishesUser');
+    const filtered = id_dish.data.filter(dish_id => dish_id.id === id);
+
+    const filter2 = filtered.filter(dish_id => dish_id.id === id);
+
+    // console.log(filtered);
+    // console.log(filter2);
+
+    let idInArray;
+    for (id of filter2) {
+      idInArray = id.id;
+      // console.log(id.id);
+    }
+    // console.log(id.id);
+    // console.log(typeof id, typeof idInArray);
+    if (id.id == idInArray) {
+      // alert('ok');
+      setUnits(prevState => prevState + 1);
+    }
+
+    // console.log(units);
+  }
+
+  function remove() {
+    setUnits(prevState => prevState - 1);
+
+    if (units <= 1) {
+      setUnits(1);
+    }
+  }
+
+  let alt1, alt2, alt3;
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get('/dishesUser');
       // console.log('response data', response.data);
+      alt1 = response.data;
       setDish(response.data);
+      // setData(response.data);
+      // console.log('response', response.data);s
     }
     fetchDishes();
   }, []);
@@ -175,6 +194,7 @@ function Home() {
       const response = await api.get('/dessertsUser');
       // console.log(response.data);
       setDesserts(response.data);
+      // console.log('data', response.data);
     }
     fetchDesserts();
   }, []);
@@ -237,7 +257,83 @@ function Home() {
       </div>
 
       <main>
-        <Section title="Pratos principais">
+        <Section title="Pratos principais" className="dishes">
+          <ul ref={carousel}>
+            {dish &&
+              dish.map(dish => (
+                <li key={String(dish.id)}>
+                  <Card
+                    dish={dish}
+                    routeUpdate={'/update'}
+                    routeDetails={'/details'}
+                  />
+                </li>
+              ))}
+          </ul>
+        </Section>
+
+        <Section title="Pratos principais" className="dishes">
+          <ul ref={carouselDesserts}>
+            {desserts &&
+              desserts.map(dessert => (
+                <li key={String(dessert.id)}>
+                  <Card
+                    dish={dessert}
+                    routeUpdate={'/updateDessert'}
+                    routeDetails={'/detailsDessert'}
+                  />
+                </li>
+              ))}
+          </ul>
+        </Section>
+
+        <Section title="Pratos principais" className="dishes">
+          <ul ref={carouselDrinks}>
+            {drinks &&
+              drinks.map(drink => (
+                <li key={String(drink.id)}>
+                  <Card
+                    dish={drink}
+                    routeUpdate={'/updateDrink'}
+                    routeDetails={'/detailsDrink'}
+                  />
+                </li>
+              ))}
+          </ul>
+
+          <Button
+            icon={MdKeyboardArrowLeft}
+            className="arrowDishesLeft"
+            onClick={handleLeftClick}
+          />
+          <Button
+            icon={MdKeyboardArrowLeft}
+            className="arrowDessertsLeft"
+            onClick={handleLeftClickDesserts}
+          />
+          <Button
+            icon={MdKeyboardArrowLeft}
+            className="arrowDrinksLeft"
+            onClick={handleLeftClickDrinks}
+          />
+          <Button
+            icon={MdKeyboardArrowRight}
+            className="arrowDishesRight"
+            onClick={handleRightClick}
+          />
+          <Button
+            icon={MdKeyboardArrowRight}
+            className="arrowDessertsRight"
+            onClick={handleRightClickDesserts}
+          />
+          <Button
+            icon={MdKeyboardArrowRight}
+            className="arrowDrinksRight"
+            onClick={handleRightClickDrinks}
+          />
+        </Section>
+
+        {/* <Section title="Pratos principais">
           <ul ref={carousel}>
             {dish &&
               dish.map(dish => (
@@ -256,26 +352,24 @@ function Home() {
                     <img
                       src={`${avatarURL}/${dish.image}`}
                       alt="imagem do prato"
-                      // onClick={() => handleDetails(dish.name)}
                       onClick={() => handleDetails(dish.id)}
                     />
 
                     <h2>{dish.name}</h2>
                     <p>{dish.description}</p>
                     <span>R$ {dish.price.replace('.', ',')}</span>
+
                     <div className="unitsAndInsert">
                       <ButtonText
                         text="-"
                         className="decrement"
-                        onClick={removeUnits}
+                        onClick={remove}
                       />
                       <span className="quantity">{units}</span>
                       <ButtonText
                         text="+"
                         className="increment"
-                        onClick={addUnits}
-
-                        // onClick={handleAddUnits}
+                        onClick={() => add(dish.id)}
                       />
                       <Button
                         text="incluir"
@@ -293,9 +387,7 @@ function Home() {
                   </div>
                 </li>
               ))}
-            {/* aqui */}
           </ul>
-          {/* <div className="showDish"></div> */}
         </Section>
         <Section title="Sobremesas">
           <ul ref={carouselDesserts}>
@@ -331,7 +423,6 @@ function Home() {
                 </li>
               ))}
           </ul>
-          {/* <div className="showDish"></div> */}
         </Section>
         <Section title="Bebidas">
           <ul ref={carouselDrinks}>
@@ -398,8 +489,7 @@ function Home() {
               onClick={handleRightClickDrinks}
             />
           </ul>
-          {/* <div className="showDish"></div> */}
-        </Section>
+        </Section> */}
       </main>
 
       <div className="newProduct">
