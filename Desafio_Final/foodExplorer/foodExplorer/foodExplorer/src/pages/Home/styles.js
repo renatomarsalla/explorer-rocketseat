@@ -592,7 +592,7 @@ const Container = styled.div`
     position: absolute;
     
     top: 60rem;
-    left: 3.5rem;
+    left: 3rem;
     background-color: transparent;
     svg{
       color: gray;
@@ -604,7 +604,7 @@ const Container = styled.div`
     position: absolute;
     
     top: 120rem;
-    left: 3.5rem;
+    left: 3rem;
     background-color: transparent;
     svg{
       color: gray;
@@ -616,7 +616,7 @@ const Container = styled.div`
     position: absolute;
     
     top: 185rem;
-    left: 3.5rem;
+    left: 3rem;
     background-color: transparent;
     svg{
       color: gray;
