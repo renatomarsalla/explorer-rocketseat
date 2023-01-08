@@ -19,7 +19,7 @@ const Container = styled.div`
         align-items: center;
 
         font-family: 'Poppins',sans-serif;
-        margin-top: 2.4rem;
+        margin-top: 3.4rem;
 
         svg{
           font-size: 2rem;

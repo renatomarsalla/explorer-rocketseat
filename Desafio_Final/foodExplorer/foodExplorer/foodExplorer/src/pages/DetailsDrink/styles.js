@@ -18,7 +18,7 @@ const Container = styled.div`
         display: flex;
         align-items: center;
 
-        margin-top: 2.4rem;
+        margin-top: 3.4rem;
 
         font-family: 'Poppins',sans-serif;
 
