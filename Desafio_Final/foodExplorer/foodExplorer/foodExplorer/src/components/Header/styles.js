@@ -183,14 +183,14 @@ const Container = styled.div`
       display: flex;
       flex-direction: row;
       justify-content: center;
+      align-items: center;
       >svg{
         margin-left: 4rem;
         /* margin-left: 12.3rem; */
       }
       >h3{
-        width: 16rem;//minimo
+        width: 17rem;
         height: 2.9rem;
-        /* margin-right: 3.7rem; */
         font-size: 2.4rem;
         font-family: 'Roboto', sans-serif;
         font-weight: 700;

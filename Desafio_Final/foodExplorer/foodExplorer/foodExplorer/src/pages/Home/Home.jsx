@@ -272,7 +272,7 @@ function Home() {
           </ul>
         </Section>
 
-        <Section title="Pratos principais" className="dishes">
+        <Section title="Sobremesas" className="dishes">
           <ul ref={carouselDesserts}>
             {desserts &&
               desserts.map(dessert => (
@@ -287,7 +287,7 @@ function Home() {
           </ul>
         </Section>
 
-        <Section title="Pratos principais" className="dishes">
+        <Section title="Bebidas" className="dishes">
           <ul ref={carouselDrinks}>
             {drinks &&
               drinks.map(drink => (

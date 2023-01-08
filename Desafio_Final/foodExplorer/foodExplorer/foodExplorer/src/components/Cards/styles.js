@@ -121,6 +121,36 @@ const Container = styled.div`
 
       /* position: relative; */
     }
+
+    @media (min-width:412px){
+      width: 16rem;
+    }
+
+    @media (min-width: 1024px) {
+      width: 30rem;
+      
+      .card{
+        align-items: center;
+        justify-content: center;
+        .favorite{
+          margin-top: -13rem;
+          gap: 20rem;
+        }
+
+
+        .unitsAndInsert{
+          bottom: -0.5rem;
+          .price{
+            height: auto;
+            font-size: 2.5rem;
+          }
+
+          .units{
+            margin-bottom:0rem;
+          }
+        }
+      }
+    }
     //////////////////////////////
 
     /* ul{

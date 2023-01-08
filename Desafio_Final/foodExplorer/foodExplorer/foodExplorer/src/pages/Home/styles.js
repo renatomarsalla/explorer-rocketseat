@@ -120,7 +120,7 @@ const Container = styled.div`
 
   button.arrowDessertsLeft{
     position: absolute;
-    top:82rem;
+    top:92rem;
     right: 30rem;
     background-color: transparent;
     svg{
@@ -131,7 +131,7 @@ const Container = styled.div`
 
   button.arrowDrinksLeft{
     position: absolute;
-    top:127rem;
+    top:147rem;
     right: 30rem;
     background-color: transparent;
     svg{
@@ -152,7 +152,7 @@ const Container = styled.div`
   }
   button.arrowDessertsRight{
     position: absolute;
-    top:82rem;
+    top:92rem;
     right: 0.2rem;
     background-color: transparent;
     svg{
@@ -163,7 +163,7 @@ const Container = styled.div`
 
   button.arrowDrinksRight{
     position: absolute;
-    top:127rem;
+    top:147rem;
     right: 0.2rem;
     background-color: transparent;
     svg{
@@ -172,10 +172,60 @@ const Container = styled.div`
     }
   }
 
+  .newProduct{
+    width: 20rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    .newRegister{
+      background-color: black;
+      font-family: 'Poppins',sans-serif;
+    }
+  }
+
   main section ul::-webkit-scrollbar{
         display: none;
+  }
+  
+  @media (min-width: 412px){
+    ul .arrowDishesLeft{
+    top:42rem;
+    right: 33.5rem;   
+  }
+
+  ul .arrowDessertsLeft{
+    top:82rem;
+    right: 33.5rem;
+  }
+
+  ul .arrowDrinksLeft{
+    top:127rem;
+    right: 33.5rem;
   } 
 
+  ul .arrowDishesRight{   
+    top:42rem;
+    right:1rem;    
+  }
+  ul .arrowDessertsRight{  
+    top:82rem;
+    right: 1rem;
+  }
+
+  ul .arrowDrinksRight{
+    
+    top:127rem;
+    right: 1rem;
+    
+  }
+
+  }
+
+
+  
+    
   //antigo
 
   /* ul{
@@ -369,38 +419,41 @@ const Container = styled.div`
 
  
   @media (min-width: 412px){
-    ul .arrowDishesLeft{
+    button.arrowDishesLeft{
     top:42rem;
-    right: 33.5rem;   
+    right: 30rem;   
   }
 
-  ul .arrowDessertsLeft{
-    top:82rem;
-    right: 33.5rem;
+  button.arrowDessertsLeft{
+    top:100rem;
+    right: 30rem;
   }
 
-  ul .arrowDrinksLeft{
-    top:127rem;
-    right: 33.5rem;
+  button.arrowDrinksLeft{
+    top:157rem;
+    right: 30rem;
   } 
 
-  ul .arrowDishesRight{   
+  button.arrowDishesRight{   
     top:42rem;
-    right:1rem;    
+    right:-5rem;    
   }
-  ul .arrowDessertsRight{  
-    top:82rem;
-    right: 1rem;
-  }
-
-  ul .arrowDrinksRight{
-    
-    top:127rem;
-    right: 1rem;
-    
+  button.arrowDessertsRight{  
+    top:100rem;
+    right: -5rem;
   }
 
+  button.arrowDrinksRight{
+    
+    top:157rem;
+    right: -5rem;
+    
   }
+
+  }
+
+  
+  
 
 
   @media (min-width: 1024px) {
@@ -409,7 +462,6 @@ const Container = styled.div`
     
       .imgAndTitle{
         flex-direction: row;
-        /* width: 112rem; */
         width: 92rem;
         height: 26rem;
         margin-top: 16.4rem;
@@ -468,7 +520,6 @@ const Container = styled.div`
         margin-bottom: 4rem;
 
 
-        /* background-color: red; */
 
       }
 
@@ -482,7 +533,6 @@ const Container = styled.div`
         width: 85rem;
 
 
-        /* margin: 0 auto; */
       }
 
       main section ul::-webkit-scrollbar{
@@ -491,9 +541,8 @@ const Container = styled.div`
 
 
       main section ul li .card{
-        min-width: 30rem;
+        width: 30rem;
         height: 60rem;
-        /* background-color: red; */
         
         >h2{
           font-size: 2.4rem;
@@ -539,79 +588,73 @@ const Container = styled.div`
       }
 
       
-      ul .arrowDishesLeft{
+      button.arrowDishesLeft{
     position: absolute;
     
-    top: 65rem;
-    left: 5rem;
+    top: 60rem;
+    left: 3.5rem;
     background-color: transparent;
     svg{
-      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
       color: gray;
       font-size: 6rem;
     }
   }
 
-  ul .arrowDessertsLeft{
+  button.arrowDessertsLeft{
     position: absolute;
     
-    top: 138rem;
-    left: 5rem;
+    top: 120rem;
+    left: 3.5rem;
     background-color: transparent;
     svg{
-      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
       color: gray;
       font-size: 6rem;
     }
   }
 
-  ul .arrowDrinksLeft{
+  button.arrowDrinksLeft{
     position: absolute;
     
-    top: 215rem;
-    left: 5rem;
+    top: 185rem;
+    left: 3.5rem;
     background-color: transparent;
     svg{
-      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
       color: gray;
       font-size: 6rem;
     }
   }
 
-  ul .arrowDishesRight{
+  button.arrowDishesRight{
     position: absolute;
     
-    top: 65rem;
-    right: 5rem;
+    top: 60rem;
+    right: 2rem;
     background-color: transparent;
     svg{
-      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
-      color: gray;
+      /* color: gray; */
       font-size: 6rem;
     }
   }
-  ul .arrowDessertsRight{
+  button.arrowDessertsRight{
     position: absolute;
     
-    top: 138rem;
-    right: 5rem;
+    top: 120rem;
+    right: 2rem;
     background-color: transparent;
     svg{
       color: gray;
-      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
       font-size: 6rem;
     }
   }
 
-  ul .arrowDrinksRight{
+  button.arrowDrinksRight{
     position: absolute;
     
-    top: 215rem;
-    right: 5rem;
+    top: 185rem;
+    right: 2rem;
     background-color: transparent;
     svg{
       color: gray;
-      /* color: ${({ theme }) => theme.COLORS.WHITE}; */
       font-size: 6rem;
     }
   }
@@ -637,6 +680,7 @@ const Container = styled.div`
   }
       
 }
+
 
 `;
 
