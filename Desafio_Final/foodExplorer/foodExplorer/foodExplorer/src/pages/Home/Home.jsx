@@ -41,13 +41,11 @@ function Home() {
   const [searchDesserts, setSearchDesserts] = useState([]);
   const [searchDrinks, setSearchDrinks] = useState([]);
 
-  let avatarURL = `${api.defaults.baseURL}/files`;
+  // let avatarURL = `${api.defaults.baseURL}/files`;
 
   const carousel = useRef(null);
   const carouselDesserts = useRef(null);
   const carouselDrinks = useRef(null);
-  const unit = useRef(1);
-  const [units, setUnits] = useState(1);
 
   const navigate = useNavigate();
 
@@ -83,108 +81,14 @@ function Home() {
     carouselDrinks.current.scrollLeft += carouselDrinks.current.offsetWidth;
   };
 
-  // function handleDetails(id) {
-  //   navigate(`/details/${id}`);
-  // }
-
-  // function handleDetailsDessert(id) {
-  //   navigate(`/detailsDessert/${id}`);
-  // }
-
-  // function handleDetailsDrink(id) {
-  //   navigate(`/detailsDrink/${id}`);
-  // }
-
-  // function updateDish(id) {
-  //   navigate(`/update/${id}`);
-  // }
-
-  // function updateDessert(id) {
-  //   navigate(`/updateDessert/${id}`);
-  // }
-
-  // function updateDrink(id) {
-  //   navigate(`/updateDrink/${id}`);
-  // }
-
   function routeAddDish() {
     navigate('/addDish');
   }
 
-  // const [unitsToDish, setUnitsToDish] = useState('');
-
-  let quantity;
-  let total;
-  async function handleCreateOrder(name, price, quantity, total, image) {
-    quantity = document.querySelector('.quantity').innerHTML;
-
-    // total = (parseFloat(quantity).toFixed(2) * parseFloat(price)).toFixed(2);
-    // alert(total);
-
-    let p = Number(price.replace(',', '.'));
-    let q = Number(quantity.replace(',', '.'));
-
-    total = (p * q).toFixed(2);
-    alert(total);
-
-    // return;
-
-    alert(`${name} ${price} ${quantity} ${total} ${image}`);
-    await api.post(`/order/${user.id}`, {
-      name,
-      price,
-      quantity,
-      total,
-      image
-    });
-
-    // console.log('dish', dish.name);
-
-    alert('pedido realizado');
-  }
-
-  async function add(id) {
-    // alert(typeof id);
-    const id_dish = await api.get('/dishesUser');
-    const filtered = id_dish.data.filter(dish_id => dish_id.id === id);
-
-    const filter2 = filtered.filter(dish_id => dish_id.id === id);
-
-    // console.log(filtered);
-    // console.log(filter2);
-
-    let idInArray;
-    for (id of filter2) {
-      idInArray = id.id;
-      // console.log(id.id);
-    }
-    // console.log(id.id);
-    // console.log(typeof id, typeof idInArray);
-    if (id.id == idInArray) {
-      // alert('ok');
-      setUnits(prevState => prevState + 1);
-    }
-
-    // console.log(units);
-  }
-
-  function remove() {
-    setUnits(prevState => prevState - 1);
-
-    if (units <= 1) {
-      setUnits(1);
-    }
-  }
-
-  let alt1, alt2, alt3;
   useEffect(() => {
     async function fetchDishes() {
       const response = await api.get('/dishesUser');
-      // console.log('response data', response.data);
-      alt1 = response.data;
       setDish(response.data);
-      // setData(response.data);
-      // console.log('response', response.data);s
     }
     fetchDishes();
   }, []);
@@ -192,9 +96,7 @@ function Home() {
   useEffect(() => {
     async function fetchDesserts() {
       const response = await api.get('/dessertsUser');
-      // console.log(response.data);
       setDesserts(response.data);
-      // console.log('data', response.data);
     }
     fetchDesserts();
   }, []);

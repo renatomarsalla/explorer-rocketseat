@@ -9,11 +9,15 @@ import { AiFillHeart } from 'react-icons/ai';
 import { FaShoppingCart } from 'react-icons/fa';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 
+import { api } from '../../service/api';
+
 import { useAuth } from '../../hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 // import { useState } from 'react';
 
 function Header({ search, searchDesserts, searchDrinks }) {
+  const [units, setUnits] = useState(0);
   const { logout, user } = useAuth();
 
   const navigate = useNavigate();
@@ -27,6 +31,14 @@ function Header({ search, searchDesserts, searchDrinks }) {
     // navigate('/myOrder');
     navigate(`/myOrder/${user.id}`);
   }
+
+  useEffect(() => {
+    async function fetchUnits() {
+      const response = await api.get(`/order/${user.id}`);
+      setUnits(response.data.length);
+    }
+    fetchUnits();
+  }, [units]);
 
   return (
     <Container>
@@ -63,12 +75,15 @@ function Header({ search, searchDesserts, searchDrinks }) {
       <Buy className="show" onClick={myOrders}>
         <FaShoppingCart />
       </Buy>
-      <Button
-        text="Meu pedido (0)"
-        className="hide myOrder"
-        icon={HiOutlineShoppingBag}
-        onClick={myOrders}
-      ></Button>
+      {units && (
+        <Button
+          // text="Meu pedido (0)"
+          text={`Meus pedidos (${units})`}
+          className="hide myOrder"
+          icon={HiOutlineShoppingBag}
+          onClick={myOrders}
+        ></Button>
+      )}
       <Logout className="logout" onClick={handleLogout}>
         <FiLogOut />
       </Logout>

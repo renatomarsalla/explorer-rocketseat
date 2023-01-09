@@ -21,8 +21,8 @@ class MyOrderService {
     return order;
   }
 
-  async deleteItem({ user_id, id }) {
-    const order = await this.myOrderRepository.deleteItem({ user_id, id });
+  async deleteItem({ id }) {
+    const order = await this.myOrderRepository.deleteItem({ id });
 
     return order;
   }

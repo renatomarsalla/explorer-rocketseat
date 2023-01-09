@@ -19,6 +19,8 @@ function Card({ dish, routeUpdate, routeDetails }) {
 
   const [quantity, setQuantity] = useState(1);
 
+  // const [units, setUnits] = useState(0);
+
   const navigate = useNavigate();
 
   function handleAddItem() {
@@ -32,6 +34,10 @@ function Card({ dish, routeUpdate, routeDetails }) {
       setQuantity(1);
     }
   }
+
+  // function handleAddUnits() {
+  //   setUnits(units + 1);
+  // }
 
   function update(id) {
     navigate(`${routeUpdate}/${id}`);
@@ -58,6 +64,8 @@ function Card({ dish, routeUpdate, routeDetails }) {
     });
 
     alert('pedido realizado');
+
+    // handleAddUnits();
   }
 
   return (
