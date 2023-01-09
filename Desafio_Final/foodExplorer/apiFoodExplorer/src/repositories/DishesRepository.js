@@ -10,8 +10,6 @@ class DishesRepository {
     const dishWithIngredients = { ...dishes, ingredients };
     console.log(dishWithIngredients);
 
-    // return ({ ...dishes, ingredients });
-    // console.log('oi');
     return (dishWithIngredients);
   }
 

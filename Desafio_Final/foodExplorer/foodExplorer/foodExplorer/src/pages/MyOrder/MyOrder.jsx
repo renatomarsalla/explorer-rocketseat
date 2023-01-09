@@ -15,13 +15,47 @@ import { api } from '../../service/api';
 
 import { useParams } from 'react-router-dom';
 
+import { useState, useEffect } from 'react';
+
+import { useAuth } from '../../hooks/auth';
+
 function MyOrder() {
   const navigate = useNavigate();
   const params = useParams();
 
+  const [data, setData] = useState([]);
+  const [total, setTotal] = useState();
+
+  const { user } = useAuth();
+
+  let totals = 0;
+
   function home() {
     navigate('/');
   }
+
+  async function deleteItem(item) {
+    await api.delete(`/order/${user.id}/${item}`);
+  }
+
+  useEffect(() => {
+    async function fetchOrder() {
+      const response = await api.get(`/order/${params.id}`);
+      setData(response.data);
+
+      let array = response.data;
+      const sumPrice = array.map(value => value.total);
+      for (let i = 0; i < sumPrice.length; i++) {
+        totals = totals + Number(sumPrice[i]);
+
+        // totals = Number(totals + sumPrice[i]);
+      }
+      setTotal(totals.toFixed(2).replace('.', ','));
+      // alert(totals);
+    }
+
+    fetchOrder();
+  }, [data]);
 
   return (
     <Container>
@@ -38,30 +72,28 @@ function MyOrder() {
           <div className="myOrder">
             <h3>Meu pedido</h3>
             <ul>
-              <li>
-                <img src={img} alt="imagem do pedido" />
-                <div className="nameAndDelete">
-                  <div>
-                    <p>1x Café expresso</p>
-                    <span>R$ 4,99</span>
-                  </div>
-                  <ButtonText text="Excluir" />
-                </div>
-              </li>
-              <li>
-                <img src={img} alt="imagem do pedido" />
-                <div className="nameAndDelete">
-                  <div>
-                    <p>1x Café expresso</p>
-                    <span>RS 4,99</span>
-                  </div>
-                  <ButtonText text="Excluir" />
-                </div>
-              </li>
-
-              <div className="total">
-                <span>Total: R$10,00</span>
-              </div>
+              {data &&
+                data.map(order => (
+                  <li key={String(order.id)}>
+                    <img src={img} alt="imagem do pedido" />
+                    <div className="nameAndDelete">
+                      <div>
+                        <p>{order.quantity}x</p>
+                        <p>{order.name}</p>
+                        {/* <p>1x Café expresso</p> */}
+                        <span>R$ {order.total}</span>
+                      </div>
+                      <ButtonText
+                        text="Excluir"
+                        onClick={() => deleteItem(order.id)}
+                      />
+                      {/* <div className="total">
+                        <span id="total">Total:{totals}</span>
+                      </div> */}
+                    </div>
+                  </li>
+                ))}
+              <span className="totals">Total: R${total}</span>
             </ul>
           </div>
           <div className="payment">

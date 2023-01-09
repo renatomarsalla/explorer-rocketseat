@@ -46,9 +46,9 @@ function Card({ dish, routeUpdate, routeDetails }) {
     let p = Number(price.replace(',', '.')).toFixed(2);
 
     total = (p * quantity).toFixed(2);
-    alert(total);
+    // alert(total);
 
-    alert(`${name} ${price} ${quantity} ${total} ${image}`);
+    // alert(`${name} ${price} ${quantity} ${total} ${image}`);
     await api.post(`/order/${user.id}`, {
       name,
       price,

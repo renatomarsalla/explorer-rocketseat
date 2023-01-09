@@ -13,36 +13,37 @@ class MyOrderController {
     const myOrderRepository = new MyOrderRepository();
     const myOrderService = new MyOrderService(myOrderRepository);
 
-    myOrderService.execute({ name, quantity, price, total, image, id })
-
-    // const user = await connectionKnex("users").where({ id });
-
-    // console.log("id ", id);
-    // console.log("user ", user[0].id);
-
-    // const dishesId = await connectionKnex("orders").insert({
-    //   name,
-    //   quantity,
-    //   price,
-    //   total,
-    //   image,
-    //   user_id: user[0].id
-
-    // });
-
-
-
-
+    await myOrderService.execute({ name, quantity, price, total, image, id })
 
     return response.json({ id });
 
+  }
 
-    // const myOrderRepository = new MyOrderRepository();
-    // const myOrderService = new MyOrderService(myOrderRepository);
+  async getOrder(request, response) {
+    const { user_id } = request.params;
 
-    // myOrderService.execute({ name, quantity, price, total, image, user_id })
 
-    // return response.status(201).json();
+    const myOrderRepository = new MyOrderRepository();
+    const myOrderService = new MyOrderService(myOrderRepository);
+
+    await myOrderService.getOrder({ user_id })
+
+    const order = await myOrderService.getOrder({ user_id })
+
+    return response.json(order)
+  }
+
+  async deleteItem(request, response) {
+    const { id } = request.params;
+
+    const myOrderRepository = new MyOrderRepository();
+    const myOrderService = new MyOrderService(myOrderRepository);
+
+    await myOrderService.deleteItem({ id })
+
+    const order = await myOrderService.deleteItem({ id })
+
+    return response.json(id)
   }
 
 

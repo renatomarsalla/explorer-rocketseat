@@ -25,6 +25,7 @@ const Container = styled.div`
 
         font-family: "Poppins",sans-serif;
 
+
         svg{
           font-size: 2rem;
           gap: 1.1rem;
@@ -51,6 +52,15 @@ const Container = styled.div`
           font-weight: 500;
           margin-top: 1.6rem;
           text-align: center;
+        }
+
+        ul{
+          span.totals{         
+            /* margin-top: 10rem; */
+            color:${({ theme }) => theme.COLORS.WHITE};
+            font-size: 1.6rem;
+            font-family: 'Poppins', sans-serif;
+          }
         }
 
         
@@ -87,6 +97,7 @@ const Container = styled.div`
                 color: ${({ theme }) => theme.COLORS.WHITE};
               }
               span{
+                margin-top: 0.3rem;
                 font-size: 1.2rem;
                 color: ${({ theme }) => theme.COLORS.GRAY_100};
               }
@@ -291,7 +302,13 @@ const Container = styled.div`
         flex-direction: row;
         justify-content: center;
 
+        /* button.back{
+          margin-bottom: 5rem;
+          background-color: red;
+        } */
+
         .myOrder{
+          margin-top: 5rem;
           width: 35rem;
 
           h3{
@@ -308,6 +325,7 @@ const Container = styled.div`
         }
 
         .payment{
+          margin-top: 5rem;
           /* background-color: red; */
           width: 35rem;
 
