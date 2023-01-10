@@ -74,6 +74,7 @@ function Header({ search, searchDesserts, searchDrinks }) {
       />
       <Buy className="show" onClick={myOrders}>
         <FaShoppingCart />
+        <span>({units})</span>
       </Buy>
       {units && (
         <Button
