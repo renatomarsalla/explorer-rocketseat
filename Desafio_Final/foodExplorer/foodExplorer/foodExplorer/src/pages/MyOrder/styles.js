@@ -323,16 +323,16 @@ const Container = styled.div`
     height: 100vh;
     
     main{
+      
       .page{
         width: 90rem;
         
         flex-direction: row;
         justify-content: center;
+        height: 100vh;
 
-        /* button.back{
-          margin-bottom: 5rem;
-          background-color: red;
-        } */
+
+        
 
         .myOrder{
           margin-top: 5rem;
