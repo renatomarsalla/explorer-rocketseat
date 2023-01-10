@@ -17,8 +17,13 @@ const Container = styled.div`
   .title{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1.2rem;
-    color: ${({ theme }) => theme.COLORS.WHITE};  
+    color: ${({ theme }) => theme.COLORS.WHITE};
+    
+    h3{
+      cursor: pointer;
+    }
   }
   .hide{
     display: none;

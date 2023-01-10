@@ -226,194 +226,7 @@ const Container = styled.div`
 
   
     
-  //antigo
-
-  /* ul{
-    display: flex;
-    gap: 2.7rem;
-    overflow-y: auto;
-
-    margin: 0 auto;
-    width: 34.5rem;
-  }
-
-  ul .arrowDishesLeft{
-    position: absolute;
-    top:32rem;
-    right: 30rem;
-    background-color: transparent;
-    svg{
-      color: gray;
-      font-size: 4rem;
-    }
-  }
-
-  ul .arrowDessertsLeft{
-    position: absolute;
-    top:82rem;
-    right: 30rem;
-    background-color: transparent;
-    svg{
-      color: gray;
-      font-size: 4rem;
-    }
-  }
-
-  ul .arrowDrinksLeft{
-    position: absolute;
-    top:127rem;
-    right: 30rem;
-    background-color: transparent;
-    svg{
-      color: gray;
-      font-size: 4rem;
-    }
-  }
-
-  ul .arrowDishesRight{
-    position: absolute;
-    top:32rem;
-    right:0.2rem;
-    background-color: transparent;
-    svg{
-      color: gray;
-      font-size: 4rem;
-    }
-  }
-  ul .arrowDessertsRight{
-    position: absolute;
-    top:82rem;
-    right: 0.2rem;
-    background-color: transparent;
-    svg{
-      color: gray;
-      font-size: 4rem;
-    }
-  }
-
-  ul .arrowDrinksRight{
-    position: absolute;
-    top:127rem;
-    right: 0.2rem;
-    background-color: transparent;
-    svg{
-      color: gray;
-      font-size: 4rem;
-    }
-  }
-  ul li{
-    list-style: none;
-    justify-content: space-between;
-  }
   
-  
-
-
-  ul li .card{
-    width: 15rem;
-    height: 40rem;
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_CARD};
-
-    margin-top: 1.5rem;
-    padding: 0 1rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap:0.8rem;
-
-    >h2{
-      font-size: 1.6rem;
-      color: ${({ theme }) => theme.COLORS.WHITE_HOME};
-      text-align: center;
-    }
-
-    >span{
-      font-size: 1.4rem;
-    }
-
-    >p{
-      color: ${({ theme }) => theme.COLORS.WHITE_HOME};
-
-    }
-
-   
-    position: relative;
-  }
-
-  ul li img{
-    width: 12.6rem;
-    height: 12.6rem;
-
-    margin-top: 1rem;
-
-    border-radius: 50%;
-
-    cursor: pointer;
-  }
-
-  ul li .card p{
-    text-align: center;
-    font-size: 1.2rem;
-  }
-
-  ul li .card span{
-    text-align: center;
-    font-size: 1.6rem;
-    color: ${({ theme }) => theme.COLORS.PRICE};
-    font-family: 'Roboto', sans-serif;
-  }
-
-  
-
-  ul li div.favorite{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 9rem;
-    
-    margin-top: 0.5rem;
-  }
-
-
-  ul li div.unitsAndInsert{
-    display: flex;
-    align-items: center;
-    gap: .8rem;
-
-    margin-bottom: 1.5rem;
-    
-    >button{
-      height: auto;
-      font-size: 1rem;
-    }
-
-    >button.decrement,button.increment, span{
-      font-size: 2rem;
-      color: ${({ theme }) => theme.COLORS.WHITE};
-    }
-
-     
-  }
-
-  .newProduct{
-    width: 20rem;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-    .newRegister{
-      background-color: black;
-      font-family: 'Poppins',sans-serif;
-    }
-  }
-
-
-  main section ul::-webkit-scrollbar{
-        display: none;
-  } */
 
   
 
@@ -587,6 +400,7 @@ const Container = styled.div`
         }
       }
 
+
       
       button.arrowDishesLeft{
     position: absolute;
@@ -680,6 +494,79 @@ const Container = styled.div`
   }
       
 }
+
+@media (min-width:1440px ) {
+  button.arrowDishesLeft{
+    position: absolute;
+    
+    top: 60rem;
+    left: 25rem;
+    background-color: transparent;
+    svg{
+      color: gray;
+      font-size: 6rem;
+    }
+  }
+  button.arrowDessertsLeft{
+    position: absolute;
+    
+    top: 120rem;
+    left: 25rem;
+    background-color: transparent;
+    svg{
+      color: gray;
+      font-size: 6rem;
+    }
+  }
+
+  button.arrowDrinksLeft{
+    position: absolute;
+    
+    top: 185rem;
+    left: 25rem;
+    background-color: transparent;
+    svg{
+      color: gray;
+      font-size: 6rem;
+    }
+  }
+
+  button.arrowDishesRight{
+    position: absolute;
+    
+    top: 60rem;
+    right: 23rem;
+    background-color: transparent;
+    svg{
+      /* color: gray; */
+      font-size: 6rem;
+    }
+  }
+  button.arrowDessertsRight{
+    position: absolute;
+    
+    top: 120rem;
+    right: 23rem;
+    background-color: transparent;
+    svg{
+      color: gray;
+      font-size: 6rem;
+    }
+  }
+
+  button.arrowDrinksRight{
+    position: absolute;
+    
+    top: 185rem;
+    right: 23rem;
+    background-color: transparent;
+    svg{
+      color: gray;
+      font-size: 6rem;
+    }
+  }
+}
+
 
 
 `;

@@ -32,6 +32,10 @@ function Header({ search, searchDesserts, searchDrinks }) {
     navigate(`/myOrder/${user.id}`);
   }
 
+  function home() {
+    navigate('/');
+  }
+
   useEffect(() => {
     async function fetchUnits() {
       const response = await api.get(`/order/${user.id}`);
@@ -55,7 +59,7 @@ function Header({ search, searchDesserts, searchDrinks }) {
             fill="#065E7C"
           />
         </svg>
-        <h3>food explorer</h3>
+        <h3 onClick={home}>food explorer</h3>
         {/* <ButtonText text="Meus favoritos" className="hide btnFavorites" />; */}
       </div>
       <Favorites className="show">
