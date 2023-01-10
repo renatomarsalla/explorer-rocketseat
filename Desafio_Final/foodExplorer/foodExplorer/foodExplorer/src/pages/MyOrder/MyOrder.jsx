@@ -35,6 +35,8 @@ function MyOrder() {
   let pix = document.querySelector('#pix');
   let creditCard = document.querySelector('#qrcodeOrCredit');
 
+  let avatarURL = `${api.defaults.baseURL}/files`;
+
   function home() {
     navigate('/');
   }
@@ -92,7 +94,10 @@ function MyOrder() {
               {data &&
                 data.map(order => (
                   <li key={String(order.id)}>
-                    <img src={img} alt="imagem do pedido" />
+                    <img
+                      src={`${avatarURL}/${order.image}`}
+                      alt="imagem do pedido"
+                    />
                     <div className="nameAndDelete">
                       <div>
                         <p>{order.quantity}x</p>

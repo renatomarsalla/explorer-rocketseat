@@ -6,7 +6,7 @@ import { DetailsDessert } from '../pages/DetailsDessert/Details';
 import { DetailsDrink } from '../pages/DetailsDrink/Details';
 import { Home } from '../pages/Home/Home';
 import { MyOrder } from '../pages/MyOrder/MyOrder';
-import { Order } from '../pages/Orders/Orders';
+// import { Order } from '../pages/Orders/Orders';
 import { UpdateFood } from '../pages/UpdateFood/UpdateFood';
 import { UpdateDessert } from '../pages/UpdateDessert/UpdateDessert';
 import { UpdateDrink } from '../pages/UpdateDrink/UpdateDrink';
@@ -23,7 +23,7 @@ function AppRoutes() {
       <Route path="/updateDrink/:id" element={<UpdateDrink />} />
       <Route path="/" element={<Home />} />
       <Route path="/myOrder/:id" element={<MyOrder />} />
-      <Route path="/order" element={<Order />} />
+      {/* <Route path="/order" element={<Order />} /> */}
     </Routes>
   );
 }

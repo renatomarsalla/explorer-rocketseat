@@ -6,8 +6,17 @@ const Container = styled.button`
 
     >svg{
       color: ${({ theme }) => theme.COLORS.WHITE};
+      /* color: red; */
       font-size: 2rem;
     }
+
+    @media (min-width: 1024px) {
+      >svg{
+        font-size: 3rem;
+      }
+    }
+
+    
 `;
 
 export { Container };

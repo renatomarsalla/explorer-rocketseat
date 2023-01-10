@@ -48,6 +48,10 @@ const Container = styled.div`
         /* background-color: blue; */
         width: 100%;
 
+        img{
+          border-radius: 50%;
+        }
+
         h3{
           font-size:2rem;
           font-family: 'Poppins', sans-serif;
@@ -151,7 +155,7 @@ const Container = styled.div`
 
           button.pix{
             border-radius: 0.5rem 0 0 0;
-            margin-bottom: -2.1rem;
+            margin-bottom: -2.2rem;
             
           }
         }

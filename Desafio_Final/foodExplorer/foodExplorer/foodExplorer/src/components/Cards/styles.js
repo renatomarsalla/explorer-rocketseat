@@ -38,6 +38,12 @@ const Container = styled.div`
         gap: 10rem;
         /* background-color: blue; */
         margin-top:0 ;
+
+        .btnFavorites{
+          /* background-color: red; */
+          /* width: 3rem; */
+          cursor: pointer;
+        }
       }
       img{
         width: 12.6rem;
@@ -116,7 +122,26 @@ const Container = styled.div`
           flex-direction: row;
           justify-content: space-around;
           align-items: center;
+
+          .insert{
+            /* color: red; */
+            font-size: 1.2rem;
+            height: auto;
+          }
         }
+      }
+
+      /* .noFavorite{
+        display: block;
+      } */
+
+      .yesFavorite{
+        display: block;
+        /* background-color: red; */
+      }
+
+      .hide{
+        display: none;
       }
 
       /* position: relative; */
@@ -147,95 +172,17 @@ const Container = styled.div`
 
           .units{
             margin-bottom:0rem;
+
+            .insert{
+              font-size: 1.4rem;
+            }
           }
         }
       }
     }
     //////////////////////////////
 
-    /* ul{
-      display: flex;
-      gap: 2.7rem;
-      overflow-y: auto;
-
-      margin: 0 auto;
-      width: 34.5rem;
-
-      li{
-        background-color: red;
-      }
-
-    } */
-
-  
-  /* ul li .card{
-    width: 15rem;
-    height: 40rem;
     
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_CARD};
-
-
-    margin-top: 1.5rem;
-    padding: 0 1rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    gap:0.8rem;
-
-    >h2{
-      font-size: 1.6rem;
-      color: ${({ theme }) => theme.COLORS.WHITE_HOME};
-      text-align: center;
-    }
-
-    >span{
-      font-size: 1.4rem;
-    }
-
-    >p{
-      color: ${({ theme }) => theme.COLORS.WHITE_HOME};
-
-    }
-
-   
-    position: relative;
-  }
-
-  ul li img{
-    width: 12.6rem;
-    height: 12.6rem;
-
-    margin-top: 1rem;
-
-    border-radius: 50%;
-
-    cursor: pointer;
-  }
-
-  ul li .card p{
-    text-align: center;
-    font-size: 1.2rem;
-  }
-
-  ul li .card span{
-    text-align: center;
-    font-size: 1.6rem;
-    color: ${({ theme }) => theme.COLORS.PRICE};
-    font-family: 'Roboto', sans-serif;
-  }
-
-  
-
-  ul li div.favorite{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    gap: 9rem;
-    
-    margin-top: 0.5rem;
-  } */
 `
 
 export { Container }

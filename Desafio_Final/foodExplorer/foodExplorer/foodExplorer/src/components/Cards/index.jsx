@@ -1,6 +1,6 @@
 import { Container } from './styles';
 
-import { AiOutlineHeart, AiOutlineEdit } from 'react-icons/ai';
+import { AiOutlineHeart, AiOutlineEdit, AiFillHeart } from 'react-icons/ai';
 
 import { api } from '../../service/api';
 import { useAuth } from '../../hooks/auth';
@@ -18,10 +18,12 @@ function Card({ dish, routeUpdate, routeDetails }) {
   let avatarURL = `${api.defaults.baseURL}/files`;
 
   const [quantity, setQuantity] = useState(1);
-
-  // const [units, setUnits] = useState(0);
+  const [productFavorite, setProductFavorite] = useState(false);
 
   const navigate = useNavigate();
+
+  let btnAdd = document.querySelector('.btnAdd');
+  let btnRemove = document.querySelector('.btnRemove');
 
   function handleAddItem() {
     setQuantity(quantity + 1);
@@ -34,10 +36,6 @@ function Card({ dish, routeUpdate, routeDetails }) {
       setQuantity(1);
     }
   }
-
-  // function handleAddUnits() {
-  //   setUnits(units + 1);
-  // }
 
   function update(id) {
     navigate(`${routeUpdate}/${id}`);
@@ -65,8 +63,6 @@ function Card({ dish, routeUpdate, routeDetails }) {
 
     alert('pedido realizado');
     window.location.reload(true);
-
-    // handleAddUnits();
   }
 
   return (
@@ -83,7 +79,18 @@ function Card({ dish, routeUpdate, routeDetails }) {
             <div />
           )}
 
-          <ButtonFavorite icon={AiOutlineHeart} />
+          <div className="btnFavorites">
+            <ButtonFavorite
+              icon={AiOutlineHeart}
+              id="btnFavorite"
+              className="btnAdd "
+            />
+            <ButtonFavorite
+              icon={AiFillHeart}
+              id="btnFavorite"
+              className="btnRemove hide"
+            />
+          </div>
         </div>
         <img
           src={`${avatarURL}/${dish.image}`}
