@@ -47,6 +47,10 @@ function Card({ dish, routeUpdate, routeDetails }) {
 
   let total;
   async function handleCreateOrder(name, price, quantities, total, image) {
+    if (quantity > 10) {
+      return alert('limite máximo de unidade é de 10');
+    }
+
     let p = Number(price.replace(',', '.')).toFixed(2);
 
     total = (p * quantity).toFixed(2);

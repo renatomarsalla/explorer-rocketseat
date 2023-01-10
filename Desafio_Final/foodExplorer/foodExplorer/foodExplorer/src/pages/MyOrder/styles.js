@@ -107,6 +107,8 @@ const Container = styled.div`
                 margin-top: 0.3rem;
                 font-size: 1.2rem;
                 color: ${({ theme }) => theme.COLORS.GRAY_100};
+                width: 10rem;
+                /* background-color: red; */
               }
             }
           }

@@ -86,14 +86,7 @@ function Header({ search, searchDesserts, searchDrinks }) {
         icon={HiOutlineShoppingBag}
         onClick={myOrders}
       ></Button>
-      {/* {units && (
-        <Button
-          text={`Meus pedidos (${units})`}
-          className="hide myOrder"
-          icon={HiOutlineShoppingBag}
-          onClick={myOrders}
-        ></Button>
-      )} */}
+
       <Logout className="logout" onClick={handleLogout}>
         <FiLogOut />
       </Logout>
