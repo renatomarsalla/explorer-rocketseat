@@ -20,18 +20,56 @@ import { api } from '../../service/api';
 
 import { useNavigate } from 'react-router-dom';
 
+import { useAuth } from '../../hooks/auth';
+
 let avatar = `${api.defaults.baseURL}/files`;
 
 function DetailsDrink() {
   const [data, setData] = useState('');
   const [listIngredients, setListIngredients] = useState([]);
-  // const [listIngredients, setListIngredients] = useState('');
+  const [quantity, setQuantity] = useState(1);
   const params = useParams();
 
   const navigate = useNavigate();
 
+  const { user } = useAuth();
+
   function home() {
     navigate('/');
+  }
+
+  function handleAddItem() {
+    setQuantity(quantity + 1);
+  }
+
+  function handleRemoveItem() {
+    setQuantity(quantity - 1);
+
+    if (quantity == 1) {
+      setQuantity(1);
+    }
+  }
+
+  let total;
+  async function handleCreateOrder(name, price, quantities, total, image) {
+    let p = Number(price.replace(',', '.')).toFixed(2);
+
+    total = (p * quantity).toFixed(2);
+    // alert(total);
+
+    // alert(`${name} ${price} ${quantity} ${total} ${image}`);
+    await api.post(`/order/${user.id}`, {
+      name,
+      price,
+      quantity,
+      total,
+      image
+    });
+
+    alert('pedido realizado');
+    window.location.reload(true);
+
+    // handleAddUnits();
   }
 
   useEffect(() => {
@@ -89,25 +127,32 @@ function DetailsDrink() {
                   ))}
               </div>
 
-              {/* <div className="ingredients">
-                {listIngredients &&
-                  listIngredients.map(ing => (
-                    <div className="ingredient">
-                      <img src={lettuce} alt="imagem do alimento" />
-                      <label>{ing}</label>;
-                    </div>
-                  ))}
-              </div> */}
-
               <div className="priceAndUnits">
-                <span className="price">R$ {data.price}</span>
+                <span className="price">R$ {data.price.replace('.', ',')}</span>
                 <div className="units">
-                  <ButtonText text="-" className="decrement" />
-                  <span>01</span>
-                  <ButtonText text="+" className="increment" />
+                  <ButtonText
+                    text="-"
+                    className="decrement"
+                    onClick={handleRemoveItem}
+                  />
+                  <span>{quantity}</span>
+                  <ButtonText
+                    text="+"
+                    className="increment"
+                    onClick={handleAddItem}
+                  />
                   <Button
                     text="incluir"
                     icon={MdOutlineProductionQuantityLimits}
+                    onClick={() =>
+                      handleCreateOrder(
+                        data.name,
+                        data.price,
+                        quantity,
+                        total,
+                        data.image
+                      )
+                    }
                   />
                 </div>
               </div>

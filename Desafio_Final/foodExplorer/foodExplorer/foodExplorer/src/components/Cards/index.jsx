@@ -94,7 +94,7 @@ function Card({ dish, routeUpdate, routeDetails }) {
         <p>{dish.description}</p>
         <div className="unitsAndInsert">
           <div>
-            <p className="price">R$ {dish.price}</p>
+            <p className="price">R$ {dish.price.replace('.', ',')}</p>
           </div>
           <div className="units">
             <ButtonText
