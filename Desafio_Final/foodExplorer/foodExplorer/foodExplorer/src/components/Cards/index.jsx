@@ -64,6 +64,7 @@ function Card({ dish, routeUpdate, routeDetails }) {
     });
 
     alert('pedido realizado');
+    window.location.reload(true);
 
     // handleAddUnits();
   }
