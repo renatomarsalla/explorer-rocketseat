@@ -80,15 +80,20 @@ function Header({ search, searchDesserts, searchDrinks }) {
         <FaShoppingCart />
         <span>({units})</span>
       </Buy>
-      {units && (
+      <Button
+        text={`Meus pedidos (${units})`}
+        className="hide myOrder"
+        icon={HiOutlineShoppingBag}
+        onClick={myOrders}
+      ></Button>
+      {/* {units && (
         <Button
-          // text="Meu pedido (0)"
           text={`Meus pedidos (${units})`}
           className="hide myOrder"
           icon={HiOutlineShoppingBag}
           onClick={myOrders}
         ></Button>
-      )}
+      )} */}
       <Logout className="logout" onClick={handleLogout}>
         <FiLogOut />
       </Logout>
