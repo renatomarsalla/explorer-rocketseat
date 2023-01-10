@@ -19,6 +19,8 @@ import { useState, useEffect } from 'react';
 
 import { useAuth } from '../../hooks/auth';
 
+import qrcode from '../../assets/qrcode.svg';
+
 function MyOrder() {
   const navigate = useNavigate();
   const params = useParams();
@@ -29,13 +31,28 @@ function MyOrder() {
   const { user } = useAuth();
 
   let totals = 0;
+  let waitingPayment = document.querySelector('#waitingPayment');
+  let pix = document.querySelector('#pix');
+  let creditCard = document.querySelector('#qrcodeOrCredit');
 
   function home() {
     navigate('/');
   }
 
+  function selectPix() {
+    pix.classList.remove('hide');
+    waitingPayment.classList.add('hide');
+    creditCard.classList.add('hide');
+  }
+  function selectCreditCard() {
+    pix.classList.add('hide');
+    waitingPayment.classList.add('hide');
+    creditCard.classList.remove('hide');
+  }
+
   async function deleteItem(item) {
     await api.delete(`/order/${user.id}/${item}`);
+    window.location.reload(true);
   }
 
   useEffect(() => {
@@ -99,7 +116,7 @@ function MyOrder() {
           <div className="payment">
             <h3>Pagamento</h3>
             <div className="options">
-              <button className="pix">
+              <button className="pix" id="qrcode" onClick={selectPix}>
                 <svg
                   width="25"
                   height="25"
@@ -128,7 +145,7 @@ function MyOrder() {
                 </svg>
                 Pix
               </button>
-              <button className="credit">
+              <button className="credit" onClick={selectCreditCard}>
                 <svg
                   width="25"
                   height="19"
@@ -164,14 +181,14 @@ function MyOrder() {
                 Crédito
               </button>
             </div>
-            <div className="QrCodeOrCredit">
-              <div className="dataCredit">
+            <div className="QrCodeOrCredit hide" id="qrcodeOrCredit">
+              <div className="dataCredit " id="creditCard">
                 <div className="numberCard">
                   <label htmlFor="number">Número do Cartão</label>
                   <input
                     type="number"
                     id="number"
-                    placeholder="0000 0000 0000 0000"
+                    placeholder="1234 4321 6789 9876"
                   />
                 </div>
                 <div className="validateAndSecurityCode">
@@ -181,7 +198,7 @@ function MyOrder() {
                   </div>
                   <div className="securityCodeCard">
                     <label htmlFor="code">CVC</label>
-                    <input type="text" id="code" placeholder="04/25" />
+                    <input type="text" id="code" placeholder="845" />
                   </div>
                 </div>
                 <button>
@@ -215,7 +232,7 @@ function MyOrder() {
                 </button>
               </div>
             </div>
-            <div className="waitingPayment hide">
+            <div className="waitingPayment " id="waitingPayment">
               <svg
                 width="105"
                 height="104"
@@ -232,10 +249,12 @@ function MyOrder() {
               </svg>
               <span>Aguardando pagamento</span>
             </div>
+            <div className="pix hide" id="pix">
+              <img src={qrcode} alt="" />
+            </div>
           </div>
         </div>
       </main>
-
       <Footer />
     </Container>
   );

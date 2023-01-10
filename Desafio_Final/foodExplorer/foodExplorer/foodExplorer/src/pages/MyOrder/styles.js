@@ -9,9 +9,12 @@ const Container = styled.div`
   position: relative;
   top:12.2rem;
 
+  /* display: flex; */
+  /* flex-direction: column; */
+  
+
   main{
     >.page{
-
 
       button.back{
         background-color: blue;
@@ -33,7 +36,7 @@ const Container = styled.div`
       }
 
       width: 34.5rem;
-      height: 100vh;
+      /* height: 100vh; */
       margin: 0 auto;
       /* background-color: red; */
 
@@ -128,8 +131,9 @@ const Container = styled.div`
         .options{
           display: flex;
           justify-content: center;
+          align-items: center;
           width: 30rem;
-          margin:0 auto;         
+          margin:0 auto;
           button{
             display: flex;
             align-items: center;
@@ -137,26 +141,30 @@ const Container = styled.div`
             gap: 0.8rem;
             background-color: ${({ theme }) => theme.COLORS.BACKGROUND_800};
             width: 15rem;
+            height: 8rem;
             padding: 2rem 0;
             color: ${({ theme }) => theme.COLORS.WHITE};
             font-size: 1.4rem;
             border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
+            cursor: pointer;
           }
 
           button.pix{
             border-radius: 0.5rem 0 0 0;
-
+            margin-bottom: -2.1rem;
+            
           }
         }
         .QrCodeOrCredit{
           width: 30rem;
-          /* background-color: red; */
-          margin: 0 auto;
+          height: 30rem;
+          /* height: auto; */
+          /* background-color: gray; */
+          margin: 0 auto 2rem;
           border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
 
           .dataCredit{
             width: 25rem;
-            /* background-color: green; */
             margin: 2rem auto 0;
             .numberCard{
               display: flex;
@@ -253,7 +261,6 @@ const Container = styled.div`
             width: 30rem;
             height: 30rem;
             margin: 0 auto;
-            /* background-color: red; */
             border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
 
             display: flex;
@@ -262,7 +269,10 @@ const Container = styled.div`
             justify-content: center;
             gap: 2rem;
 
+            margin-top: -2.2rem;
             margin-bottom: 2rem;
+            /* margin: 2rem auto 0; */
+            /* margin-bottom: 2rem; */
 
             span{
               color: ${({ theme }) => theme.COLORS.GRAY_300};
@@ -272,16 +282,33 @@ const Container = styled.div`
 
           }
 
+          .pix{
+            width: 30rem;
+            height: 30rem;
+            margin: 0 auto;
+            border: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: -2.2rem;
+            margin-bottom: 2rem;
+            img{
+              width: 22rem;
+            }
+          }
+
           .hide{
             display: none;
-      }
+            
       }
 
-      
     }
 
-    
+      
   }
+
+    
+}
 
   @media (min-width: 412px) {
 
@@ -334,12 +361,15 @@ const Container = styled.div`
 
             button{
               width: 100%;
+              /* width: 16rem; */
               font-size: 1.6rem;
+              /* background-color: red; */
             }
           }
 
           .QrCodeOrCredit{
             width: 100%;
+            
 
             .dataCredit{
               width: 30rem;
@@ -356,7 +386,13 @@ const Container = styled.div`
               }
             }
 
+            
+
           }
+
+          .pix, .waitingPayment{
+            width: 100%;
+            }
 
           h3{
             margin-top: 3.4rem;
