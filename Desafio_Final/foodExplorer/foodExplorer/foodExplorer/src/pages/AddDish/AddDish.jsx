@@ -14,8 +14,13 @@ import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { api } from '../../service/api';
 import { useState, useEffect } from 'react';
 
+import { useAuth } from '../../hooks/auth';
+
 function AddDish() {
   const navigate = useNavigate();
+
+  const [units, setUnits] = useState(0);
+  const { user } = useAuth();
 
   function home() {
     navigate('/');
@@ -57,20 +62,11 @@ function AddDish() {
     setImage(imagePreview);
   }
 
-  // const fileUploadForm = new FormData();
-  // const img = imageFile.map(img => img.name);
-  // fileUploadForm.append('image', img);
-
-  // console.log(fileUploadForm);
-
   async function register() {
     if (!name || !ingredients || !price || !description) {
       alert('Preencha os campos');
       return;
     }
-
-    // const editPrice = price.replace(',', '.');
-    // setPrice(editPrice);
 
     const option = selectOptionDish();
 
@@ -98,14 +94,13 @@ function AddDish() {
     }
   }
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     const response = await api.get('/dishesUser');
-  //     // console.log('response data', response.data);
-  //     setData(response.data);
-  //   }
-  //   fetchData();
-  // }, []);
+  useEffect(() => {
+    async function fetchUnits() {
+      const response = await api.get(`/order/${user.id}`);
+      setUnits(response.data.length);
+    }
+    fetchUnits();
+  }, [units]);
 
   return (
     <Container>
@@ -130,7 +125,8 @@ function AddDish() {
         <div className="userAndOrders">
           <span>Admin</span>
           <Button
-            text="Meu pedido (0)"
+            text={`Meu pedido (${units})`}
+            // text="Meu pedido (0)"
             className="hide"
             icon={HiOutlineShoppingBag}
           />

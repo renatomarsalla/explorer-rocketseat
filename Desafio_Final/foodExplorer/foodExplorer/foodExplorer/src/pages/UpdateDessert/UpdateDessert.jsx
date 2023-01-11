@@ -16,6 +16,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { api } from '../../service/api';
 
+import { useAuth } from '../../hooks/auth';
+
 function UpdateDessert() {
   const [name, setName] = useState();
   const [price, setPrice] = useState();
@@ -28,6 +30,9 @@ function UpdateDessert() {
 
   const [data, setData] = useState([]);
   const [listIngredients, setListIngredients] = useState('');
+
+  const [units, setUnits] = useState(0);
+  const { user } = useAuth();
 
   const params = useParams();
 
@@ -116,6 +121,14 @@ function UpdateDessert() {
     fetchListIngredients();
   }, [ingredients]);
 
+  useEffect(() => {
+    async function fetchUnits() {
+      const response = await api.get(`/order/${user.id}`);
+      setUnits(response.data.length);
+    }
+    fetchUnits();
+  }, [units]);
+
   return (
     <Container>
       <header>
@@ -139,7 +152,8 @@ function UpdateDessert() {
         <div className="userAndOrders">
           <span>Admin</span>
           <Button
-            text="Meu pedido (0)"
+            text={`Meu pedido (${units})`}
+            // text="Meu pedido (0)"
             className="hide"
             icon={HiOutlineShoppingBag}
           />

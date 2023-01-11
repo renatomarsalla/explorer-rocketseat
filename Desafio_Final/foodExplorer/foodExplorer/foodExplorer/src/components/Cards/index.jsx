@@ -18,12 +18,8 @@ function Card({ dish, routeUpdate, routeDetails }) {
   let avatarURL = `${api.defaults.baseURL}/files`;
 
   const [quantity, setQuantity] = useState(1);
-  // const [productFavorite, setProductFavorite] = useState(false);
 
   const navigate = useNavigate();
-
-  let btnAdd = document.querySelector('.btnAdd');
-  let btnRemove = document.querySelector('.btnRemove');
 
   let images = {
     img1: AiOutlineHeart,
@@ -76,14 +72,14 @@ function Card({ dish, routeUpdate, routeDetails }) {
   }
 
   function changeImage() {
-    // setImage(state => (state === 'img1' ? 'img2' : 'img1'));
-    if (image === 'img1') {
-      setImage('img2');
-      alert('adicionou');
-    } else {
-      setImage('img1');
-      alert('removeu');
-    }
+    setImage(state => (state === 'img1' ? 'img2' : 'img1'));
+    // if (image === 'img1') {
+    //   setImage('img2');
+    //   alert('adicionou');
+    // } else {
+    //   setImage('img1');
+    //   alert('removeu');
+    // }
   }
 
   return (

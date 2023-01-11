@@ -17,6 +17,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import { api } from '../../service/api';
 
+import { useAuth } from '../../hooks/auth';
+
 function UpdateFood() {
   const [name, setName] = useState();
   const [price, setPrice] = useState();
@@ -33,6 +35,9 @@ function UpdateFood() {
   const params = useParams();
 
   const navigate = useNavigate();
+
+  const [units, setUnits] = useState(0);
+  const { user } = useAuth();
 
   async function handleUpdate(id) {
     !name ? setName(data.name) : name;
@@ -115,6 +120,14 @@ function UpdateFood() {
     fetchListIngredients();
   }, [ingredients]);
 
+  useEffect(() => {
+    async function fetchUnits() {
+      const response = await api.get(`/order/${user.id}`);
+      setUnits(response.data.length);
+    }
+    fetchUnits();
+  }, [units]);
+
   return (
     <Container>
       <header>
@@ -138,7 +151,8 @@ function UpdateFood() {
         <div className="userAndOrders">
           <span>Admin</span>
           <Button
-            text="Meu pedido (0)"
+            text={`Meu pedido (${units})`}
+            // text="Meu pedido (0)"
             className="hide"
             icon={HiOutlineShoppingBag}
           />
