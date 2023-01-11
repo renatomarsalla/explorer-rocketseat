@@ -1,6 +1,7 @@
 const jwtToken = {
   jwt: {
-    secret: "default",
+    // secret: "default",
+    secret: process.env.AUTH_SECRET || "default",
     expiresIn: "1d"
   }
 }
