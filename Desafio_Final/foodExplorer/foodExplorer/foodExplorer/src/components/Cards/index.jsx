@@ -18,12 +18,18 @@ function Card({ dish, routeUpdate, routeDetails }) {
   let avatarURL = `${api.defaults.baseURL}/files`;
 
   const [quantity, setQuantity] = useState(1);
-  const [productFavorite, setProductFavorite] = useState(false);
+  // const [productFavorite, setProductFavorite] = useState(false);
 
   const navigate = useNavigate();
 
   let btnAdd = document.querySelector('.btnAdd');
   let btnRemove = document.querySelector('.btnRemove');
+
+  let images = {
+    img1: AiOutlineHeart,
+    img2: AiFillHeart
+  };
+  const [image, setImage] = useState('img1');
 
   function handleAddItem() {
     setQuantity(quantity + 1);
@@ -69,6 +75,17 @@ function Card({ dish, routeUpdate, routeDetails }) {
     window.location.reload(true);
   }
 
+  function changeImage() {
+    // setImage(state => (state === 'img1' ? 'img2' : 'img1'));
+    if (image === 'img1') {
+      setImage('img2');
+      alert('adicionou');
+    } else {
+      setImage('img1');
+      alert('removeu');
+    }
+  }
+
   return (
     <Container>
       <div className="card">
@@ -85,15 +102,18 @@ function Card({ dish, routeUpdate, routeDetails }) {
 
           <div className="btnFavorites">
             <ButtonFavorite
-              icon={AiOutlineHeart}
+              // icon={AiOutlineHeart}
+              icon={images[image]}
               id="btnFavorite"
               className="btnAdd "
+              onClick={changeImage}
             />
-            <ButtonFavorite
+
+            {/* <ButtonFavorite
               icon={AiFillHeart}
               id="btnFavorite"
               className="btnRemove hide"
-            />
+            /> */}
           </div>
         </div>
         <img

@@ -1,32 +1,19 @@
 import { Container } from './styles';
 
-import { AiOutlineHeart, AiOutlineEdit } from 'react-icons/ai';
 import { MdKeyboardArrowRight } from 'react-icons/md';
-import {
-  MdKeyboardArrowLeft,
-  MdChangeCircle,
-  MdSystemUpdate
-} from 'react-icons/md';
-import { GrUpdate, GrDocumentUpdate } from 'react-icons/gr';
-// import { GrUpdate } from 'react-icons/';
+import { MdKeyboardArrowLeft } from 'react-icons/md';
 
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { Section } from '../../components/Section';
-import { ButtonText } from '../../components/Buttontext';
 import { Button } from '../../components/Button';
-import { ButtonFavorite } from '../../components/ButtonFavorite';
-import { ButtonUpdate } from '../../components/ButtonUpdate';
 import { Card } from '../../components/Cards';
 
-import { Quantity } from '../../components/Quantity';
-
 import img from '../../assets/principal.png';
-// import salad from '../../assets/Mask group.png';
 
 import { useNavigate } from 'react-router-dom';
 
-import { useState, useEffect, useRef, useLayoutEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { api } from '../../service/api';
 
 import { useAuth } from '../../hooks/auth';
@@ -35,13 +22,10 @@ function Home() {
   const [dish, setDish] = useState([]);
   const [drinks, setDrinks] = useState([]);
   const [desserts, setDesserts] = useState([]);
-  // const [data, setData] = useState([]);
 
   const [search, setSearch] = useState([]);
   const [searchDesserts, setSearchDesserts] = useState([]);
   const [searchDrinks, setSearchDrinks] = useState([]);
-
-  // let avatarURL = `${api.defaults.baseURL}/files`;
 
   const carousel = useRef(null);
   const carouselDesserts = useRef(null);
