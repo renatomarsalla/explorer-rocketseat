@@ -38,7 +38,14 @@ const Container = styled.div`
       /* gap: 1rem; */
       align-items: center;
       justify-content: center;
-      margin-right: 2.2rem;
+      margin-right: 3.2rem;
+      position: relative;
+
+      .units{
+        position: absolute;
+        left: 8rem;
+        color: ${({ theme }) => theme.COLORS.GRAY_300};
+      }
 
       span{
         color: ${({ theme }) => theme.COLORS.GRAY_300};

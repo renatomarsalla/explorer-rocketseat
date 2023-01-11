@@ -38,7 +38,14 @@ const Container = styled.div`
       /* gap: 1rem; */
       align-items: center;
       justify-content: center;
-      margin-right: 2.2rem;
+      margin-right: 3.2rem;
+      position: relative;
+
+      .units{
+        position: absolute;
+        left: 8rem;
+        color: ${({ theme }) => theme.COLORS.GRAY_300};
+      }
 
       span{
         color: ${({ theme }) => theme.COLORS.GRAY_300};
@@ -67,7 +74,7 @@ const Container = styled.div`
       margin:0 auto;
       /* width: 100vw; */
       width: 34.5rem;
-      height: 100vh;
+      /* height: 100vh; */
       /* background-color: blue; */
       background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
 
@@ -309,6 +316,7 @@ const Container = styled.div`
       color: ${({ theme }) => theme.COLORS.GRAY_100};
       font-family: 'Poppins', sans-serif;
       font-weight: 500;
+      margin-bottom:5rem;
     }
   }
 

@@ -189,6 +189,7 @@ const Container = styled.div`
             font-size: 2rem;
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
+            margin-top: 5rem;
             
             svg{             
               font-size: 3rem;

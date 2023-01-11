@@ -12,6 +12,7 @@ const Container = styled.div`
     width: 34.5rem;
 
     >.return{
+      
 
       button{
         background-color: transparent;
@@ -181,13 +182,14 @@ const Container = styled.div`
 
         >.return{
           margin-left: 12.2rem;
-
+          
           button{
             width: 20rem;
             height: 3.4rem;
             font-size: 2rem;
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
+            margin-top: 5rem;
             
             svg{             
               font-size: 3rem;

@@ -159,6 +159,7 @@ function UpdateDessert() {
           />
           <Buy className="show">
             <FaShoppingCart />
+            <span className="units">({units})</span>
           </Buy>
         </div>
       </header>
